@@ -15,7 +15,7 @@ const Navigation = () => {
           <div className="flex-shrink-0">
             <Link href="/">
               <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/7308b7c1ed2e9dab51754b94b898b565697ff230?width=330" 
+                src="logos/header-logo.png" 
                 alt="TransNepal Logo" 
                 className="h-12 w-auto"
               />

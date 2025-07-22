@@ -61,7 +61,7 @@ const Footer = () => {
           <div className="flex flex-col items-center">
             <div className="w-56 h-56 bg-white rounded-full flex items-center justify-center mb-4">
               <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/d921f0fcc0591cea034c7eb890e054057eb15ea1?width=448" 
+                src="/logos/all-cargo.png" 
                 alt="TransNepal Logo" 
                 className="w-48 h-28 object-contain"
               />

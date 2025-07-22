@@ -35,7 +35,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/home/hero-bg.jpg')`
+            backgroundImage: `url('/home/hero-bg.png')`
           }}
         />
         <div className="absolute inset-0 bg-black/40"></div>
@@ -79,13 +79,13 @@ export default function Home() {
             <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[525px]">
               <div className="relative h-64">
                 <img 
-                  src="/services/cargo-handling.jpg" 
+                  src="/services/cargo-handling.png" 
                   alt="Cargo Handling" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center">
                   <img 
-                    src="/icons/container-icon.png" 
+                    src="/services/shipping-container.png" 
                     alt="Container Icon" 
                     className="w-12 h-11"
                   />
@@ -103,7 +103,7 @@ export default function Home() {
             <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[525px]">
               <div className="relative h-64">
                 <img 
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/6e67c949055779edd4ba92b657313118d67350e8?width=726" 
+                  src="/services/storage.png" 
                   alt="Storage" 
                   className="w-full h-full object-cover"
                 />
@@ -125,7 +125,7 @@ export default function Home() {
             <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[525px]">
               <div className="relative h-64">
                 <img 
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/a079af32c2f007877bd0f98569714d470a4ae32f?width=726" 
+                  src="/services/weighment.png" 
                   alt="Weighment" 
                   className="w-full h-full object-cover"
                 />
@@ -156,7 +156,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/7b28cf89b9d2d459980c9157d95a3add8ecc8371?width=1010" 
+                src="/home/gtku.png" 
                 alt="TransNepal Building" 
                 className="w-full h-auto rounded-2xl shadow-lg"
               />
@@ -220,7 +220,7 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div>
                   <img 
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/b37593dfff5b7ce7158fb64506a34054e6bcf3b5?width=1166" 
+                    src="/locations/biratnagar.png" 
                     alt="Biratnagar" 
                     className="w-full h-64 lg:h-full object-cover"
                   />
@@ -242,7 +242,7 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div>
                   <img 
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/1e43a3e86e947fafc6b37f226e8d1266647fe71a?width=1168" 
+                    src="/locations/kakarvita.png" 
                     alt="Kakarvita" 
                     className="w-full h-64 lg:h-full object-cover"
                   />
@@ -264,7 +264,7 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div>
                   <img 
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/9372a6975619bafeeda79ae36434bf85019275ca?width=1172" 
+                    src="/locations/tatopani.png" 
                     alt="Tatopani" 
                     className="w-full h-64 lg:h-full object-cover"
                   />
@@ -286,7 +286,7 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div>
                   <img 
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/6eaa0aed33a72a404a27c4763b164b62e53a39cb?width=1168" 
+                    src="/locations/chobar.png" 
                     alt="Chobar" 
                     className="w-full h-64 lg:h-full object-cover"
                   />

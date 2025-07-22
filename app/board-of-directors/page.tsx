@@ -26,7 +26,7 @@ export default function BoardOfDirectors() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                   <div className="lg:col-span-1">
                     <img 
-                      src="https://cdn.builder.io/api/v1/image/assets%2F36b81f40e8314a76bb9d588bf23840f5%2F7fbc86fb5d3c4b79a7e88117c28a249a?format=webp&width=800" 
+                      src="/about/bod/adarsh-hegde.png" 
                       alt="Adarsh Hegde" 
                       className="w-48 h-48 lg:w-64 lg:h-64 rounded-2xl object-cover mx-auto border-4 border-white"
                     />
@@ -65,7 +65,7 @@ export default function BoardOfDirectors() {
                   <div className="lg:col-span-1">
                     <div className="relative">
                       <img 
-                        src="https://cdn.builder.io/api/v1/image/assets%2F36b81f40e8314a76bb9d588bf23840f5%2F7fbc86fb5d3c4b79a7e88117c28a249a?format=webp&width=800" 
+                        src="/about/bod/mukesh-rathi.png" 
                         alt="Mukesh Kumar Rathi" 
                         className="w-48 h-48 lg:w-64 lg:h-64 rounded-2xl object-cover mx-auto border-4 border-gray-200"
                       />
@@ -89,7 +89,7 @@ export default function BoardOfDirectors() {
                   <div className="lg:col-span-1">
                     <div className="relative">
                       <img 
-                        src="https://cdn.builder.io/api/v1/image/assets%2F36b81f40e8314a76bb9d588bf23840f5%2F7fbc86fb5d3c4b79a7e88117c28a249a?format=webp&width=800" 
+                        src="/about/bod/bhim-joshi.png" 
                         alt="Bhim Raj Joshi" 
                         className="w-48 h-48 lg:w-64 lg:h-64 rounded-2xl object-cover mx-auto border-4 border-white"
                       />
@@ -131,7 +131,7 @@ export default function BoardOfDirectors() {
                   <div className="lg:col-span-1">
                     <div className="relative">
                       <img 
-                        src="https://cdn.builder.io/api/v1/image/assets%2F36b81f40e8314a76bb9d588bf23840f5%2F7fbc86fb5d3c4b79a7e88117c28a249a?format=webp&width=800" 
+                        src="/about/bod/pankaj-rathi.png" 
                         alt="Pankaj Rathi" 
                         className="w-48 h-48 lg:w-64 lg:h-64 rounded-2xl object-cover mx-auto border-4 border-gray-200"
                       />
