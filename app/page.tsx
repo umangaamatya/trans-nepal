@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { ChevronDown, Mail, Phone, Calendar, MapPin, Send, ArrowLeft, ArrowRight, Facebook, Linkedin, Youtube } from "lucide-react";
 
@@ -531,3 +533,4 @@ const Index = () => {
 };
 
 export default Index;
+
