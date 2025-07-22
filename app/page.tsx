@@ -1,9 +1,11 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { ChevronDown, Mail, Phone, Calendar, MapPin, Send, ArrowLeft, ArrowRight, Facebook, Linkedin, Youtube } from "lucide-react";
+import { useState } from 'react';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import { ChevronDown, Mail, Phone, Calendar, MapPin, Send, ArrowLeft, ArrowRight } from 'lucide-react';
 
-const Index = () => {
+export default function Home() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,68 +23,19 @@ const Index = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log("Form submitted:", formData);
   };
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation Header */}
-      <header className="w-full bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/7308b7c1ed2e9dab51754b94b898b565697ff230?width=330" 
-                alt="TransNepal Logo" 
-                className="h-12 w-auto"
-              />
-            </div>
-            
-            {/* Navigation Menu */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <div className="bg-trans-blue text-white px-4 py-1 rounded-full text-sm font-medium">
-                Home
-              </div>
-              <div className="flex items-center space-x-1 text-gray-800 hover:text-trans-blue cursor-pointer">
-                <span className="text-sm">About Us</span>
-                <ChevronDown className="w-3 h-3" />
-              </div>
-              <div className="flex items-center space-x-1 text-gray-800 hover:text-trans-blue cursor-pointer">
-                <span className="text-sm">Services</span>
-                <ChevronDown className="w-3 h-3" />
-              </div>
-              <span className="text-gray-800 hover:text-trans-blue cursor-pointer text-sm">Tariff</span>
-              <div className="flex items-center space-x-1 text-gray-800 hover:text-trans-blue cursor-pointer">
-                <span className="text-sm">Associates</span>
-                <ChevronDown className="w-3 h-3" />
-              </div>
-              <span className="text-gray-800 hover:text-trans-blue cursor-pointer text-sm">Services</span>
-              <span className="text-gray-800 hover:text-trans-blue cursor-pointer text-sm">Contact Us</span>
-              <span className="text-gray-800 hover:text-trans-blue cursor-pointer text-sm">Gallery</span>
-              <span className="text-gray-800 hover:text-trans-blue cursor-pointer text-sm">News & Events</span>
-              <span className="text-gray-800 hover:text-trans-blue cursor-pointer text-sm">CSR</span>
-            </nav>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button className="text-gray-800 hover:text-trans-blue">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="relative h-[600px] md:h-[729px] bg-gray-900">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://api.builder.io/api/v1/image/assets/TEMP/624d99410381bf7b4c371fb61cc22024a4d111cc?width=3078')`
+            backgroundImage: `url('/home/hero-bg.jpg')`
           }}
         />
         <div className="absolute inset-0 bg-black/40"></div>
@@ -126,13 +79,13 @@ const Index = () => {
             <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[525px]">
               <div className="relative h-64">
                 <img 
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/5c6f8927ffe83a2c6806d09d9fe6c7cd30789d8a?width=726" 
+                  src="/services/cargo-handling.jpg" 
                   alt="Cargo Handling" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center">
                   <img 
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/aabad066a036f6bc491652f45d145c7b9d90a195?width=104" 
+                    src="/icons/container-icon.png" 
                     alt="Container Icon" 
                     className="w-12 h-11"
                   />
@@ -450,87 +403,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-trans-blue text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {/* Connect with us */}
-            <div>
-              <h4 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-white">CONNECT WITH US</h4>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5" />
-                  <span>info@transnepaldryport.com</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5" />
-                  <span>+977 21 501470</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5" />
-                  <span>+977 21 501441</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Calendar className="w-5 h-5" />
-                  <span>Office Hours</span>
-                </div>
-              </div>
-              <div className="flex space-x-4 mt-6">
-                <Facebook className="w-10 h-10 p-2 rounded-full border hover:bg-white/10 cursor-pointer" />
-                <Linkedin className="w-10 h-10 p-2 rounded-full border hover:bg-white/10 cursor-pointer" />
-                <Youtube className="w-10 h-10 p-2 rounded-full border hover:bg-white/10 cursor-pointer" />
-              </div>
-            </div>
-
-            {/* Useful Links */}
-            <div>
-              <h4 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-white">USEFUL LINKS</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="hover:text-gray-300 transition-colors">Department Of Customs</a></li>
-                <li><a href="#" className="hover:text-gray-300 transition-colors">NITDB Board</a></li>
-                <li><a href="#" className="hover:text-gray-300 transition-colors">FNCCI</a></li>
-                <li><a href="#" className="hover:text-gray-300 transition-colors">Indian Embassy Nepal</a></li>
-                <li><a href="#" className="hover:text-gray-300 transition-colors">Check Email</a></li>
-              </ul>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-white">QUICK LINKS</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="hover:text-gray-300 transition-colors">Management Team</a></li>
-                <li><a href="#" className="hover:text-gray-300 transition-colors">Biratnagar ICP</a></li>
-                <li><a href="#" className="hover:text-gray-300 transition-colors">Kakarbhitta ICD</a></li>
-                <li><a href="#" className="hover:text-gray-300 transition-colors">Tariff</a></li>
-                <li><a href="#" className="hover:text-gray-300 transition-colors">News & Events</a></li>
-              </ul>
-            </div>
-
-            {/* Logo */}
-            <div className="flex flex-col items-center">
-              <div className="w-56 h-56 bg-white rounded-full flex items-center justify-center mb-4">
-                <img 
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/d921f0fcc0591cea034c7eb890e054057eb15ea1?width=448" 
-                  alt="TransNepal Logo" 
-                  className="w-48 h-28 object-contain"
-                />
-              </div>
-              <button className="border border-white px-4 py-2 text-sm hover:bg-white hover:text-trans-blue transition-colors">
-                Back to top
-              </button>
-            </div>
-          </div>
-
-          <div className="border-t border-white/30 mt-12 pt-8">
-            <p className="text-center text-white/80">
-              All rights Reserved | Copyright © 2024 Trans Nepal Freight Services Pvt. Ltd.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
-};
-
-export default Index;
-
+}
