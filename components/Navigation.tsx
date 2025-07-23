@@ -52,18 +52,72 @@ const Navigation = () => {
               <ChevronDown className="w-3 h-3" />
             </div>
             
-            <span className="text-gray-800 hover:text-trans-blue cursor-pointer text-sm">Tariff</span>
+            <Link 
+              href="/tariff"
+              className={`text-sm transition-colors ${
+                pathname === '/tariff'
+                  ? 'bg-trans-blue text-white px-4 py-1 rounded-full font-medium'
+                  : 'text-gray-800 hover:text-trans-blue'
+              }`}
+            >
+              Tariff
+            </Link>
             
             <div className="flex items-center space-x-1 text-gray-800 hover:text-trans-blue cursor-pointer">
               <span className="text-sm">Associates</span>
               <ChevronDown className="w-3 h-3" />
             </div>
             
-            <span className="text-gray-800 hover:text-trans-blue cursor-pointer text-sm">Services</span>
-            <span className="text-gray-800 hover:text-trans-blue cursor-pointer text-sm">Contact Us</span>
-            <span className="text-gray-800 hover:text-trans-blue cursor-pointer text-sm">Gallery</span>
-            <span className="text-gray-800 hover:text-trans-blue cursor-pointer text-sm">News & Events</span>
-            <span className="text-gray-800 hover:text-trans-blue cursor-pointer text-sm">CSR</span>
+            <Link 
+              href="/our-purpose"
+              className={`text-sm transition-colors ${
+                pathname === '/our-purpose'
+                  ? 'bg-trans-blue text-white px-4 py-1 rounded-full font-medium'
+                  : 'text-gray-800 hover:text-trans-blue'
+              }`}
+            >
+              Our Purpose
+            </Link>
+            <Link 
+              href="/contact"
+              className={`text-sm transition-colors ${
+                pathname === '/contact'
+                  ? 'bg-trans-blue text-white px-4 py-1 rounded-full font-medium'
+                  : 'text-gray-800 hover:text-trans-blue'
+              }`}
+            >
+              Contact Us
+            </Link>
+            <Link 
+              href="/gallery"
+              className={`text-sm transition-colors ${
+                pathname === '/gallery'
+                  ? 'bg-trans-blue text-white px-4 py-1 rounded-full font-medium'
+                  : 'text-gray-800 hover:text-trans-blue'
+              }`}
+            >
+              Gallery
+            </Link>
+            <Link 
+              href="/news"
+              className={`text-sm transition-colors ${
+                pathname === '/news'
+                  ? 'bg-trans-blue text-white px-4 py-1 rounded-full font-medium'
+                  : 'text-gray-800 hover:text-trans-blue'
+              }`}
+            >
+              News & Events
+            </Link>
+            <Link 
+              href="/csr"
+              className={`text-sm transition-colors ${
+                pathname === '/csr'
+                  ? 'bg-trans-blue text-white px-4 py-1 rounded-full font-medium'
+                  : 'text-gray-800 hover:text-trans-blue'
+              }`}
+            >
+              CSR
+            </Link>
           </nav>
 
           {/* Mobile menu button */}

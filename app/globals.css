@@ -51,6 +51,12 @@
     --trans-blue-700: 227 52% 35%;
     --trans-blue-800: 227 52% 25%;
     --trans-blue-900: 227 52% 15%;
+
+    /* Brand Colors from pixel-landing */
+    --brand-blue: 234 56% 32%;
+    --brand-blue-dark: 225 63% 22%;
+    --brand-red: 1 74% 45%;
+    --brand-text-blue: 225 63% 22%;
   }
 
   .dark {
@@ -91,5 +97,14 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, 'Roboto', 'Helvetica', sans-serif;
+  }
+
+  .font-poppins {
+    font-family: 'Poppins', -apple-system, 'Roboto', 'Helvetica', sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', -apple-system, 'Roboto', 'Helvetica', sans-serif;
   }
 }
