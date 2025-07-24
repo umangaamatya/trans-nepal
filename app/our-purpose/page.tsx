@@ -12,7 +12,7 @@ export default function OurPurpose() {
       {/* Main Content */}
       <main className="relative">
         {/* --- This top section remains unchanged --- */}
-        <section className="relative pt-[120px] lg:pt-[213px] px-4">
+        <section className="relative pt-[40px] lg:pt-[80px] px-4">
           <h1 className="max-w-[911px] text-[#233488] text-center font-poppins text-[40px] lg:text-[50px] font-bold leading-normal mx-auto mb-0">
             <span>Our</span>
             <br />

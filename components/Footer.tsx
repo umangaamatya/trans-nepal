@@ -1,3 +1,4 @@
+"use client";
 import { Mail, Phone, Facebook, Linkedin, Youtube, ChevronRight, ChevronUp } from "lucide-react";
 
 export default function Footer() {
@@ -65,7 +66,10 @@ export default function Footer() {
 
         {/* Logo and Button */}
         <div className="flex flex-col items-center gap-6 lg:gap-10">
-          <button className="border border-white text-white px-4 py-2 rounded hover:bg-white/10 transition">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="border border-white text-white px-4 py-2 rounded hover:bg-white/10 transition"
+          >
             Back to top <ChevronUp className="inline ml-1 w-4 h-4" />
           </button>
           <div className="w-[140px] h-[140px] bg-white rounded-full flex items-center justify-center">

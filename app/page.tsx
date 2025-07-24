@@ -1,11 +1,52 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { ChevronDown, Mail, Phone, Calendar, MapPin, Send, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Mail, Phone, Calendar, MapPin, Send, ArrowLeft, ArrowRight } from 'lucide-react';
+
+// Data for your hero slides with updated image paths
+const heroSlides = [
+  {
+    imagePath: '/home/hero-bg.png',
+    title: "Nepal's Leading<br />Dry Port Operations"
+  },
+  {
+    imagePath: '/home/hero-bg-1.png', // Updated Path
+    title: "Advanced<br />Storage Solutions"
+  },
+  {
+    imagePath: '/home/hero-bg-2.png', // Updated Path
+    title: "Efficient<br />Cargo Handling"
+  },
+];
 
 export default function Home() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Memoize functions to prevent re-creation on every render
+  const goToPrevious = useCallback(() => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? heroSlides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  }, [currentIndex]);
+
+  const goToNext = useCallback(() => {
+    const isLastSlide = currentIndex === heroSlides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  }, [currentIndex]);
+  
+  // useEffect hook for the automatic carousel timer
+  useEffect(() => {
+    const slideInterval = setInterval(goToNext, 5000); // Change slide every 5 seconds
+    
+    // Clear the interval when the component unmounts or dependencies change
+    return () => clearInterval(slideInterval);
+  }, [goToNext]);
+
+
+  // (The form state and handlers remain unchanged)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,26 +66,32 @@ export default function Home() {
     e.preventDefault();
     console.log("Form submitted:", formData);
   };
-
+  
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative h-[600px] md:h-[729px] bg-gray-900">
+      {/* Hero Section - Now with Timer and Animation */}
+      <section className="relative h-[600px] md:h-[729px] bg-gray-900 overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          // The 'key' prop is crucial. It tells React to re-render the component, which re-triggers our animation.
+          key={currentIndex}
+          className="absolute inset-0 bg-cover bg-center animate-fadeIn"
           style={{
-            backgroundImage: `url('/home/hero-bg.png')`
+            backgroundImage: `url('${heroSlides[currentIndex].imagePath}')`
           }}
         />
         <div className="absolute inset-0 bg-black/40"></div>
         
         {/* Navigation Arrows */}
-        <button className="absolute left-4 md:left-28 top-1/2 transform -translate-y-1/2 w-16 h-16 rounded-full border border-white/80 bg-white/5 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+        <button 
+          onClick={goToPrevious}
+          className="absolute left-4 md:left-28 top-1/2 transform -translate-y-1/2 w-16 h-16 rounded-full border border-white/80 bg-white/5 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/10 transition-colors z-20">
           <ArrowLeft className="w-6 h-6" />
         </button>
-        <button className="absolute right-4 md:right-28 top-1/2 transform -translate-y-1/2 w-16 h-16 rounded-full border border-white/80 bg-white/5 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+        <button 
+          onClick={goToNext}
+          className="absolute right-4 md:right-28 top-1/2 transform -translate-y-1/2 w-16 h-16 rounded-full border border-white/80 bg-white/5 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/10 transition-colors z-20">
           <ArrowRight className="w-6 h-6" />
         </button>
 
@@ -53,17 +100,23 @@ export default function Home() {
           <div className="bg-trans-blue text-white px-8 py-3 rounded-xl mb-6">
             <span className="text-lg md:text-2xl font-bold">Welcome to</span>
           </div>
-          <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-bold max-w-4xl leading-tight">
-            Nepal's Leading<br />
-            Dry Port Operations
-          </h1>
+          <h1 
+            className="text-white text-2xl md:text-4xl lg:text-5xl font-bold max-w-4xl leading-tight"
+            dangerouslySetInnerHTML={{ __html: heroSlides[currentIndex].title }}
+          />
         </div>
 
         {/* Carousel Indicators */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
-          <div className="w-16 h-1.5 bg-white rounded-full"></div>
-          <div className="w-16 h-1.5 bg-white/50 rounded-full"></div>
-          <div className="w-16 h-1.5 bg-white/50 rounded-full"></div>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+          {heroSlides.map((slide, slideIndex) => (
+            <button
+              key={slideIndex}
+              onClick={() => setCurrentIndex(slideIndex)}
+              className={`w-16 h-1.5 rounded-full transition-colors duration-300 ${
+                currentIndex === slideIndex ? 'bg-white' : 'bg-white/50 hover:bg-white/75'
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -149,7 +202,7 @@ export default function Home() {
       {/* Get to Know Us Section */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-trans-blue text-center mb-16" style={{ fontFamily: 'Poly' }}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-trans-blue text-center mb-16">
             Get to know us
           </h2>
           
@@ -274,7 +327,7 @@ export default function Home() {
                     <h3 className="text-2xl md:text-3xl font-bold">Tatopani</h3>
                     <MapPin className="w-12 h-12 text-white/80 flex-shrink-0" />
                   </div>
-                  <p className="text-lg md:text-xl leading-relaxed">
+                  <p className="text-lg md:text-xl leading-relaxed text-justify">
                     Tatopani ICD is located in Sidhupachowk, Bagmati Province 114 Km north east of Kathmandu. Tatopani and Rasua are two important cross border points of Nepal to China.
                   </p>
                 </div>
@@ -318,7 +371,7 @@ export default function Home() {
                 <div className="flex items-center justify-center mb-8">
                   <Send className="w-16 h-16" />
                 </div>
-                <h3 className="text-4xl lg:text-5xl font-bold mb-6">Get a quote</h3>
+                <h3 className="text-4xl lg:text-5xl text-center font-bold mb-6">Get a quote</h3>
                 <p className="text-lg text-white/80 text-center">
                   Fill out the form below and we'll provide you with a personalized quote tailored to your needs
                 </p>
@@ -340,7 +393,7 @@ export default function Home() {
                       />
                     </div>
                     <div>
-                      <label className="block text-trans-blue text-lg font-medium mb-2">E-mail</label>
+                      <label className="block text-trans-blue text-lg font-medium mb-2">Email</label>
                       <input
                         type="email"
                         name="email"
