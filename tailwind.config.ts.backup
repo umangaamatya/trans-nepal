@@ -2,11 +2,7 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./client/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
     container: {
@@ -74,11 +70,6 @@ export default {
           800: "hsl(var(--trans-blue-800))",
           900: "hsl(var(--trans-blue-900))",
         },
-        "brand-blue": "hsl(var(--brand-blue))",
-        "brand-red": "hsl(var(--brand-red))",
-        "text-blue": "hsl(var(--brand-text-blue))",
-        "light-blue": "#E6F3FF",
-        "medium-blue": "#4A90E2",
       },
       borderRadius: {
         lg: "var(--radius)",
