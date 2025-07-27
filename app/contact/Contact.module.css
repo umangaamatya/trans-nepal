@@ -1,0 +1,179 @@
+/* styles/Contact.module.css */
+.pageWrapper {
+  background-color: #ffffff;
+}
+
+/* --- Hero Section --- */
+.heroSection {
+  position: relative;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-image: url('/contact/contact-background.png'); /* Replace with your hero image */
+  background-size: cover;
+  background-position: center;
+}
+.heroOverlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  
+}
+.heroContent {
+  position: relative;
+  z-index: 2;
+}
+.heroContent h1 {
+  font-size: 3rem;
+  color: #283B9A;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.heroContent p {
+  font-size: 1rem;
+  color: #283B9A;
+}
+
+/* --- Main Content Section --- */
+.mainContentSection {
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: -80px auto 0 auto; /* Pulls it up over the hero */
+  position: relative;
+  z-index: 3;
+}
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* --- Left Info Block --- */
+.infoBlock {
+  /* Replaced the solid color with the gradient from your image */
+  background-image: linear-gradient(to bottom right, #616FB3, #283B9A);
+  color: white;
+  padding: 40px;
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.infoBlock h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: 1.5rem;
+}
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.infoItem .icon {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.infoItem p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.9);
+}
+.infoItem strong {
+  display: block;
+  margin-bottom: 4px;
+}
+.socials {
+  margin-top: auto; /* Pushes to the bottom */
+}
+.socialIcons {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+.socialIcons a {
+  color: white;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+.socialIcons a:hover {
+  opacity: 1;
+}
+
+/* --- Right Form Block --- */
+.formBlock {
+  padding: 40px;
+}
+.formBlock h3 {
+  font-size: 1.75rem;
+  text-align: center;
+  font-weight: 600;
+  color: #981d2a;
+  margin-bottom: 24px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.formGroup label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #495057;
+}
+.formGroup input, .formGroup textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #f8f9fa;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.formGroup input:focus, .formGroup textarea:focus {
+  outline: none;
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+}
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #981d2a; /* Red button */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background-color 0.2s ease;
+}
+.submitButton:hover {
+  background-color: #c82333;
+}
+
+/* --- Map Section --- */
+.mapSection {
+  width: 100%;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .heroSection { height: 250px; }
+  .heroContent h1 { font-size: 2.25rem; }
+  .mainContentSection { padding: 40px 20px; margin-top: -60px; }
+}
