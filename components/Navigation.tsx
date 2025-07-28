@@ -35,7 +35,7 @@ const NavDropdown: FC<NavDropdownProps> = ({ title, children, href, isActive }) 
         className={`flex items-center space-x-1 cursor-pointer transition-colors px-4 py-1 rounded-full whitespace-nowrap ${
           isActive
             ? 'bg-[#36427C] text-white font-medium' 
-            : 'text-gray-800 hover:text-trans-blue'
+            : 'text-gray-800 hover:text-brand-blue'
         }`}
       >
         <span className="text-sm">{title}</span>
@@ -45,7 +45,7 @@ const NavDropdown: FC<NavDropdownProps> = ({ title, children, href, isActive }) 
       </Link>
       
       {isOpen && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white rounded-md shadow-lg z-20">
+        <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white rounded-md shadow-lg z-20 border border-gray-200">
           <div className="py-1">
             {children}
           </div>
@@ -63,7 +63,7 @@ const NavLink: FC<NavLinkProps> = ({ href, children }) => {
         className={`text-sm px-4 py-1 rounded-full transition-colors whitespace-nowrap ${
           pathname === href 
             ? 'bg-[#36427C] text-white font-medium' 
-            : 'text-gray-800 hover:text-trans-blue'
+            : 'text-gray-800 hover:text-brand-blue'
         }`}
       >
         {children}
@@ -77,6 +77,18 @@ const NavLink: FC<NavLinkProps> = ({ href, children }) => {
 const Navigation: FC = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileDropdowns, setMobileDropdowns] = useState({
+    about: false,
+    services: false,
+    associates: false
+  });
+
+  const toggleMobileDropdown = (dropdown: keyof typeof mobileDropdowns) => {
+    setMobileDropdowns(prev => ({
+      ...prev,
+      [dropdown]: !prev[dropdown]
+    }));
+  };
 
   return (
     <header className="w-full bg-white shadow-sm sticky top-0 z-50">
@@ -97,20 +109,22 @@ const Navigation: FC = () => {
           <nav className="hidden md:flex items-center space-x-1">
             <NavLink href="/">Home</NavLink>
             
-            <NavDropdown title="About Us" href="/board-of-directors" isActive={pathname.startsWith('/about') || pathname === '/board-of-directors' || pathname === '/our-purpose'}>
-              <Link href="/board-of-directors" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Board of Directors</Link>
-              <Link href="/our-purpose" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Our Purpose</Link>
+            <NavDropdown title="About Us" href="/board-of-directors" isActive={pathname.startsWith('/about') || pathname === '/board-of-directors' || pathname === '/our-purpose' || pathname === '/management-team' || pathname === '/calendar'}>
+              <Link href="/board-of-directors" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Board of Directors</Link>
+              <Link href="/management-team" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Management Team</Link>
+              <Link href="/our-purpose" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Our Purpose</Link>
+              <Link href="/calendar" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Holiday Calendar</Link>
             </NavDropdown>
 
             <NavDropdown title="Services" href="/services" isActive={pathname.startsWith('/services')}>
-               <Link href="/services/cargo" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cargo Handling</Link>
-               <Link href="/services/storage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Storage</Link>
+               <Link href="/services/cargo" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Cargo Handling</Link>
+               <Link href="/services/storage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Storage</Link>
             </NavDropdown>
             
             <NavLink href="/tariff">Tariff</NavLink>
             
             <NavDropdown title="Associates" href="/associates" isActive={pathname.startsWith('/associates')}>
-               <Link href="/associates/partner-1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Partner One</Link>
+               <Link href="/associates/partner-1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Partner One</Link>
             </NavDropdown>
             
             <NavLink href="/contact">Contact Us</NavLink>
@@ -121,7 +135,7 @@ const Navigation: FC = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-800 hover:text-trans-blue">
+            <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-800 hover:text-brand-blue">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
@@ -132,12 +146,68 @@ const Navigation: FC = () => {
       
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white py-4">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
-            <Link href="/" className="block text-gray-800 hover:text-trans-blue py-2">Home</Link>
-            <Link href="/board-of-directors" className="block text-gray-800 hover:text-trans-blue py-2">About Us</Link>
-            <Link href="/services" className="block text-gray-800 hover:text-trans-blue py-2">Services</Link>
-            <Link href="/contact" className="block text-gray-800 hover:text-trans-blue py-2">Contact Us</Link>
+        <div className="md:hidden bg-white py-4 border-t border-gray-200">
+          <div className="px-4 space-y-2">
+            <Link href="/" className="block text-gray-800 hover:text-brand-blue py-2 transition-colors">Home</Link>
+            
+            {/* About Us Mobile Dropdown */}
+            <div>
+              <button 
+                onClick={() => toggleMobileDropdown('about')}
+                className="flex items-center justify-between w-full text-gray-800 hover:text-brand-blue py-2 transition-colors"
+              >
+                <span>About Us</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileDropdowns.about ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileDropdowns.about && (
+                <div className="pl-4 space-y-1">
+                  <Link href="/board-of-directors" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Board of Directors</Link>
+                  <Link href="/our-purpose" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Our Purpose</Link>
+                  <Link href="/management-team" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Management Team</Link>
+                  <Link href="/calendar" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Holiday Calendar</Link>
+                </div>
+              )}
+            </div>
+
+            {/* Services Mobile Dropdown */}
+            <div>
+              <button 
+                onClick={() => toggleMobileDropdown('services')}
+                className="flex items-center justify-between w-full text-gray-800 hover:text-brand-blue py-2 transition-colors"
+              >
+                <span>Services</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileDropdowns.services ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileDropdowns.services && (
+                <div className="pl-4 space-y-1">
+                  <Link href="/services/cargo" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Cargo Handling</Link>
+                  <Link href="/services/storage" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Storage</Link>
+                </div>
+              )}
+            </div>
+
+            <Link href="/tariff" className="block text-gray-800 hover:text-brand-blue py-2 transition-colors">Tariff</Link>
+            
+            {/* Associates Mobile Dropdown */}
+            <div>
+              <button 
+                onClick={() => toggleMobileDropdown('associates')}
+                className="flex items-center justify-between w-full text-gray-800 hover:text-brand-blue py-2 transition-colors"
+              >
+                <span>Associates</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileDropdowns.associates ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileDropdowns.associates && (
+                <div className="pl-4 space-y-1">
+                  <Link href="/associates/partner-1" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Partner One</Link>
+                </div>
+              )}
+            </div>
+
+            <Link href="/contact" className="block text-gray-800 hover:text-brand-blue py-2 transition-colors">Contact Us</Link>
+            <Link href="/gallery" className="block text-gray-800 hover:text-brand-blue py-2 transition-colors">Gallery</Link>
+            <Link href="/news" className="block text-gray-800 hover:text-brand-blue py-2 transition-colors">News & Events</Link>
+            <Link href="/csr" className="block text-gray-800 hover:text-brand-blue py-2 transition-colors">CSR</Link>
           </div>
         </div>
       )}

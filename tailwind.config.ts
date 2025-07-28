@@ -17,6 +17,16 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'poppins': ['var(--font-poppins)', 'sans-serif'],
+        'inter': ['var(--font-inter)', 'sans-serif'],
+      },
+      spacing: {
+        '13': '3.25rem',
+        '25': '6.25rem',
+        '30': '7.5rem',
+        '57': '14.25rem',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -74,8 +84,10 @@ export default {
           800: "hsl(var(--trans-blue-800))",
           900: "hsl(var(--trans-blue-900))",
         },
-        "brand-blue": "hsl(var(--brand-blue))",
-        "brand-red": "hsl(var(--brand-red))",
+        'brand-blue': '#283B9A',
+        'brand-red': '#AC3A38',
+        'brand-light-blue': '#6471B6',
+        'brand-text-blue': '#233488',
         "text-blue": "hsl(var(--brand-text-blue))",
         "light-blue": "#E6F3FF",
         "medium-blue": "#4A90E2",
