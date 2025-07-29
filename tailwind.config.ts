@@ -18,8 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        'poppins': ['var(--font-poppins)', 'sans-serif'],
-        'inter': ['var(--font-inter)', 'sans-serif'],
+        'poppins': ['var(--font-poppins)', 'Poppins', 'sans-serif'],
+        'inter': ['var(--font-inter)', 'Inter', 'sans-serif'],
       },
       spacing: {
         '13': '3.25rem',
@@ -84,6 +84,7 @@ export default {
           800: "hsl(var(--trans-blue-800))",
           900: "hsl(var(--trans-blue-900))",
         },
+        // TransNepal brand colors (existing)
         'brand-blue': '#283B9A',
         'brand-red': '#AC3A38',
         'brand-light-blue': '#6471B6',
@@ -91,6 +92,14 @@ export default {
         "text-blue": "hsl(var(--brand-text-blue))",
         "light-blue": "#E6F3FF",
         "medium-blue": "#4A90E2",
+        // Design system colors (new)
+        brand: {
+          primary: "#252F5C",
+          secondary: "#283B9A", 
+          tertiary: "#36427C",
+          light: "#BEC5ED",
+          blue: "#6F7FC1",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
