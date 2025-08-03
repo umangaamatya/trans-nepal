@@ -133,7 +133,7 @@ const Navigation: FC = () => {
             
             <NavDropdown title="Associates" href="/associates" isActive={pathname.startsWith('/associates')}>
                <Link href="/associates/transik-terminals" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Transik Terminals Pvt. Ltd.</Link>
-               <Link href="/associates/transnepal-trs-logipark" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">TransNepal TRS Logipark Pvt. Ltd.</Link>
+               <Link href="/associates/trs-logipark" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">TransNepal TRS Logipark Pvt. Ltd.</Link>
             </NavDropdown>
             
             <NavLink href="/contact">Contact Us</NavLink>
