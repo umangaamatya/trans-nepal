@@ -43,7 +43,7 @@ const NavDropdown: FC<NavDropdownProps> = ({ title, children, href, isActive }) 
       </Link>
       
       {isOpen && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white rounded-md shadow-lg z-20 border border-gray-200">
+        <div className="absolute top-full left-1/2 -translate-x-1/2 w-72 bg-white rounded-md shadow-lg z-20 border border-gray-200">
           <div className="py-1">
             {children}
           </div>
@@ -76,6 +76,7 @@ const Navigation: FC = () => {
   const [mobileDropdowns, setMobileDropdowns] = useState({
     about: false,
     services: false,
+    terminalManagement: false,
     associates: false
   });
 
@@ -113,14 +114,26 @@ const Navigation: FC = () => {
             </NavDropdown>
 
             <NavDropdown title="Services" href="/services" isActive={pathname.startsWith('/services')}>
-               <Link href="/services/cargo" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Cargo Handling</Link>
-               <Link href="/services/storage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Storage</Link>
+              <Link href="/services/cargo" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Cargo Handling</Link>
+              <Link href="/services/storage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Storage</Link>
+              
+              {/* Terminal Management Submenu */}
+              <div className="px-4 py-1">
+                <div className="text-sm font-medium text-gray-900 py-1">Terminal Management</div>
+                <div className="pl-4 space-y-1">
+                  <Link href="/services/terminal-management/biratnagar" className="block px-2 py-1 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors rounded">Biratnagar</Link>
+                  <Link href="/services/terminal-management/kakarbitta" className="block px-2 py-1 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors rounded">Kakarbitta</Link>
+                  <Link href="/services/terminal-management/tatopani" className="block px-2 py-1 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors rounded">Tatopani</Link>
+                  <Link href="/services/terminal-management/chobar" className="block px-2 py-1 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors rounded">Chobar</Link>
+                </div>
+              </div>
             </NavDropdown>
             
             <NavLink href="/tariff">Tariff</NavLink>
             
             <NavDropdown title="Associates" href="/associates" isActive={pathname.startsWith('/associates')}>
-               <Link href="/associates" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Transik Terminals</Link>
+               <Link href="/associates/transik-terminals" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Transik Terminals Pvt. Ltd.</Link>
+               <Link href="/associates/transnepal-trs-logipark" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">TransNepal TRS Logipark Pvt. Ltd.</Link>
             </NavDropdown>
             
             <NavLink href="/contact">Contact Us</NavLink>
@@ -178,6 +191,25 @@ const Navigation: FC = () => {
                 <div className="pl-4 space-y-1">
                   <Link href="/services/cargo" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Cargo Handling</Link>
                   <Link href="/services/storage" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Storage</Link>
+                  
+                  {/* Terminal Management Mobile Submenu */}
+                  <div>
+                    <button 
+                      onClick={() => toggleMobileDropdown('terminalManagement')}
+                      className="flex items-center justify-between w-full text-gray-600 hover:text-brand-blue py-1 transition-colors"
+                    >
+                      <span>Terminal Management</span>
+                      <ChevronDown className={`w-3 h-3 transition-transform ${mobileDropdowns.terminalManagement ? 'rotate-180' : ''}`} />
+                    </button>
+                    {mobileDropdowns.terminalManagement && (
+                      <div className="pl-4 space-y-1">
+                        <Link href="/services/terminal-management/biratnagar" className="block text-gray-500 hover:text-brand-blue py-1 transition-colors">Biratnagar</Link>
+                        <Link href="/services/terminal-management/kakarbitta" className="block text-gray-500 hover:text-brand-blue py-1 transition-colors">Kakarbitta</Link>
+                        <Link href="/services/terminal-management/tatopani" className="block text-gray-500 hover:text-brand-blue py-1 transition-colors">Tatopani</Link>
+                        <Link href="/services/terminal-management/chobar" className="block text-gray-500 hover:text-brand-blue py-1 transition-colors">Chobar</Link>
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
@@ -195,7 +227,8 @@ const Navigation: FC = () => {
               </button>
               {mobileDropdowns.associates && (
                 <div className="pl-4 space-y-1">
-                  <Link href="/associates" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Transik Terminals</Link>
+                  <Link href="/associates/transik-terminals" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Transik Terminals Pvt. Ltd.</Link>
+                  <Link href="/associates/transnepal-trs-logipark" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">TransNepal TRS Logipark Pvt. Ltd.</Link>
                 </div>
               )}
             </div>

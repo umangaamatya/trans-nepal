@@ -1,8 +1,8 @@
 "use client";
 
-import Navigation from "../../components/Navigation";
-import Footer from "../../components/Footer";
-import Breadcrumb from "../../components/Breadcrumb";
+import Navigation from "../../../components/Navigation";
+import Footer from "../../../components/Footer";
+import Breadcrumb from "../../../components/Breadcrumb";
 
 export default function Associates() {
   const breadcrumbItems = [
