@@ -18,9 +18,7 @@ interface NavLinkProps {
   children: ReactNode;
 }
 
-
 // --- HELPER COMPONENTS ---
-
 const NavDropdown: FC<NavDropdownProps> = ({ title, children, href, isActive }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -56,24 +54,22 @@ const NavDropdown: FC<NavDropdownProps> = ({ title, children, href, isActive }) 
 };
 
 const NavLink: FC<NavLinkProps> = ({ href, children }) => {
-    const pathname = usePathname();
-    return (
-      <Link 
-        href={href}
-        className={`text-sm px-4 py-1 rounded-full transition-colors whitespace-nowrap ${
-          pathname === href 
-            ? 'bg-[#36427C] text-white font-medium' 
-            : 'text-gray-800 hover:text-brand-blue'
-        }`}
-      >
-        {children}
-      </Link>
-    );
+  const pathname = usePathname();
+  return (
+    <Link 
+      href={href}
+      className={`text-sm px-4 py-1 rounded-full transition-colors whitespace-nowrap ${
+        pathname === href 
+          ? 'bg-[#36427C] text-white font-medium' 
+          : 'text-gray-800 hover:text-brand-blue'
+      }`}
+    >
+      {children}
+    </Link>
+  );
 };
 
-
 // --- MAIN NAVIGATION COMPONENT ---
-
 const Navigation: FC = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -124,7 +120,7 @@ const Navigation: FC = () => {
             <NavLink href="/tariff">Tariff</NavLink>
             
             <NavDropdown title="Associates" href="/associates" isActive={pathname.startsWith('/associates')}>
-               <Link href="/associates/partner-1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Partner One</Link>
+               <Link href="/associates" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Transik Terminals</Link>
             </NavDropdown>
             
             <NavLink href="/contact">Contact Us</NavLink>
@@ -199,7 +195,7 @@ const Navigation: FC = () => {
               </button>
               {mobileDropdowns.associates && (
                 <div className="pl-4 space-y-1">
-                  <Link href="/associates/partner-1" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Partner One</Link>
+                  <Link href="/associates" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Transik Terminals</Link>
                 </div>
               )}
             </div>
