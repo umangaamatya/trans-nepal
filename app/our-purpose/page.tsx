@@ -19,7 +19,8 @@ export default function OurPurpose() {
             <span>Purpose</span>
           </h1>
 
-          <div className="flex flex-col lg:flex-row gap-[45px] mx-auto max-w-[1300px] lg:mx-[131px] mt-[60px] lg:mt-[100px] relative">
+          {/* Centered Vision/Mission Section */}
+          <div className="flex flex-col lg:flex-row gap-[45px] justify-center items-center max-w-[1200px] mx-auto mt-[60px] lg:mt-[100px] relative px-4">
             <div className="flex flex-col gap-[39px] w-full lg:w-auto">
               <div className="w-full lg:w-[552px] h-auto lg:h-[253px] bg-[#36427C] rounded-tl-[50px] relative p-[25px] lg:pr-[170px]">
                 <div className="absolute left-[25px] top-[25px]">

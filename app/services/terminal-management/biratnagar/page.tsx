@@ -146,36 +146,51 @@ export default function BiratngarTerminalPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative w-full h-96 bg-brand-blue overflow-hidden">
+      <section className="relative w-full h-96 bg-brand-blue bg-opacity-100 overflow-hidden">
         <div className="absolute inset-0">
           <Image 
-            src="https://api.builder.io/api/v1/image/assets/TEMP/f7204e5b051b4cbeed5d65056a2bdef4e06a1168?placeholderIfAbsent=true" 
+            src="/biratnagar/biratnagar.png" 
             alt="Terminal Management" 
             fill
             className="object-cover opacity-80"
           />
-          <div className="absolute inset-0 bg-brand-blue bg-opacity-70"></div>
+          <div className="absolute inset-0 bg-brand-blue bg-opacity-10"></div>
         </div>
         
-        <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20 h-full flex items-center justify-center relative z-10">
-          <div className="text-center text-white">
-            <h1 className="text-white font-poppins text-4xl md:text-6xl font-bold leading-normal mb-4">
-              Terminal Management
-            </h1>
-            <h2 className="text-white font-poppins text-3xl md:text-5xl font-semibold leading-normal">
-              Biratnagar
-            </h2>
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20 h-full flex flex-col justify-center relative z-10">
+        {/* Header text */}
+        <div className="text-center text-white mb-0.5">
+          <h1 className="text-white font-poppins text-4xl md:text-6xl font-bold leading-normal mb-4">
+            Terminal Management
+          </h1>
+          <h2 className="text-white font-poppins text-3xl md:text-5xl font-semibold leading-normal">
+            Biratnagar
+          </h2>
+        </div>
+
+        {/* Breadcrumb - Now with increased spacing from header */}
+        <div className="mt-3">
+          <div className="flex items-center gap-3 justify-center">
+            <a href="/" className="text-white text-base font-normal hover:underline">Home</a>
+            <svg width="8" height="16" viewBox="0 0 8 16" fill="none">
+              <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
+            </svg>
+            <a href="/services" className="text-white text-base font-normal hover:underline">Services</a>
+            <svg width="8" height="16" viewBox="0 0 8 16" fill="none">
+              <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
+            </svg>
+            <a href="/services/terminal-management" className="text-white text-base font-normal hover:underline">Terminal Management</a>
+            <svg width="8" height="16" viewBox="0 0 8 16" fill="none">
+              <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
+            </svg>
+            <span className="text-white text-base font-normal">Biratnagar</span>
           </div>
         </div>
+      </div>
       </section>
 
       {/* Main Content */}
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
-        {/* Breadcrumb */}
-        <div className="py-8">
-          <Breadcrumb items={breadcrumbItems} />
-        </div>
-
         {/* Services Section */}
         <section className="py-16">
           {/* Search and Filter Bar */}

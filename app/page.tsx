@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Mail, Phone, Calendar, MapPin, Send, ArrowLeft, ArrowRight } from 'lucide-react';
@@ -23,6 +23,33 @@ const heroSlides = [
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const parallaxRef = useRef<HTMLDivElement>(null);
+
+  // Parallax effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!parallaxRef.current) return;
+      
+      const scrolled = window.pageYOffset;
+      const sectionTop = parallaxRef.current.offsetTop;
+      const sectionHeight = parallaxRef.current.offsetHeight;
+      const windowHeight = window.innerHeight;
+      
+      if (scrolled + windowHeight > sectionTop && scrolled < sectionTop + sectionHeight) {
+        const parallaxSpeed = 0.5;
+        const yPos = -(scrolled - sectionTop) * parallaxSpeed;
+        const bgElement = parallaxRef.current.querySelector('.parallax-bg');
+        if (bgElement) {
+          (bgElement as HTMLElement).style.transform = `translate3d(0, ${yPos}px, 0)`;
+        }
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Memoize functions to prevent re-creation on every render
   const goToPrevious = useCallback(() => {
@@ -86,13 +113,13 @@ export default function Home() {
         {/* Navigation Arrows */}
         <button 
           onClick={goToPrevious}
-          className="absolute left-4 md:left-28 top-1/2 transform -translate-y-1/2 w-16 h-16 rounded-full border border-white/80 bg-white/5 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/10 transition-colors z-20">
-          <ArrowLeft className="w-6 h-6" />
+          className="absolute left-4 md:left-28 top-1/2 transform -translate-y-1/2 w-16 h-16 rounded-full bg-white/90 flex items-center justify-center text-trans-blue hover:bg-white transition-colors z-20 shadow-lg">
+          <ArrowLeft className="w-8 h-8" strokeWidth={2.5} />
         </button>
         <button 
           onClick={goToNext}
-          className="absolute right-4 md:right-28 top-1/2 transform -translate-y-1/2 w-16 h-16 rounded-full border border-white/80 bg-white/5 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/10 transition-colors z-20">
-          <ArrowRight className="w-6 h-6" />
+          className="absolute right-4 md:right-28 top-1/2 transform -translate-y-1/2 w-16 h-16 rounded-full bg-white/90 flex items-center justify-center text-trans-blue hover:bg-white transition-colors z-20 shadow-lg">
+          <ArrowRight className="w-8 h-8" strokeWidth={2.5} />
         </button>
 
         {/* Hero Content */}
@@ -129,23 +156,16 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {/* Cargo Handling */}
-            <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[525px]">
+            <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[500px]">
               <div className="relative h-64">
                 <img 
                   src="/services/cargo-handling.png" 
                   alt="Cargo Handling" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                  <img 
-                    src="/services/shipping-container.png" 
-                    alt="Container Icon" 
-                    className="w-12 h-11"
-                  />
-                </div>
               </div>
-              <div className="p-6 text-white">
-                <h3 className="text-2xl font-bold mb-4">CARGO HANDLING</h3>
+              <div className="p-6 pt-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">Cargo Handling</h3>
                 <p className="text-lg leading-relaxed">
                   Earlier cargoes were being totally handled manually. In the current situation where handling activities difficult
                 </p>
@@ -153,21 +173,16 @@ export default function Home() {
             </div>
 
             {/* Storage */}
-            <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[525px]">
+            <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[500px]">
               <div className="relative h-64">
                 <img 
                   src="/services/storage.png" 
                   alt="Storage" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                  <svg className="w-10 h-10 text-trans-blue" viewBox="0 0 40 40" fill="currentColor">
-                    <path d="M2.3999 4.79999H37.5999V8.79999H2.3999V4.79999ZM4.7999 10.4V36.8H35.1999V10.4H4.7999ZM25.5999 17.6H13.5999V15.2H25.5999V17.6Z" />
-                  </svg>
-                </div>
               </div>
-              <div className="p-6 text-white">
-                <h3 className="text-2xl font-bold mb-4">STORAGE</h3>
+              <div className="p-6 pt-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">Storage</h3>
                 <p className="text-lg leading-relaxed">
                   Covered Warehouse of 55 x 25 meter with 1.2 meter high level platform in both Biratnagar and Bhairahawa.
                 </p>
@@ -175,21 +190,16 @@ export default function Home() {
             </div>
 
             {/* Weighment */}
-            <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[525px]">
+            <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[500px]">
               <div className="relative h-64">
                 <img 
                   src="/services/weighment.png" 
                   alt="Weighment" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                  <svg className="w-11 h-11 text-trans-blue" viewBox="0 0 45 46" fill="currentColor">
-                    <path d="M32 12.8725H38L44 21.4881V34.1142H39.93C39.6892 35.8838 38.8561 37.5021 37.5834 38.6725C36.3107 39.843 34.6835 40.4872 33 40.4872C31.3165 40.4872 29.6893 39.843 28.4166 38.6725C27.1439 37.5021 26.3108 35.8838 26.07 34.1142H15.93C15.6922 35.8864 14.8604 37.5079 13.5874 38.681C12.3143 39.8541 10.6854 40.5 9 40.5C7.31456 40.5 5.68571 39.8541 4.41264 38.681C3.13957 37.5079 2.30776 35.8864 2.07 34.1142H0V8.62417C0 8.0608 0.210714 7.52051 0.585786 7.12215C0.960859 6.7238 1.46957 6.5 2 6.5H30C30.5304 6.5 31.0391 6.7238 31.4142 7.12215C31.7893 7.52051 32 8.0608 32 8.62417V12.8725ZM32 17.1208V23.4933H40V22.888L35.984 17.1208H32Z" />
-                  </svg>
-                </div>
               </div>
-              <div className="p-6 text-white">
-                <h3 className="text-2xl font-bold mb-4">WEIGHMENT</h3>
+              <div className="p-6 pt-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">Weighment</h3>
                 <p className="text-lg leading-relaxed">
                   Weighing activities were being carried out at remote locations making it costs ineffective and time consuming.
                 </p>
@@ -232,33 +242,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="py-20 relative">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://api.builder.io/api/v1/image/assets/TEMP/ad75e17b4c67a6ddff841fbba3e3f5502e68084c?width=2898')`
-          }}
+      {/* Statistics Section with Parallax Effect */}
+      <section ref={parallaxRef} className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <img 
+          src="/home/ship-t.jpg"
+          alt="Parallax Background"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
-        
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">7<br />Offices</h3>
+              <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+                7<br />Offices
+              </h3>
             </div>
             <div>
-              <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">3<br />Projects</h3>
+              <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+                3<br />Projects
+              </h3>
             </div>
             <div>
-              <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">100<br />Staffs</h3>
+              <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+                100<br />Staffs
+              </h3>
             </div>
             <div>
-              <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">19<br />Years</h3>
+              <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+                19<br />Years
+              </h3>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Locations Section */}
       <section className="py-16 md:py-24 bg-white">
@@ -347,9 +369,7 @@ export default function Home() {
                 <div className="p-8 lg:p-12 text-white flex flex-col justify-center">
                   <div className="flex items-start justify-between mb-6">
                     <h3 className="text-2xl md:text-3xl font-bold">Chobar</h3>
-                    <svg className="w-8 h-10 text-white/80 flex-shrink-0" viewBox="0 0 35 42" fill="currentColor">
-                      <path d="M29.5884 4.99362C22.8197 -1.66454 11.8455 -1.66454 5.07686 4.99362C3.4698 6.56367 2.19282 8.43913 1.32097 10.5098C0.449124 12.5804 0 14.8044 0 17.0511C0 19.2978 0.449124 21.5219 1.32097 23.5925C2.19282 25.6631 3.4698 27.5386 5.07686 29.1086L17.3315 41.1661L29.5884 29.1086C31.1954 27.5386 32.4724 25.6631 33.3442 23.5925C34.2161 21.5219 34.6652 19.2978 34.6652 17.0511C34.6652 14.8044 34.2161 12.5804 33.3442 10.5098C32.4724 8.43913 31.1954 6.56367 29.5884 4.99362ZM17.3315 22.7495C15.8842 22.7495 14.5257 22.1861 13.5009 21.1635C12.4863 20.1467 11.9165 18.7691 11.9165 17.3328C11.9165 15.8965 12.4863 14.5188 13.5009 13.5021C14.5235 12.4795 15.8842 11.9161 17.3315 11.9161C18.7789 11.9161 20.1395 12.4795 21.1622 13.5021C22.1767 14.5188 22.7465 15.8965 22.7465 17.3328C22.7465 18.7691 22.1767 20.1467 21.1622 21.1635C20.1395 22.1861 18.7789 22.7495 17.3315 22.7495Z" />
-                    </svg>
+                    <MapPin className="w-12 h-12 text-white/80 flex-shrink-0" />
                   </div>
                   <p className="text-lg md:text-xl leading-relaxed text-justify">
                     Earlier cargoes were being totally handled manually. In the current situation where handling activities have been transforming from manual to mechanical.

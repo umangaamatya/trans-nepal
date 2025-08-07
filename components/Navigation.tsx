@@ -3,7 +3,7 @@
 import { useState, FC, ReactNode } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ChevronRight } from 'lucide-react';
 
 // --- TYPE DEFINITIONS ---
 interface NavDropdownProps {
@@ -69,6 +69,35 @@ const NavLink: FC<NavLinkProps> = ({ href, children }) => {
   );
 };
 
+// Terminal Management Side Dropdown Component
+const TerminalManagementSideDropdown: FC = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div 
+      className="relative"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors cursor-pointer">
+        <span>Terminal Management</span>
+        <ChevronRight className="w-4 h-4" />
+      </div>
+      
+      {isHovered && (
+        <div className="absolute top-0 left-full ml-1 w-48 bg-white rounded-md shadow-lg z-30 border border-gray-200">
+          <div className="py-1">
+            <Link href="/services/terminal-management/biratnagar" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors">Biratnagar</Link>
+            <Link href="/services/terminal-management/kakarbitta" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors">Kakarbitta</Link>
+            <Link href="/services/terminal-management/tatopani" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors">Tatopani</Link>
+            <Link href="/services/terminal-management/chobar" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors">Chobar</Link>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 // --- MAIN NAVIGATION COMPONENT ---
 const Navigation: FC = () => {
   const pathname = usePathname();
@@ -114,19 +143,13 @@ const Navigation: FC = () => {
             </NavDropdown>
 
             <NavDropdown title="Services" href="/services" isActive={pathname.startsWith('/services')}>
-              <Link href="/services/cargo" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Cargo Handling</Link>
-              <Link href="/services/storage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Storage</Link>
+              {/* Terminal Management with Side Dropdown */}
+              <TerminalManagementSideDropdown />
               
-              {/* Terminal Management Submenu */}
-              <div className="px-4 py-1">
-                <div className="text-sm font-medium text-gray-900 py-1">Terminal Management</div>
-                <div className="pl-4 space-y-1">
-                  <Link href="/services/terminal-management/biratnagar" className="block px-2 py-1 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors rounded">Biratnagar</Link>
-                  <Link href="/services/terminal-management/kakarbitta" className="block px-2 py-1 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors rounded">Kakarbitta</Link>
-                  <Link href="/services/terminal-management/tatopani" className="block px-2 py-1 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors rounded">Tatopani</Link>
-                  <Link href="/services/terminal-management/chobar" className="block px-2 py-1 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors rounded">Chobar</Link>
-                </div>
-              </div>
+              {/* Other Services */}
+              <Link href="/services/agency" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Agency Services</Link>
+              <Link href="/services/rental" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Rental Services</Link>
+              <Link href="/services/transportation" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Transportation</Link>
             </NavDropdown>
             
             <NavLink href="/tariff">Tariff</NavLink>
@@ -189,9 +212,6 @@ const Navigation: FC = () => {
               </button>
               {mobileDropdowns.services && (
                 <div className="pl-4 space-y-1">
-                  <Link href="/services/cargo" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Cargo Handling</Link>
-                  <Link href="/services/storage" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Storage</Link>
-                  
                   {/* Terminal Management Mobile Submenu */}
                   <div>
                     <button 
@@ -210,6 +230,10 @@ const Navigation: FC = () => {
                       </div>
                     )}
                   </div>
+                  
+                  <Link href="/services/agency" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Agency Services</Link>
+                  <Link href="/services/rental" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Rental Services</Link>
+                  <Link href="/services/transportation" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Transportation</Link>
                 </div>
               )}
             </div>

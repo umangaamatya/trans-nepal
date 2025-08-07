@@ -86,7 +86,7 @@ export default function Footer() {
       <div className="flex flex-col lg:flex-row justify-between items-center py-6 text-[14px] text-white/80 gap-3">
         <div>All rights Reserved | Copyright © 2024 Trans Nepal Freight Services Pvt. Ltd.</div>
         <div>
-          Technology Partner | <span className="underline">Pracas Infosys</span>
+          Technology Partner | <span>Pracas Infosys</span>
         </div>
       </div>
     </footer>
