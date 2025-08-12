@@ -4,26 +4,22 @@ import Navigation from "../../../../components/Navigation";
 import Footer from "../../../../components/Footer";
 
 // Import images
-import brt61 from "./brt-6-1.png";
-import brt7 from "./brt-7.png";
-import c9f695053F304469A8Af60B8099389735 from "./c9f69505-3f30-4469-a8af-60b809938973-5.png";
-import c9f695053F304469A8Af60B8099389737 from "./c9f69505-3f30-4469-a8af-60b809938973-7.png";
-import image1 from "./image.png";
+import brt61 from "/biratnagar/brt-6-1.png";
+import brt7 from "/biratnagar/brt-7.png";
 import image from "./image.svg";
-import rectangle333 from "./rectangle-333.png";
-import rectangle334 from "./rectangle-334.png";
-import rectangle335 from "./rectangle-335.png";
-import rectangle336 from "./rectangle-336.png";
-import rectangle337 from "./rectangle-337.png";
-import rectangle339 from "./rectangle-339.png";
-import vector from "./vector.svg";
-import vector2 from "./vector-2.svg";
-import vector3 from "./vector-3.svg";
-import vector4 from "./vector-4.svg";
-import vector6 from "./vector-6.svg";
-import vector7 from "./vector-7.svg";
-import vector9 from "./vector-9.svg";
-import vector10 from "./vector-10.svg";
+import rectangle333 from "/biratnagar/rectangle-333.png";
+import rectangle334 from "/biratnagar/rectangle-334.png";
+import rectangle335 from "/biratnagar/rectangle-335.png";
+import rectangle336 from "/biratnagar/rectangle-336.png";
+import rectangle337 from "/biratnagar/rectangle-337.png";
+import rectangle339 from "/biratnagar/rectangle-339.png";
+import vector from "/biratnagar/vector.svg";
+import vector3 from "/biratnagar/vector-3.png";
+import vector4 from "/biratnagar/vector-4.png";
+import vector6 from "/biratnagar/vector-6.png";
+import vector7 from "/biratnagar/vector-7.png";
+import vector9 from "/biratnagar/vector-9.png";
+import vector10 from "/biratnagar/vector-10.svg";
 
 const facilityCards = [
   {
@@ -57,7 +53,7 @@ const facilityCards = [
     title: "Security Barrack",
     category: "Administrative Building",
     categoryColor: "#5664b2",
-    icon: vector10,
+    icon: vector3,
     details: [
       { label: "Area", value: "837 sqm" },
       { label: "Storeys", value: "Double Storeys" }
@@ -120,6 +116,7 @@ const facilityCards = [
     title: "Container Yard",
     category: "Cargo Handling",
     categoryColor: "#5664b2",
+    icon: vector6,
     details: [
       { label: "Containers", value: "500" },
       { label: "Type", value: "TEU" }
