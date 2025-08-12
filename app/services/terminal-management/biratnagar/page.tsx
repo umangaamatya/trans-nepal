@@ -4,22 +4,9 @@ import Navigation from "../../../../components/Navigation";
 import Footer from "../../../../components/Footer";
 
 // Import images
-import brt61 from "/biratnagar/brt-6-1.png";
-import brt7 from "/biratnagar/brt-7.png";
-import image from "./image.svg";
-import rectangle333 from "/biratnagar/rectangle-333.png";
-import rectangle334 from "/biratnagar/rectangle-334.png";
-import rectangle335 from "/biratnagar/rectangle-335.png";
-import rectangle336 from "/biratnagar/rectangle-336.png";
-import rectangle337 from "/biratnagar/rectangle-337.png";
-import rectangle339 from "/biratnagar/rectangle-339.png";
-import vector from "/biratnagar/vector.svg";
-import vector3 from "/biratnagar/vector-3.png";
-import vector4 from "/biratnagar/vector-4.png";
-import vector6 from "/biratnagar/vector-6.png";
-import vector7 from "/biratnagar/vector-7.png";
-import vector9 from "/biratnagar/vector-9.png";
-import vector10 from "/biratnagar/vector-10.svg";
+// import brt61 from "/biratnagar/brt-6-1.png";
+// Image imports removed; use string paths instead
+// import vector10 from "/biratnagar/vector-10.svg";
 
 const facilityCards = [
   {
@@ -27,7 +14,7 @@ const facilityCards = [
     title: "Administrative Building",
     category: "Administrative Building",
     categoryColor: "#283b9ac4",
-    icon: vector3,
+    icon: "/biratnagar/vector-3.png",
     details: [
       { label: "Area", value: "1320 sqm" },
       { label: "Storeys", value: "Double Storeys" }
@@ -40,7 +27,7 @@ const facilityCards = [
     title: "Customer Service",
     category: "Warehouse & Sheds",
     categoryColor: "#5664b2",
-    icon: vector9,
+    icon: "/biratnagar/vector-9.png",
     details: [
       { label: "Area", value: "658 sqm" },
       { label: "Storeys", value: "Single Storeys" }
@@ -53,7 +40,7 @@ const facilityCards = [
     title: "Security Barrack",
     category: "Administrative Building",
     categoryColor: "#5664b2",
-    icon: vector3,
+    icon: "/biratnagar/vector-3.png",
     details: [
       { label: "Area", value: "837 sqm" },
       { label: "Storeys", value: "Double Storeys" }
@@ -66,7 +53,7 @@ const facilityCards = [
     title: "Dispensary Building",
     category: "Support Facilities",
     categoryColor: "#5664b2",
-    icon: vector4,
+    icon: "/biratnagar/vector-4.png",
     details: [
       { label: "Area", value: "161 sqm" },
       { label: "Storeys", value: "Single Storeys" }
@@ -103,7 +90,7 @@ const facilityCards = [
     title: "Warehouse Building",
     category: "Storage Facilities",
     categoryColor: "#5664b2",
-    icon: vector7,
+    icon: "/biratnagar/vector-7.png",
     details: [
       { label: "Area", value: "2500 sqm" },
       { label: "Capacity", value: "High Volume" }
@@ -116,7 +103,7 @@ const facilityCards = [
     title: "Container Yard",
     category: "Cargo Handling",
     categoryColor: "#5664b2",
-    icon: vector6,
+    icon: "/biratnagar/vector-6.png",
     details: [
       { label: "Containers", value: "500" },
       { label: "Type", value: "TEU" }
@@ -139,13 +126,13 @@ const facilityCards = [
 ];
 
 const galleryImages = [
-  { src: rectangle337, alt: "Administrative Building" },
-  { src: rectangle333, alt: "Container Yard" },
-  { src: rectangle334, alt: "Warehouse Facility" },
-  { src: rectangle335, alt: "Processing Area" },
-  { src: rectangle336, alt: "Security Gates" },
-  { src: brt7, alt: "Terminal Overview" },
-  { src: rectangle339, alt: "Parking Area" }
+  { src: "/biratnagar/rectangle-337.png", alt: "Administrative Building" },
+  { src: "/biratnagar/rectangle-333.png", alt: "Container Yard" },
+  { src: "/biratnagar/rectangle-334.png", alt: "Warehouse Facility" },
+  { src: "/biratnagar/rectangle-335.png", alt: "Processing Area" },
+  { src: "/biratnagar/rectangle-336.png", alt: "Security Gates" },
+  { src: "/biratnagar/brt-7.png", alt: "Terminal Overview" },
+  { src: "/biratnagar/rectangle-339.png", alt: "Parking Area" }
 ];
 
 export default function ServicesBiratnagar() {
@@ -197,11 +184,11 @@ export default function ServicesBiratnagar() {
         <div className="mb-12">
           <div className="bg-white/75 rounded-2xl p-4 inline-flex items-center gap-4 shadow-sm">
             <div className="w-8 h-8 flex items-center justify-center">
-              <Image src={vector} alt="Category icon" width={24} height={24} />
+              <Image src="/biratnagar/vector.png" alt="Category icon" width={24} height={24} />
             </div>
             <span className="text-[#283b9a] font-inter text-lg font-medium">All categories</span>
             <div className="w-4 h-4 flex items-center justify-center">
-              <Image src={image} alt="Dropdown" width={16} height={16} />
+              <Image src="/biratnagar/image.png" alt="Dropdown" width={16} height={16} />
             </div>
           </div>
         </div>
