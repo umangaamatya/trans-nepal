@@ -19,16 +19,28 @@ export default {
       }
     },
     extend: {
+      // Merge new fontFamily stack from provided code
       fontFamily: {
-        // Merge: keep both CSS var and plain font families
         poppins: [
           'var(--font-poppins)',
           'Poppins',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica',
+          'Arial',
           'sans-serif'
         ],
         inter: [
           'var(--font-inter)',
           'Inter',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica',
+          'Arial',
           'sans-serif'
         ],
       },
@@ -43,7 +55,7 @@ export default {
         '7xl': '1440px',
       },
       colors: {
-        // Merge new colors from provided snippet
+        // Merge new colors from provided code
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -52,6 +64,29 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+        },
+        brand: {
+          blue: "#252f5c",
+          "blue-light": "#364381",
+          "blue-nav": "#283b9a",
+          "service-bg": "#5664b2",
+          gray: "#4b4b4b",
+          "gray-light": "#2b3b83",
+          // Existing keys preserved
+          ...(typeof {} !== "undefined" && {
+            'dark-blue': "hsl(var(--brand-dark-blue))",
+            red: "hsl(var(--brand-red))",
+            primary: '#252F5C',
+            secondary: '#283B9A',
+            tertiary: '#36427C',
+            light: '#BEC5ED',
+            hero: 'hsl(var(--brand-hero))',
+            blueAlt: '#6F7FC1',
+            'text-primary': 'hsl(var(--brand-text-primary))',
+            'text-secondary': 'hsl(var(--brand-text-secondary))',
+            'text-muted': 'hsl(var(--brand-text-muted))',
+            'text-light': 'hsl(var(--brand-text-light))',
+          }),
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -77,33 +112,33 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Add new allcargo colors from snippet
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
+        },
+        // NEW: Add custom port website colors from provided code
+        port: {
+          primary: "hsl(var(--port-primary))",
+          dark: "hsl(var(--port-dark))",
+          text: "hsl(var(--port-text))",
+        },
+        // Keep all existing colors
         "allcargo-blue": "hsl(var(--allcargo-blue))",
         "allcargo-hero": "hsl(var(--allcargo-hero))",
         "allcargo-light-blue": "hsl(var(--allcargo-light-blue))",
         "allcargo-text-muted": "hsl(var(--allcargo-text-muted))",
         "allcargo-bg-light": "hsl(var(--allcargo-bg-light))",
-        // Keep all existing colors
         'primary-blue': '#283b9a',
         'hero-blue': '#252f5c',
         'light-blue': '#c8d0ed',
         'icon-blue': '#36427c',
         'text-gray': '#4b4b4b',
-        brand: {
-          blue: "hsl(var(--brand-blue))",
-          'dark-blue': "hsl(var(--brand-dark-blue))",
-          red: "hsl(var(--brand-red))",
-          primary: '#252F5C',
-          secondary: '#283B9A',
-          tertiary: '#36427C',
-          light: '#BEC5ED',
-          hero: 'hsl(var(--brand-hero))',
-          blueAlt: '#6F7FC1',
-          'text-primary': 'hsl(var(--brand-text-primary))',
-          'text-secondary': 'hsl(var(--brand-text-secondary))',
-          'text-muted': 'hsl(var(--brand-text-muted))',
-          'text-light': 'hsl(var(--brand-text-light))',
-        },
         'brand-text': {
           primary: '#283b9a',
           secondary: '#3b4264',
