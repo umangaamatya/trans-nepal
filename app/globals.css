@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -20,8 +20,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+  --primary: 228 47% 31%;
+  --primary-foreground: 0 0% 100%;
+  /* Custom colors for Trans Nepal design */
+  --brand-primary: 228 47% 31%;
+  --brand-secondary: 224 61% 27%;
+  --brand-hero: 224 37% 31%;
+  --brand-text-primary: 224 61% 27%;
+  --brand-text-secondary: 223 33% 11%;
+  --brand-text-muted: 0 0% 67%;
+  --brand-text-light: 224 44% 56%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -141,14 +149,14 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  .font-poppins {
-    font-family: 'Poppins', -apple-system, 'Roboto', 'Helvetica', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
 
   .font-inter {
-    font-family: 'Inter', -apple-system, 'Roboto', 'Helvetica', sans-serif;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
   }
 }

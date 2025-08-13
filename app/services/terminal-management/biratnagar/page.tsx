@@ -5,7 +5,6 @@ import Footer from "../../../../components/Footer";
 
 // Import images
 // import brt61 from "/biratnagar/brt-6-1.png";
-// Image imports removed; use string paths instead
 // import vector10 from "/biratnagar/vector-10.svg";
 
 const facilityCards = [

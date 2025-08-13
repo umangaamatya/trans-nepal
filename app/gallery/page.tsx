@@ -1,119 +1,113 @@
-import { ChevronRight } from "lucide-react";
+"use client";
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { ChevronRight } from "lucide-react";
 
 export default function Gallery() {
   const galleryItems = [
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/0bc076dbb0b9a5305a41322e66626767ada8b219?width=760",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/f7158e8b83c9525e59e6e9ba47d6846dee76f242?width=802",
       title: "Certificates"
     },
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/6638593db53990af98815a9a75e852002a636386?width=760", 
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/c46cfaa102bfb9ce39ce50a3b4ffc5083ff467e4?width=802",
       title: "ICD Inauguration 2002"
     },
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/51f4c65a29725217f89824692a3462467e61a27d?width=760",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/8d094cf9a7f52cc545d2317e445b7583a95e47f0?width=802",
       title: "ICP Biratnagar"
     },
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/330ac27a3db549b8382fa3944bac7c637a97310f?width=760",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/0506826ac2212108b4f6a4164ec0e8e634a6a271?width=802",
       title: "ICP Inauguration 2020"
     },
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/f8423d1ae1fa81f94f58a95732296ee3ed058c47?width=760",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/e95e58efc099320a4268260903de9c33aef604ee?width=802",
       title: "Finance Minister Visit"
     },
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/b416688bcdc9b96064de15170bbe22f1537db4d7?width=774",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/66fb976e9bb051d479f01a9c93729a516564c8ec?width=802",
       title: "ICD Kakarbhitta"
     },
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/239c70c2d3b4f1bf9c59b4d7d4dfea60bb718bd9?width=760",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/cce74699bba41308905e2dcef5ea01c366b0bb16?width=802",
       title: "Railway Inauguration at ICP"
     },
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/9edade05008109f0f16399126d3df70e4bd7ff1c?width=760",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/77cddc22ad0663b1efb4274641528b801d90d885?width=800",
       title: "ICD Tatopani Inauguration"
     },
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/d595584d7a9138de68e55b9b4c39c3be0e1d35c9?width=760",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/5d6788d09fdd977e9cb92a883ed6fc4bd3bd4d52?width=800",
       title: "ICD Chobhar Inauguration"
     }
   ];
 
   return (
-    <div className="min-h-screen w-full bg-white">
+    <div className="min-h-screen bg-white">
       <Navigation />
-
+      
       {/* Hero Section */}
-      <div className="relative w-full h-[455px] flex items-center justify-center">
-        {/* Background gradient */}
-        <div className="absolute inset-0 w-full h-full bg-[#36427C]">
-          <div 
-            className="absolute inset-0 w-full h-full opacity-80"
-            style={{
-              background: 'linear-gradient(90deg, #616FB3 0.01%, #171F45 100%)'
-            }}
-          />
+      <div className="w-full h-[199px] bg-brand-blue-dark relative">
+        <div className="absolute left-1/2 top-[65px] transform -translate-x-1/2">
+          <h1 className="text-white text-center font-poppins text-[45px] font-semibold">
+            Gallery
+          </h1>
         </div>
-        
-        {/* Hero Title */}
-        <div className="relative z-10 text-white text-center text-[48px] sm:text-[60px] md:text-[72px] lg:text-[90px] font-bold leading-normal">
-          Gallery
+        <div className="absolute left-1/2 top-[133px] transform -translate-x-1/2 flex items-center gap-2">
+          <span className="text-white font-inter text-[12px] font-normal">Home</span>
+          <ChevronRight className="w-2 h-4 text-white" />
+          <span className="text-white font-inter text-[12px] font-normal">Gallery</span>
         </div>
       </div>
 
-      {/* Breadcrumb */}
-      <div className="flex items-center gap-2 px-4 sm:px-8 lg:px-16 xl:px-[72px] py-5 text-[#283b9a] text-xs font-normal">
-        <span>Home Gallery</span>
-        <ChevronRight className="w-2 h-4 text-[#283B9A]" />
-      </div>
-
-      {/* Gallery Grid */}
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 xl:px-[70px] py-8 sm:py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 md:gap-16 lg:gap-[75px] justify-items-center">
-          {galleryItems.map((item, index) => (
-            <div key={index} className="relative w-full max-w-[380px] mx-auto">
-              <img
-                src={item.image}
+      {/* Gallery Content */}
+      <div className="w-full max-w-[1280px] mx-auto px-5 py-20">
+        {/* First Row */}
+        <div className="flex gap-[38px] mb-20 flex-wrap">
+          {galleryItems.slice(0, 3).map((item, index) => (
+            <div key={index} className="flex-1 min-w-[300px]">
+              <img 
+                src={item.image} 
                 alt={item.title}
-                className="w-full h-auto min-h-[364px] max-h-[377px] object-cover shadow-[0_4px_0_rgba(0,0,0,0.25)] rounded-lg"
+                className="w-full h-[303px] rounded-[15px] object-cover"
               />
-              
-              {/* Label overlay with custom shape */}
-              <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex items-center w-fit max-w-full">
-                {/* Left curve */}
-                <svg
-                  width="21"
-                  height="75"
-                  viewBox="0 0 21 77"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-[21px] h-[75px] fill-[#36427C] flex-shrink-0"
-                >
-                  <path d="M0 38.1658C0 58.071 12.1664 76.2073 17.5 76.2073C22.8336 76.2073 19.3146 58.071 19.3146 38.1658C15.2484 17.0777 24.6483 0.207278 19.3147 0.207278C7 -2.29272 0 18.2607 0 38.1658Z" fill="#36427C" />
-                </svg>
-                
-                {/* Center background */}
-                <div className="bg-[#36427c] h-[71px] px-4 sm:px-8 md:px-12 lg:px-16 relative flex items-center justify-center min-w-[280px] sm:min-w-[300px]">
-                  <span className="text-white text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-normal text-center">
-                    {item.title}
-                  </span>
-                </div>
-                
-                {/* Right curve */}
-                <svg
-                  width="21"
-                  height="75"
-                  viewBox="0 0 21 76"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-[21px] h-[75px] fill-[#36427C] flex-shrink-0"
-                >
-                  <path d="M21 38.5612C21 58.151 8.83358 76 3.5 76C-1.83358 76 1.68538 58.151 1.68538 38.5612C5.75165 17.8072 -3.64831 1.20397 1.68528 1.20397C13 -1.5 21 18.9714 21 38.5612Z" fill="#36427C" />
-                </svg>
-              </div>
+              <h3 className="text-brand-blue font-poppins text-[20px] font-bold mt-[14px] text-center">
+                {item.title}
+              </h3>
+            </div>
+          ))}
+        </div>
+
+        {/* Second Row */}
+        <div className="flex gap-[38px] mb-20 flex-wrap">
+          {galleryItems.slice(3, 6).map((item, index) => (
+            <div key={index} className="flex-1 min-w-[300px]">
+              <img 
+                src={item.image} 
+                alt={item.title}
+                className="w-full h-[303px] rounded-[15px] object-cover"
+              />
+              <h3 className="text-brand-blue font-poppins text-[20px] font-bold mt-[14px] text-center">
+                {item.title}
+              </h3>
+            </div>
+          ))}
+        </div>
+
+        {/* Third Row */}
+        <div className="flex gap-[38px] mb-20 flex-wrap">
+          {galleryItems.slice(6, 9).map((item, index) => (
+            <div key={index} className="flex-1 min-w-[300px]">
+              <img 
+                src={item.image} 
+                alt={item.title}
+                className="w-full h-[301px] rounded-[15px] object-cover"
+              />
+              <h3 className="text-brand-blue font-poppins text-[20px] font-bold mt-[14px] text-center">
+                {item.title}
+              </h3>
             </div>
           ))}
         </div>
