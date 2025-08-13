@@ -20,7 +20,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        // Keep existing fontFamily with CSS vars, but add plain fallback from new snippet
+        // Merge: keep both CSS var and plain font families
         poppins: [
           'var(--font-poppins)',
           'Poppins',
@@ -39,14 +39,18 @@ export default {
         '30': '7.5rem',
         '57': '14.25rem'
       },
-      // NEW: Add maxWidth from snippet if not present
       maxWidth: {
         '7xl': '1440px',
       },
       colors: {
-        // Merge new brand colors from snippet
+        // --- NEW DESIGN COLORS from snippet ---
+        'primary-blue': '#283b9a',
+        'hero-blue': '#252f5c',
+        'light-blue': '#c8d0ed',
+        'icon-blue': '#36427c',
+        'text-gray': '#4b4b4b',
+        // --- EXISTING COLORS ---
         brand: {
-          // Merged properties from both brand objects
           blue: "hsl(var(--brand-blue))",
           'dark-blue': "hsl(var(--brand-dark-blue))",
           red: "hsl(var(--brand-red))",
@@ -61,22 +65,20 @@ export default {
           'text-muted': 'hsl(var(--brand-text-muted))',
           'text-light': 'hsl(var(--brand-text-light))',
         },
-        // NEW: Add brand-text from snippet
         'brand-text': {
           primary: '#283b9a',
           secondary: '#3b4264',
           muted: 'rgba(0, 0, 0, 0.54)',
         },
-        // Keep all existing colors
         'trans-nepal': {
           'blue': '#283b9a',
           'dark-blue': '#233488',
           'light-blue': '#36427C',
           'bg': '#f6f8ff',
         },
-        'primary-blue': '#283b9a',
+        //'primary-blue': '#283b9a',
         'hero-bg': '#252f5c',
-        'light-blue': 'rgba(54, 66, 124, 0.77)',
+        //'light-blue': 'rgba(54, 66, 124, 0.77)',
         'text-blue': 'rgba(40, 59, 154, 0.79)',
         'form-bg': '#f2f4f9',
         border: 'hsl(var(--border))',
