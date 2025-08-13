@@ -43,13 +43,52 @@ export default {
         '7xl': '1440px',
       },
       colors: {
-        // --- NEW DESIGN COLORS from snippet ---
+        // Merge new colors from provided snippet
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        // Add new allcargo colors from snippet
+        "allcargo-blue": "hsl(var(--allcargo-blue))",
+        "allcargo-hero": "hsl(var(--allcargo-hero))",
+        "allcargo-light-blue": "hsl(var(--allcargo-light-blue))",
+        "allcargo-text-muted": "hsl(var(--allcargo-text-muted))",
+        "allcargo-bg-light": "hsl(var(--allcargo-bg-light))",
+        // Keep all existing colors
         'primary-blue': '#283b9a',
         'hero-blue': '#252f5c',
         'light-blue': '#c8d0ed',
         'icon-blue': '#36427c',
         'text-gray': '#4b4b4b',
-        // --- EXISTING COLORS ---
         brand: {
           blue: "hsl(var(--brand-blue))",
           'dark-blue': "hsl(var(--brand-dark-blue))",
@@ -76,54 +115,9 @@ export default {
           'light-blue': '#36427C',
           'bg': '#f6f8ff',
         },
-        //'primary-blue': '#283b9a',
         'hero-bg': '#252f5c',
-        //'light-blue': 'rgba(54, 66, 124, 0.77)',
         'text-blue': 'rgba(40, 59, 154, 0.79)',
         'form-bg': '#f2f4f9',
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))'
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))'
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))'
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))'
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))'
-        },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))'
-        },
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))'
-        },
-        sidebar: {
-          DEFAULT: 'hsl(var(--sidebar-background))',
-          foreground: 'hsl(var(--sidebar-foreground))',
-          primary: 'hsl(var(--sidebar-primary))',
-          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-          accent: 'hsl(var(--sidebar-accent))',
-          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-          border: 'hsl(var(--sidebar-border))',
-          ring: 'hsl(var(--sidebar-ring))'
-        },
         'trans-blue': {
           '50': 'hsl(var(--trans-blue-50))',
           '100': 'hsl(var(--trans-blue-100))',
