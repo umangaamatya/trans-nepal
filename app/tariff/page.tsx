@@ -1,8 +1,19 @@
+"use client";
+import React, { useState } from "react";
 import Navigation from "@/components/Navigation";
 import { TariffTable } from "../../components/TariffTable";
 import { ChevronRight } from "lucide-react";
 
+const TABS = [
+  { label: "ICP Biratnagar", value: "biratnagar" },
+  { label: "ICP Kakarbhitta", value: "kakarbhitta" },
+  { label: "ICP Tatopani", value: "tatopani" },
+  { label: "ICP Chobar", value: "chobar" },
+];
+
 export default function Index() {
+  const [activeTab, setActiveTab] = useState("biratnagar");
+
   return (
     <div className="w-full min-h-screen bg-white relative">
       {/* Navigation */}
@@ -25,6 +36,27 @@ export default function Index() {
         <div className="w-full max-w-[1111px] mb-10 text-[#283b9a] text-justify font-poppins text-[15px] font-normal leading-[26px]">
           This section outlines tariff details for dry port services, including charges for freight entry, cargo and terminal handling, weighing, warehousing, storage, container cleaning, sub-leasing, forklift use, rail handling, and bulk cargo operations, providing clear pricing for all port-related activities.
         </div>
+
+        {/* Tabbed Pane */}
+        <div className="flex mb-10">
+          <div className="flex flex-row gap-2 min-w-[180px]">
+            {TABS.map(tab => (
+              <button
+                key={tab.value}
+                onClick={() => setActiveTab(tab.value)}
+                className={`text-left px-4 py-2 font-poppins text-[15px] font-medium transition-colors ${
+                  activeTab === tab.value
+                    ? "bg-[#ecefff] text-black"
+                    : "bg-transparent text-black hover:bg-[#ecefff]"
+                }`}
+                style={{ outline: "none", border: "none" }}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
 
         {/* Freight Entry Charges */}
         <div className="mb-[60px]">
