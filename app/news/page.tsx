@@ -1,4 +1,6 @@
+"use client";
 import * as React from "react";
+import Link from "next/link";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 
@@ -119,12 +121,17 @@ export default function Index() {
                   alt={item.title} 
                   className="w-full h-[349px] rounded-[15px] object-cover"
                 />
-                <div className="absolute top-[375px] left-2 bg-black bg-opacity-70 text-white font-poppins text-[12px] font-normal px-2 py-1 rounded">
-                  {item.date}
+                {/* Date - updated styling */}
+                <div className="absolute" style={{ top: 'calc(349px + 20px)', left: '0.5rem' }}>
+                  <span className="text-black font-poppins text-[12px] font-normal">
+                    {item.date}
+                  </span>
                 </div>
-                <h3 className="text-brand-text-primary font-poppins text-[20px] font-medium leading-normal mt-[45px] mb-[15px]">
-                  {item.title}
-                </h3>
+                <Link href="/news-more">
+                  <h3 className="text-brand-text-primary font-poppins text-[20px] font-medium leading-normal mt-[60px] mb-[15px] hover:underline cursor-pointer">
+                    {item.title}
+                  </h3>
+                </Link>
                 <p className="text-black text-opacity-33 font-poppins text-[12px] font-normal leading-normal">
                   {item.description}
                 </p>

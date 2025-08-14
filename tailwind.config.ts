@@ -23,9 +23,12 @@ export default {
       }
     },
     extend: {
+      // --- Merge new fontFamily from provided code ---
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
+        inter: ['Inter', 'system-ui', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
+        poppins: ['Poppins', 'system-ui', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        heading: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       colors: {
         // Existing design-specific colors
@@ -39,12 +42,28 @@ export default {
         'company-dark-blue': '#252F5C',
         'company-light': '#ECEFFF',
 
-        // --- Merge new transnepal colors from provided code ---
         transnepal: {
           blue: "#283B9A",
           "blue-dark": "#252F5C",
           text: "#36427C",
           "card-bg": "#ECEFFF",
+        },
+
+        'trans-nepal': {
+          blue: "hsl(var(--trans-nepal-blue))",
+          'blue-light': "hsl(var(--trans-nepal-blue-light))",
+          'blue-lighter': "hsl(var(--trans-nepal-blue-lighter))",
+        },
+        'text-gray': "hsl(var(--text-gray))",
+        'text-light-gray': "hsl(var(--text-light-gray))",
+
+        // --- Merge new brand colors from provided code ---
+        brand: {
+          primary: "hsl(var(--brand-primary))",
+          text: "hsl(var(--brand-text))",
+          'text-light': "hsl(var(--brand-text-light))",
+          'blue-light': "hsl(var(--brand-blue-light))",
+          'blue-lighter': "hsl(var(--brand-blue-lighter))",
         },
 
         // Existing colors (keep everything intact)
@@ -57,7 +76,7 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-        brand: {
+        brandOld: {
           blue: "#252f5c",
           "blue-light": "#364381",
           "blue-nav": "#283b9a",
@@ -127,13 +146,12 @@ export default {
         'hero-blue': '#252f5c',
         'light-blue': '#c8d0ed',
         'icon-blue': '#36427c',
-        'text-gray': '#4b4b4b',
         'brand-text': {
           primary: '#283b9a',
           secondary: '#3b4264',
           muted: 'rgba(0, 0, 0, 0.54)',
         },
-        'trans-nepal': {
+        'trans-nepal-old': {
           'blue': '#283b9a',
           'dark-blue': '#233488',
           'light-blue': '#36427C',

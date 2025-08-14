@@ -204,9 +204,11 @@ export default function CSR() {
               </div>
 
               <div className="mt-4 sm:mt-5">
-                <h3 className="text-blue-800 font-poppins text-base sm:text-lg font-medium leading-normal mb-2">
-                  {article.title}
-                </h3>
+                <Link href="/csr-more">
+                  <h3 className="text-blue-800 font-poppins text-base sm:text-lg font-medium leading-normal mb-2 hover:underline cursor-pointer">
+                    {article.title}
+                  </h3>
+                </Link>
                 <p className="text-gray-500 font-poppins text-xs leading-normal">
                   {article.excerpt}
                 </p>
