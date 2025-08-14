@@ -14,15 +14,49 @@ A modern, responsive website for TransNepal Freight Services built with Next.js 
 ## Project Structure
 
 ```
-├── app/                          # Next.js App Router pages
-│   ├── board-of-directors/       # Board of Directors page
-│   ├── globals.css              # Global styles with custom colors
-│   ├── layout.tsx               # Root layout
-│   └── page.tsx                 # Homepage
-├── components/                   # Reusable components
-│   ├── Navigation.tsx           # Header navigation
-│   └── Footer.tsx               # Footer component
-└── public/                      # Static assets
+├── app/
+│   ├── associates/
+│   │   └── trs-logipark/
+│   │       └── page.tsx
+│   ├── board-of-directors/
+│   │   └── page.tsx
+│   ├── contact/
+│   │   └── page.tsx
+│   ├── management-team/
+│   │   └── page.tsx
+│   ├── services/
+│   │   └── terminal-management/
+│   │       ├── biratnagar/
+│   │       │   └── page.tsx
+│   │       ├── chobar/
+│   │       │   └── page.tsx
+│   │       ├── kakarbitta/
+│   │       │   └── page.tsx
+│   │       └── tatopani/
+│   │           └── page.tsx
+│   ├── qa-code-of-conduct/
+│   │   └── page.tsx
+│   ├── calendar/
+│   │   └── page.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── Footer.tsx
+│   ├── Navigation.tsx
+│   └── (other shared components)
+├── public/
+│   └── about/
+│       └── bod/
+│           ├── adarsh-hegde.png
+│           ├── bhim-joshi.png
+│           ├── mukesh-rathi.png
+│           └── pankaj-rathi.png
+│   └── (other static assets)
+├── tailwind.config.ts
+├── README.md
+├── package.json
+└── tsconfig.json
 ```
 
 ## Getting Started
