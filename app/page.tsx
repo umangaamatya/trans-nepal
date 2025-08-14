@@ -123,7 +123,7 @@ export default function Home() {
         </button>
 
         {/* Hero Content */}
-        <div className="absolute left-0 right-0 bottom-30 z-10 flex flex-col items-center justify-end text-center px-4">
+        <div className="absolute left-0 right-0 bottom-28 z-10 flex flex-col items-center justify-end text-center px-4">
           <div className="bg-trans-blue text-white px-8 py-3 rounded-xl mb-6">
             <span className="text-lg md:text-2xl font-bold">Welcome to</span>
           </div>

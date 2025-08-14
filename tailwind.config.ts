@@ -9,6 +9,10 @@ export default {
     "./src/**/*.{html,js,ts,jsx,tsx}",
     "./client/**/*.{ts,tsx}"
   ],
+  safelist: [
+    'font-poppins',
+    'font-inter',
+  ],
   prefix: "",
   theme: {
     container: {
@@ -19,14 +23,29 @@ export default {
       }
     },
     extend: {
-      // --- Merge new terminal colors ---
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+      },
       colors: {
-        // Design-specific colors from new code
+        // Existing design-specific colors
         'terminal-blue': '#283B9A',
         'terminal-blue-light': '#616FB3',
         'terminal-blue-dark': '#171F45',
         'terminal-bg': '#F6F8FF',
         'terminal-gray': '#4B4B4B',
+
+        'company-blue': '#283B9A',
+        'company-dark-blue': '#252F5C',
+        'company-light': '#ECEFFF',
+
+        // --- Merge new transnepal colors from provided code ---
+        transnepal: {
+          blue: "#283B9A",
+          "blue-dark": "#252F5C",
+          text: "#36427C",
+          "card-bg": "#ECEFFF",
+        },
 
         // Existing colors (keep everything intact)
         border: "hsl(var(--border))",
@@ -154,7 +173,22 @@ export default {
           '3': 'hsl(var(--chart-3))',
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))'
-        }
+        },
+        terminal: {
+          primary: "#283B9A",
+          secondary: "#5664B2",
+          background: "#F6F8FF",
+          text: "#4B4B4B",
+          "text-dark": "#171F45",
+          blue: "#283B9A",
+          "blue-light": "#5664B2",
+          "bg-light": "#F6F8FF",
+          red: "#AC3A38",
+          gray: {
+            light: "#F6F8FF",
+            medium: "#4B4B4B",
+          },
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

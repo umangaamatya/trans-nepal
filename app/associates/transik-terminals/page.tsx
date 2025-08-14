@@ -1,154 +1,221 @@
-"use client";
-
-import Navigation from "../../../components/Navigation";
-import Footer from "../../../components/Footer";
-import Breadcrumb from "../../../components/Breadcrumb";
-
-export default function Associates() {
-  const breadcrumbItems = [
-    { label: "Home", href: "/" },
-    { label: "Associates", href: "/associates" },
-    { label: "Transik Terminals Pvt.Ltd." }
-  ];
-
-  const boardMembers = [
-    { name: 'Mukesh Kumar Rathi', position: 'Chairman' },
-    { name: 'Suresh Kumar R', position: 'Director' },
-    { name: 'Ramesh Sherpa', position: 'Joint Managing Director' },
-    { name: 'Mukesh Kumar Rathi', position: 'Director' },
-    { name: 'Bhimraj Joshi', position: 'Joint Managing Director' },
-    { name: 'Bijay Sherpa', position: 'Director' },
-  ];
-
-  const managementTeam = [
-    { name: 'Capt. Mayur Paralkar', position: 'Management Committee Member' },
-    { name: 'Anand Kumar Singh', position: 'Management Committee Member' },
-    { name: 'Anirudra Thapa', position: 'Chief Executive Officer' },
-    { name: 'Raj Sapkota', position: 'Chief Financial Officer' },
-  ];
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import { ChevronRight } from "lucide-react";
+export default function Index() {
   return (
-    <div className="min-h-screen bg-white font-inter">
+    <div className="min-h-screen bg-white">
       <Navigation />
-
-      {/* Hero Section */}
-      <section className="relative w-full h-96 bg-brand-blue overflow-hidden">
-        <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20 h-full flex items-center justify-between relative z-10">
-          {/* Left Content */}
-          <div className="flex-1 max-w-4xl">
-            <h1 className="text-white text-center font-poppins text-4xl md:text-6xl font-bold leading-normal">
-              Transik Terminals Pvt. Ltd.
-            </h1>
-          </div>
-
-          {/* Right Images Grid */}
-          <div className="hidden lg:flex flex-wrap gap-5 max-w-2xl">
-            <img 
-              src="https://api.builder.io/api/v1/image/assets/TEMP/29bfb599f7f50477d23c9a35bd14693d7b76f75a?width=520" 
-              alt="Terminal facility" 
-              className="w-64 h-56 rounded-3xl object-cover"
-            />
-            <img 
-              src="https://api.builder.io/api/v1/image/assets/TEMP/cca701db9d02370008e4374a0a2f594a8cfcbf6a?width=520" 
-              alt="Terminal operations" 
-              className="w-64 h-28 rounded-b-3xl object-cover"
-            />
-            <img 
-              src="https://api.builder.io/api/v1/image/assets/TEMP/d41628429364438805acd611b8a6fa10e2a91fba?width=520" 
-              alt="Container handling" 
-              className="w-64 h-56 rounded-b-3xl object-cover"
-            />
-            <img 
-              src="https://api.builder.io/api/v1/image/assets/TEMP/d4406479fa7fd6ff0a206dfb5b0f3dc726410c57?width=520" 
-              alt="Logistics operations" 
-              className="w-64 h-32 rounded-tl-3xl object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Main Content */}
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
-        {/* Breadcrumb */}
-        <div className="py-8">
-          <Breadcrumb items={breadcrumbItems} />
-        </div>
-
-        {/* Company Overview */}
-        <section className="mb-20">
-          <h2 className="text-brand-red font-poppins text-3xl font-bold leading-normal mb-5">
-            Company overview
-          </h2>
-          <div className="w-[156px] h-[2px] bg-brand-red mb-10"></div>
-          <p className="text-brand-text-blue text-justify font-inter text-xl font-normal leading-relaxed max-w-none">
-            TranSilk Terminals Pvt. Ltd. a 60:40 Joint Venture company incorporated in the year 2022 with the objective of operating and managing terminals in Nepal. The company has signed the contract of operation and management of Tatopani ICD with Nepal Intermodel Transport Development Board and commenced its operation from September 2022.
-          </p>
-        </section>
-
-        {/* Board of Directors */}
-        <section className="mb-20">
-          <h2 className="text-brand-text-blue font-poppins text-3xl font-bold leading-normal mb-5">
-            Board of Directors
-          </h2>
-          <div className="w-[156px] h-[2px] bg-brand-text-blue mb-10"></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {boardMembers.map((member, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <h3 className="text-brand-text-blue font-poppins text-xl font-bold mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-brand-light-blue font-inter text-lg">
-                  {member.position}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Management Team */}
-        <section className="mb-20">
-          <h2 className="text-brand-text-blue font-poppins text-3xl font-bold leading-normal mb-5">
-            Management Team
-          </h2>
-          <div className="w-[156px] h-[2px] bg-brand-text-blue mb-10"></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {managementTeam.map((member, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <h3 className="text-brand-text-blue font-poppins text-xl font-bold mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-brand-light-blue font-inter text-lg">
-                  {member.position}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Back to Top */}
-        <div className="flex justify-end mb-8">
-          <button 
-            onClick={scrollToTop}
-            className="flex items-center gap-2 text-brand-blue hover:text-brand-text-blue transition-colors font-inter"
-          >
-            <span className="text-lg font-normal">Back to top</span>
-            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" className="transform rotate-180">
-              <path 
-                fillRule="evenodd" 
-                clipRule="evenodd" 
-                d="M7.71065 0.843063L13.3676 6.50006L11.9536 7.91406L7.00365 2.96406L2.05365 7.91406L0.639648 6.50006L6.29665 0.843063C6.48418 0.655592 6.73848 0.550276 7.00365 0.550276C7.26881 0.550276 7.52312 0.655592 7.71065 0.843063Z" 
-                fill="currentColor"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-
+      <HeroSection />
+      <CompanyOverview />
+      <BoardOfDirectors />
+      <ManagementTeam />
       <Footer />
     </div>
   );
 }
+
+const HeroSection = () => {
+  return (
+    <section className="w-full bg-company-dark-blue relative">
+      <div className="container mx-auto px-6 py-16 md:py-24">
+        {/* Main Title */}
+        <div className="text-center text-white mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            Transik Treminals<br />
+            Pvt. Ltd.
+          </h1>
+        </div>
+        
+        {/* Breadcrumb */}
+        <div className="flex items-center justify-center text-white text-xs space-x-2 mt-8">
+          <span>Home</span>
+          <ChevronRight className="w-3 h-3" />
+          <span>Associates</span>
+          <ChevronRight className="w-3 h-3" />
+          <span>Transik Terminals Pvt. Ltd.</span>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const CompanyOverview = () => {
+  return (
+    <section className="w-full bg-white py-16">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Title */}
+          <h2 className="text-2xl md:text-3xl font-bold text-company-blue mb-6">
+            Company overview
+          </h2>
+          {/* Decorative Line */}
+          <div className="w-40 h-0.5 bg-company-blue mb-8"></div>
+          {/* Company Description */}
+          <p className="text-lg leading-relaxed text-company-blue font-medium text-justify">
+            TranSilk Terminals Pvt. Ltd. a 60:40 Joint Venture company incorporated in the year 2022 with the objective of operating and managing terminals in Nepal. The company has signed the contract of operation and management of Tatopani ICD with Nepal Intermodel Transport Development Board and commenced its operation from September 2022.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+interface DirectorProps {
+  name: string;
+  position: string;
+  image: string;
+}
+
+const DirectorCard = ({ name, position, image }: DirectorProps) => {
+  return (
+    <div className="bg-company-light rounded-2xl p-6 flex items-center space-x-6 h-36">
+      <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+        <img 
+          src={image} 
+          alt={name}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="flex-1">
+        <p className="text-lg text-company-blue mb-1">{position}</p>
+        <h3 className="text-xl font-normal text-company-blue">{name}</h3>
+      </div>
+    </div>
+  );
+};
+
+const BoardOfDirectors = () => {
+  const directors = [
+    {
+      name: "Mukesh Kumar Rathi",
+      position: "Chairman",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Suresh Kumar R",
+      position: "Director",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Ramesh Sherpa",
+      position: "Joint Managing Director",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Mukesh Kumar Rathi",
+      position: "Director",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Bhimraj Joshi",
+      position: "Joint Managing Director",
+      image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Bijay Sherpa",
+      position: "Director",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
+    }
+  ];
+
+  return (
+    <section className="w-full bg-white py-16">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Title */}
+          <h2 className="text-2xl md:text-3xl font-bold text-company-blue mb-6">
+            Board of Directors
+          </h2>
+          {/* Decorative Line */}
+          <div className="w-40 h-0.5 bg-black mb-12"></div>
+          {/* Directors Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {directors.map((director, index) => (
+              <DirectorCard
+                key={index}
+                name={director.name}
+                position={director.position}
+                image={director.image}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+interface TeamMemberProps {
+  name: string;
+  position: string;
+  image: string;
+}
+
+const TeamMemberCard = ({ name, position, image }: TeamMemberProps) => {
+  return (
+    <div className="bg-company-light rounded-2xl p-6 flex items-center space-x-6 h-36">
+      <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+        <img 
+          src={image} 
+          alt={name}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="flex-1">
+        <p className="text-lg text-company-blue mb-1">{position}</p>
+        <h3 className="text-xl font-normal text-company-blue">{name}</h3>
+      </div>
+    </div>
+  );
+};
+
+const ManagementTeam = () => {
+  const teamMembers = [
+    {
+      name: "Capt. Mayur Paralkar",
+      position: "Management Committee Member",
+      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Anand Kumar Singh",
+      position: "Management Committee Member",
+      image: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Anirudra Thapa",
+      position: "Chief Executive Officer",
+      image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Raj Sapkota",
+      position: "Chief Financial Officer",
+      image: "https://images.unsplash.com/photo-1549068106-b024baf5062d?w=150&h=150&fit=crop&crop=face"
+    }
+  ];
+
+  return (
+    <section className="w-full bg-white py-16">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Title */}
+          <h2 className="text-2xl md:text-3xl font-bold text-company-blue mb-6">
+            Management Team
+          </h2>
+          {/* Decorative Line */}
+          <div className="w-40 h-0.5 bg-company-blue mb-12"></div>
+          {/* Team Members Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {teamMembers.map((member, index) => (
+              <TeamMemberCard
+                key={index}
+                name={member.name}
+                position={member.position}
+                image={member.image}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

@@ -127,7 +127,7 @@ export default function CSR() {
     <div className="min-h-screen bg-white">
       <Navigation />
       {/* HeroSection inlined */}
-      <div className="w-full h-[303px] bg-blue-900 flex items-center justify-center relative">
+      <div className="w-full h-[303px] bg-[#252f5c] flex items-center justify-center relative">
         <div className="text-center text-white">
           <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold leading-normal mb-5 px-4">
             <span className="block sm:inline">{'Customer Shared Responsibility'.split(' ').slice(0, 2).join(' ')}</span>

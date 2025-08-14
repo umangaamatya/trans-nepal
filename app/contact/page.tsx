@@ -28,7 +28,7 @@ export default function ContactPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <div className="w-full h-[205px] bg-gradient-to-r from-trans-nepal-blue to-trans-nepal-dark-blue flex items-center justify-center flex-col">
+      <div className="w-full h-[205px] bg-[#252f5c] flex items-center justify-center flex-col">
         <div className="text-center">
           <h1 className="text-white font-poppins text-[45px] font-semibold mb-[25px]">
             Contact Us
