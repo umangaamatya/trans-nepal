@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Mail, Phone, Calendar, MapPin, Send, ArrowLeft, ArrowRight } from 'lucide-react';
+import './carousel-animations.css';
 
 // Data for your hero slides with updated image paths
 const heroSlides = [
@@ -12,12 +13,12 @@ const heroSlides = [
     title: "Nepal's Leading<br />Dry Port Operations"
   },
   {
-    imagePath: '/home/hero-bg-1.png', // Updated Path
-    title: "Advanced<br />Storage Solutions"
+    imagePath: '/home/hero-bg-1.png',
+    title: "Nepal's Leading<br />Dry Port Operations"
   },
   {
-    imagePath: '/home/hero-bg-2.png', // Updated Path
-    title: "Efficient<br />Cargo Handling"
+    imagePath: '/home/hero-bg-2.png',
+    title: "Nepal's Leading<br />Dry Port Operations"
   },
 ];
 
@@ -100,10 +101,9 @@ export default function Home() {
 
       {/* Hero Section - Now with Timer and Animation */}
       <section className="relative h-[600px] md:h-[729px] bg-gray-900 overflow-hidden">
-        <div 
-          // The 'key' prop is crucial. It tells React to re-render the component, which re-triggers our animation.
+        <div
           key={currentIndex}
-          className="absolute inset-0 bg-cover bg-center animate-fadeIn"
+          className="absolute inset-0 bg-cover bg-center carousel-fade"
           style={{
             backgroundImage: `url('${heroSlides[currentIndex].imagePath}')`
           }}
@@ -123,7 +123,7 @@ export default function Home() {
         </button>
 
         {/* Hero Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+        <div className="absolute left-0 right-0 bottom-30 z-10 flex flex-col items-center justify-end text-center px-4">
           <div className="bg-trans-blue text-white px-8 py-3 rounded-xl mb-6">
             <span className="text-lg md:text-2xl font-bold">Welcome to</span>
           </div>

@@ -38,34 +38,32 @@ export default function Home() {
     <div className="min-h-screen bg-white font-poppins">
       <Navigation />
       
-      {/* Hero Section */}
-      <div className="relative w-full h-[455px]">
-        {/* Blue background */}
-        <div className="w-full h-[372px] absolute left-0 top-[83px]" style={{ backgroundColor: '#36427C' }}></div>
-        
-        {/* Content */}
-        <div className="relative z-10">
+      {/* Hero Section - updated to match Board Of Directors */}
+      <section className="relative w-full h-96 bg-[#36427C] overflow-hidden">
+        <div className="absolute inset-0 bg-[#252f5c]"></div>
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 h-full flex flex-col justify-center relative z-10">
           {/* Title */}
-          <h1 className="text-white text-center font-poppins text-5xl font-bold leading-[70px] absolute left-1/2 transform -translate-x-1/2 top-[189px] w-[911px]">
-            <span>Management</span>
-            <br />
-            <span>Team</span>
-          </h1>
-          
+          <div className="text-center text-white mb-12">
+            <h1 className="text-white font-inter text-4xl md:text-6xl font-bold leading-normal">
+              Management Team
+            </h1>
+          </div>
           {/* Breadcrumb */}
-          <div className="flex items-center justify-center absolute left-1/2 transform -translate-x-1/2 top-[341px] w-[397px] h-[23px]">
-            <span className="text-white font-inter text-xs">Home</span>
-            <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-2">
-              <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47401L3.00028 12.2453L2.05762 11.3027L5.35762 8.00268L2.05762 4.70268L3.00028 3.76001L6.77162 7.53134C6.8966 7.65636 6.96681 7.8259 6.96681 8.00268C6.96681 8.17945 6.8966 8.34899 6.77162 8.47401Z" fill="white"/>
-            </svg>
-            <span className="text-white font-inter text-xs">About Us</span>
-            <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-2">
-              <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47401L3.00028 12.2453L2.05762 11.3027L5.35762 8.00268L2.05762 4.70268L3.00028 3.76001L6.77162 7.53134C6.8966 7.65636 6.96681 7.8259 6.96681 8.00268C6.96681 8.17945 6.8966 8.34899 6.77162 8.47401Z" fill="white"/>
-            </svg>
-            <span className="text-white font-inter text-xs">Management team</span>
+          <div className="mt-8">
+            <div className="flex items-center gap-3 justify-center">
+              <a href="/" className="text-white text-base font-normal hover:underline font-inter">Home</a>
+              <svg width="8" height="16" viewBox="0 0 8 16" fill="none">
+                <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
+              </svg>
+              <a href="/about" className="text-white text-base font-normal hover:underline font-inter">About Us</a>
+              <svg width="8" height="16" viewBox="0 0 8 16" fill="none">
+                <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
+              </svg>
+              <span className="text-white text-base font-normal font-inter">Management Team</span>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Team Members */}
       <div className="py-[120px] px-[150px] max-w-[1440px] mx-auto">
@@ -75,13 +73,13 @@ export default function Home() {
               member.imagePosition === 'left' ? 'flex-row-reverse' : 'flex-row'
             }`}>
               <div className="flex-1 max-w-[810px]">
-                <h2 className="text-xl font-bold leading-normal mb-2 font-poltawski" style={{ color: '#36427C' }}>
+                <h2 className="font-inter text-2xl lg:text-3xl font-bold mb-4" style={{ color: '#283B9A' }}>
                   {member.name}
                 </h2>
-                <p className="text-[15px] font-normal leading-normal mb-[30px] font-poppins" style={{ color: '#AC3A38' }}>
+                <p className="font-inter text-lg lg:text-xl font-semibold mb-7" style={{ color: '#AC3A38' }}>
                   {member.position}
                 </p>
-                <p className="text-justify text-[15px] font-normal leading-[30px] font-poppins" style={{ color: '#171F45' }}>
+                <p className="font-inter text-base lg:text-lg text-[#171F45] leading-relaxed text-justify">
                   {member.description}
                 </p>
               </div>

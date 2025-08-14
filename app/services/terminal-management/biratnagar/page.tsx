@@ -1,343 +1,335 @@
-import React from "react";
-import Image from "next/image";
-import Navigation from "../../../../components/Navigation";
-import Footer from "../../../../components/Footer";
+"use client";
+import Navigation from "@/components/Navigation";
+// ...existing code...
+import Footer from "@/components/Footer";
 
-// Import images
-// import brt61 from "/biratnagar/brt-6-1.png";
-// import vector10 from "/biratnagar/vector-10.svg";
-
-const facilityCards = [
-  {
-    id: 1,
-    title: "Administrative Building",
-    category: "Administrative Building",
-    categoryColor: "#283b9ac4",
-    icon: "/biratnagar/vector-3.png",
-    details: [
-      { label: "Area", value: "1320 sqm" },
-      { label: "Storeys", value: "Double Storeys" }
-    ],
-    textColor: "#283b9a",
-    detailsColor: "#4b4b4b"
-  },
-  {
-    id: 2,
-    title: "Customer Service",
-    category: "Warehouse & Sheds",
-    categoryColor: "#5664b2",
-    icon: "/biratnagar/vector-9.png",
-    details: [
-      { label: "Area", value: "658 sqm" },
-      { label: "Storeys", value: "Single Storeys" }
-    ],
-    textColor: "#5664b2",
-    detailsColor: "#ac3a37"
-  },
-  {
-    id: 3,
-    title: "Security Barrack",
-    category: "Administrative Building",
-    categoryColor: "#5664b2",
-    icon: "/biratnagar/vector-3.png",
-    details: [
-      { label: "Area", value: "837 sqm" },
-      { label: "Storeys", value: "Double Storeys" }
-    ],
-    textColor: "#5664b2",
-    detailsColor: "#a03633"
-  },
-  {
-    id: 4,
-    title: "Dispensary Building",
-    category: "Support Facilities",
-    categoryColor: "#5664b2",
-    icon: "/biratnagar/vector-4.png",
-    details: [
-      { label: "Area", value: "161 sqm" },
-      { label: "Storeys", value: "Single Storeys" }
-    ],
-    textColor: "#283b9a",
-    detailsColor: "#4b4b4b"
-  },
-  {
-    id: 5,
-    title: "Parking Yard",
-    category: "Cargo Handling",
-    categoryColor: "#5664b2",
-    details: [
-      { label: "Vehicles", value: "250" },
-      { label: "Type", value: "Commercial" }
-    ],
-    textColor: "#5664b2",
-    detailsColor: "#ab3937"
-  },
-  {
-    id: 6,
-    title: "Process Shed",
-    category: "Processing Area",
-    categoryColor: "#5664b2",
-    details: [
-      { label: "Area", value: "161 sqm" },
-      { label: "Type", value: "Import processing" }
-    ],
-    textColor: "#5664b2",
-    detailsColor: "#ab3937"
-  },
-  {
-    id: 7,
-    title: "Warehouse Building",
-    category: "Storage Facilities",
-    categoryColor: "#5664b2",
-    icon: "/biratnagar/vector-7.png",
-    details: [
-      { label: "Area", value: "2500 sqm" },
-      { label: "Capacity", value: "High Volume" }
-    ],
-    textColor: "#5664b2",
-    detailsColor: "#4b4b4b"
-  },
-  {
-    id: 8,
-    title: "Container Yard",
-    category: "Cargo Handling",
-    categoryColor: "#5664b2",
-    icon: "/biratnagar/vector-6.png",
-    details: [
-      { label: "Containers", value: "500" },
-      { label: "Type", value: "TEU" }
-    ],
-    textColor: "#5664b2",
-    detailsColor: "#ab3937"
-  },
-  {
-    id: 9,
-    title: "Inspection Shed",
-    category: "Processing Area",
-    categoryColor: "#5664b2",
-    details: [
-      { label: "Area", value: "300 sqm" },
-      { label: "Type", value: "Customs" }
-    ],
-    textColor: "#5664b2",
-    detailsColor: "#ab3937"
-  }
-];
-
-const galleryImages = [
-  { src: "/biratnagar/rectangle-337.png", alt: "Administrative Building" },
-  { src: "/biratnagar/rectangle-333.png", alt: "Container Yard" },
-  { src: "/biratnagar/rectangle-334.png", alt: "Warehouse Facility" },
-  { src: "/biratnagar/rectangle-335.png", alt: "Processing Area" },
-  { src: "/biratnagar/rectangle-336.png", alt: "Security Gates" },
-  { src: "/biratnagar/brt-7.png", alt: "Terminal Overview" },
-  { src: "/biratnagar/rectangle-339.png", alt: "Parking Area" }
-];
-
-export default function ServicesBiratnagar() {
+export default function BiratnagarPage() {
   return (
-    <div className="min-h-screen bg-[#f6f8ff] font-poppins">
+    <div className="min-h-screen bg-white">
       <Navigation />
-      
-      {/* Hero Section */}
-      <section className="relative w-full h-96 bg-[#36427C] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#36427C]/90 to-[#283B9A]/90"></div>
-        
-        <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20 h-full flex flex-col justify-center relative z-10">
-          
-          {/* Header text */}
-          <div className="text-center text-white mb-12">
-            <h1 className="text-white font-poppins text-4xl md:text-6xl font-bold leading-normal">
-              Terminal Management
-            </h1>
-            <h2 className="text-white font-poppins text-3xl md:text-5xl font-bold leading-normal mt-4">
-              Biratnagar
-            </h2>
-          </div>
-
-          {/* Breadcrumb */}
-          <div className="mt-8">
-            <div className="flex items-center gap-3 justify-center">
-              <a href="/" className="text-white text-base font-normal hover:underline font-inter">Home</a>
-              <svg width="8" height="16" viewBox="0 0 8 16" fill="none">
-                <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
-              </svg>
-              <a href="/services" className="text-white text-base font-normal hover:underline font-inter">Services</a>
-              <svg width="8" height="16" viewBox="0 0 8 16" fill="none">
-                <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
-              </svg>
-              <span className="text-white text-base font-normal font-inter">Terminal Management</span>
-              <svg width="8" height="16" viewBox="0 0 8 16" fill="none">
-                <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
-              </svg>
-              <span className="text-white text-base font-normal font-inter">Biratnagar</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        
-        {/* Category Filter */}
-        <div className="mb-12">
-          <div className="bg-white/75 rounded-2xl p-4 inline-flex items-center gap-4 shadow-sm">
-            <div className="w-8 h-8 flex items-center justify-center">
-              <Image src="/biratnagar/vector.png" alt="Category icon" width={24} height={24} />
-            </div>
-            <span className="text-[#283b9a] font-inter text-lg font-medium">All categories</span>
-            <div className="w-4 h-4 flex items-center justify-center">
-              <Image src="/biratnagar/image.png" alt="Dropdown" width={16} height={16} />
-            </div>
-          </div>
-        </div>
-
-        {/* Facilities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {facilityCards.map((card) => (
-            <div key={card.id} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              {/* Category Badge */}
-              <div 
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4"
-                style={{ backgroundColor: card.categoryColor }}
-              >
-                {card.icon && (
-                  <Image src={card.icon} alt="Category icon" width={15} height={15} />
-                )}
-                <span className="text-white text-sm font-medium">{card.category}</span>
-              </div>
-
-              {/* Title */}
-              <h3 
-                className="text-lg font-medium mb-6"
-                style={{ color: card.textColor }}
-              >
-                {card.title}
-              </h3>
-
-              {/* Details */}
-              <div className="grid grid-cols-2 gap-4">
-                {card.details.map((detail, index) => (
-                  <div key={index}>
-                    <p 
-                      className="text-sm font-medium mb-1"
-                      style={{ color: card.detailsColor }}
-                    >
-                      {detail.label}
-                    </p>
-                    <p 
-                      className="text-sm"
-                      style={{ color: card.detailsColor }}
-                    >
-                      {detail.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Gallery Section */}
-        <div className="mb-16">
-          <h2 className="text-[#36427C] font-poppins text-3xl font-bold mb-8">Gallery</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {galleryImages.map((img, index) => (
-              <div key={index} className="relative overflow-hidden rounded-2xl group">
-                <Image 
-                  src={img.src} 
-                  alt={img.alt}
-                  width={300}
-                  height={200}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+      <main>
+        {/* --- HeroSection code inlined --- */}
+        {(() => {
+          return (
+            <section className="relative h-[300px] md:h-[400px] lg:h-[455px] w-full overflow-hidden">
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <img 
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/34a2f742813cfc17f08fec59a6677a22c4f0501a?width=2904" 
+                  alt="Terminal Management Biratnagar" 
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-            ))}
-          </div>
-        </div>
+              {/* Gradient Overlay */}
+              <div 
+                className="absolute inset-0 bg-gradient-to-r from-terminal-blue-light/80 to-terminal-blue-dark/80"
+                style={{
+                  background: 'linear-gradient(270deg, rgba(97, 111, 179, 0.80) 1.08%, rgba(23, 31, 69, 0.80) 99.89%), #36427C'
+                }}
+              />
+              {/* Content */}
+              <div className="relative z-10 flex items-center justify-center h-full text-center px-4">
+                <div className="text-white">
+                  <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-inter mb-2 md:mb-4">
+                    Terminal Management
+                  </h1>
+                  <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-inter mb-4 md:mb-6">
+                    Biratnagar
+                  </h2>
+                  <div className="flex flex-wrap items-center justify-center gap-1 md:gap-2 text-white/90 font-inter text-sm md:text-lg">
+                    <span>Home</span>
+                    <span>&gt;</span>
+                    <span>Services</span>
+                    <span>&gt;</span>
+                    <span className="hidden sm:inline">Terminal Management</span>
+                    <span className="hidden sm:inline">&gt;</span>
+                    <span>Biratnagar</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          );
+        })()}
 
-        {/* Terminal Information */}
-        <div className="bg-white rounded-2xl p-8 shadow-sm mb-16">
-          <h2 className="text-[#36427C] font-poppins text-2xl font-bold mb-6">Terminal Information</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-[#283b9a] font-medium text-lg mb-4">Location</h3>
-              <p className="text-gray-600">
-                Biratnagar, Nepal<br />
-                Nepal-India Border
-              </p>
-            </div>
-            <div>
-              <h3 className="text-[#283b9a] font-medium text-lg mb-4">Operating Hours</h3>
-              <p className="text-gray-600">
-                24/7 Operations<br />
-                All days of the week
-              </p>
-            </div>
-            <div>
-              <h3 className="text-[#283b9a] font-medium text-lg mb-4">Services</h3>
-              <p className="text-gray-600">
-                Import/Export Processing<br />
-                Customs Clearance<br />
-                Cargo Handling
-              </p>
-            </div>
-          </div>
-        </div>
+        {/* --- ServicesSection code inlined --- */}
+        {(() => {
+          const services = [
+            {
+              id: 1,
+              title: "Administrative Building",
+              area: "1320 sqm",
+              storeys: "Double Storeys",
+              category: "Administrative Building",
+              icon: require("lucide-react").Building
+            },
+            {
+              id: 2,
+              title: "Customs Service Building",
+              area: "658 sqm", 
+              storeys: "Double Storeys",
+              category: "Administrative Building",
+              icon: require("lucide-react").Building
+            },
+            {
+              id: 3,
+              title: "Entrance Gate",
+              area: "133 sqm",
+              storeys: "Double Storeys", 
+              category: "Administrative Building",
+              icon: require("lucide-react").Building
+            },
+            {
+              id: 4,
+              title: "Warehouse Arrival",
+              area: "1,520 sqm",
+              zone: "Import Side",
+              category: "Warehouse & Sheds",
+              icon: require("lucide-react").Warehouse
+            },
+            {
+              id: 5,
+              title: "Warehouse Departure", 
+              area: "740 sqm",
+              zone: "Export Side",
+              category: "Warehouse & Sheds",
+              icon: require("lucide-react").Warehouse
+            },
+            {
+              id: 6,
+              title: "Animal Shed",
+              area: "100 sqm",
+              zone: "Import Side", 
+              category: "Warehouse & Sheds",
+              icon: require("lucide-react").Warehouse
+            },
+            {
+              id: 7,
+              title: "Dispensary Building",
+              area: "161 sqm",
+              storeys: "Single Storey",
+              category: "Support Facilities",
+              icon: require("lucide-react").Building
+            },
+            {
+              id: 8,
+              title: "Dormitory Building",
+              area: "647 sqm", 
+              storeys: "Single Storey",
+              category: "Support Facilities",
+              icon: require("lucide-react").Building
+            },
+            {
+              id: 9,
+              title: "Security Barrack Building",
+              area: "837 sqm",
+              storeys: "Double Storey",
+              category: "Support Facilities", 
+              icon: require("lucide-react").Building
+            }
+          ];
+          const { ChevronDown, Filter } = require("lucide-react");
+          return (
+            <section className="bg-terminal-bg py-8 md:py-16">
+              <div className="container mx-auto px-4 md:px-6">
+                {/* Filter Section */}
+                <div className="mb-8 md:mb-12">
+                  <div className="bg-white rounded-2xl p-3 md:p-4 w-fit shadow-sm">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <Filter className="w-5 h-5 md:w-6 md:h-6 text-terminal-blue" />
+                      <button className="flex items-center gap-2 text-terminal-blue font-inter text-base md:text-lg font-medium">
+                        All categories
+                        <ChevronDown className="w-3 h-3 md:w-4 md:h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                {/* Services Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
+                  {services.map((service) => {
+                    const Icon = service.icon;
+                    return (
+                      <div key={service.id} className="bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                        {/* Category Badge */}
+                        <div className="mb-4">
+                          <div className="inline-flex items-center gap-2 bg-terminal-blue/80 text-white px-4 py-1.5 rounded-full text-xs font-medium">
+                            <Icon className="w-3 h-3" />
+                            {service.category}
+                          </div>
+                        </div>
+                        {/* Title */}
+                        <h3 className="text-terminal-blue font-poppins text-lg md:text-xl font-medium mb-3 md:mb-4 leading-tight">
+                          {service.title}
+                        </h3>
+                        {/* Details */}
+                        <div className="space-y-2">
+                          <div className="flex justify-between text-sm">
+                            <div className="text-terminal-gray">
+                              <div className="font-medium text-[15px]">Area</div>
+                              <div className="text-[13px]">{service.area}</div>
+                            </div>
+                            <div className="text-terminal-gray text-right">
+                              {service.storeys && (
+                                <>
+                                  <div className="font-medium text-[15px]">Storeys</div>
+                                  <div className="text-[13px]">{service.storeys}</div>
+                                </>
+                              )}
+                              {service.zone && (
+                                <>
+                                  <div className="font-medium text-[15px]">Zone</div>
+                                  <div className="text-[13px]">{service.zone}</div>
+                                </>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                {/* View More Button */}
+                <div className="text-center">
+                  <button className="text-terminal-blue font-inter text-lg md:text-xl font-medium hover:underline flex items-center gap-2 mx-auto">
+                    View more
+                    <ChevronDown className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </section>
+          );
+        })()}
 
-        {/* Key Features */}
-        <div className="bg-gradient-to-r from-[#36427C] to-[#283B9A] rounded-2xl p-8 text-white">
-          <h2 className="font-poppins text-2xl font-bold mb-6">Key Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mt-1">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polyline points="20,6 9,17 4,12"></polyline>
-                </svg>
+        {/* --- GallerySection code inlined --- */}
+        {(() => {
+          const galleryImages = [
+            {
+              id: 1,
+              src: "https://api.builder.io/api/v1/image/assets/TEMP/e90382f4f689b50d8e024a451c730f69ad03a55b?width=436",
+              alt: "Warehouse facility",
+              className: "row-span-2 h-[566px]"
+            },
+            {
+              id: 2,
+              src: "https://api.builder.io/api/v1/image/assets/TEMP/b508b2de49d7b4299498d3171b3ae0c51c8cb917?width=1030",
+              alt: "Terminal building exterior",
+              className: "col-span-2 h-[263px]"
+            },
+            {
+              id: 3,
+              src: "https://api.builder.io/api/v1/image/assets/TEMP/8fa68afe6179eeffbfce0a5febf08cb24993878f?width=500",
+              alt: "Loading area",
+              className: "h-[263px]"
+            },
+            {
+              id: 4,
+              src: "https://api.builder.io/api/v1/image/assets/TEMP/b7e521a416be6100beb2ca5e333d76fb6e703f14?width=508",
+              alt: "Office workspace",
+              className: "h-[273px]"
+            },
+            {
+              id: 5,
+              src: "https://api.builder.io/api/v1/image/assets/TEMP/87a27952c2d8cb4a50ca8c7e1e19be7cad4d492e?width=1006",
+              alt: "Container handling",
+              className: "col-span-2 h-[273px]"
+            },
+            {
+              id: 6,
+              src: "https://api.builder.io/api/v1/image/assets/TEMP/c163b904948b8dcd96330ce83ec6143f383425ba?width=370",
+              alt: "Terminal infrastructure",
+              className: "row-span-2 h-[384px]"
+            },
+            {
+              id: 7,
+              src: "https://api.builder.io/api/v1/image/assets/TEMP/8d5a525621ea3a22328e29b88f10df30e2a7aeba?width=366",
+              alt: "Equipment and machinery",
+              className: "h-[162px]"
+            }
+          ];
+          return (
+            <section className="bg-terminal-bg py-8 md:py-16">
+              <div className="container mx-auto px-4 md:px-6">
+                {/* Section Title */}
+                <h2 className="text-terminal-blue font-inter text-xl md:text-2xl font-bold mb-6 md:mb-8">
+                  Gallery
+                </h2>
+                {/* Gallery Grid - Mobile: Simple 2-column, Desktop: Complex layout */}
+                <div className="block md:hidden">
+                  {/* Mobile Gallery - Simple 2-column grid */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {galleryImages.slice(0, 6).map((image) => (
+                      <div key={image.id}>
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-[150px] object-cover rounded-xl shadow-lg"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {/* Desktop Gallery - Complex layout */}
+                <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-min">
+                  {/* Tall image on the left */}
+                  <div className="md:row-span-2">
+                    <img
+                      src={galleryImages[0].src}
+                      alt={galleryImages[0].alt}
+                      className="w-full h-[300px] md:h-[566px] object-cover rounded-2xl shadow-lg"
+                    />
+                  </div>
+                  {/* Large horizontal image */}
+                  <div className="md:col-span-2">
+                    <img
+                      src={galleryImages[1].src}
+                      alt={galleryImages[1].alt}
+                      className="w-full h-[200px] md:h-[263px] object-cover rounded-2xl shadow-lg"
+                    />
+                  </div>
+                  {/* Medium image */}
+                  <div>
+                    <img
+                      src={galleryImages[2].src}
+                      alt={galleryImages[2].alt}
+                      className="w-full h-[200px] md:h-[263px] object-cover rounded-2xl shadow-lg"
+                    />
+                  </div>
+                  {/* Bottom row images */}
+                  <div>
+                    <img
+                      src={galleryImages[3].src}
+                      alt={galleryImages[3].alt}
+                      className="w-full h-[200px] md:h-[273px] object-cover rounded-2xl shadow-lg"
+                    />
+                  </div>
+                  <div className="md:col-span-2">
+                    <img
+                      src={galleryImages[4].src}
+                      alt={galleryImages[4].alt}
+                      className="w-full h-[200px] md:h-[273px] object-cover rounded-2xl shadow-lg"
+                    />
+                  </div>
+                  {/* Tall image on the right */}
+                  <div className="md:row-span-2">
+                    <img
+                      src={galleryImages[5].src}
+                      alt={galleryImages[5].alt}
+                      className="w-full h-[300px] md:h-[384px] object-cover rounded-2xl shadow-lg"
+                    />
+                  </div>
+                  {/* Small image */}
+                  <div className="md:col-start-4">
+                    <img
+                      src={galleryImages[6].src}
+                      alt={galleryImages[6].alt}
+                      className="w-full h-[130px] lg:h-[162px] object-cover rounded-2xl shadow-lg"
+                    />
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="font-medium text-lg mb-2">Strategic Location</h3>
-                <p className="text-white/80">Located at the Nepal-India border for efficient cross-border trade</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mt-1">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polyline points="20,6 9,17 4,12"></polyline>
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-medium text-lg mb-2">Modern Infrastructure</h3>
-                <p className="text-white/80">State-of-the-art facilities with advanced cargo handling equipment</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mt-1">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polyline points="20,6 9,17 4,12"></polyline>
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-medium text-lg mb-2">24/7 Operations</h3>
-                <p className="text-white/80">Round-the-clock services for uninterrupted trade operations</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mt-1">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polyline points="20,6 9,17 4,12"></polyline>
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-medium text-lg mb-2">Comprehensive Services</h3>
-                <p className="text-white/80">Complete range of logistics and customs clearance services</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+            </section>
+          );
+        })()}
+      </main>
       <Footer />
     </div>
   );

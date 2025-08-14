@@ -1,0 +1,13 @@
+.carousel-fade {
+  animation: simpleCarouselFade 0.7s ease;
+}
+@keyframes simpleCarouselFade {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

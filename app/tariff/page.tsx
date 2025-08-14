@@ -1,12 +1,12 @@
-import Header from "@/components/Header";
+import Navigation from "@/components/Navigation";
 import { TariffTable } from "../../components/TariffTable";
 import { ChevronRight } from "lucide-react";
 
 export default function Index() {
   return (
     <div className="w-full min-h-screen bg-white relative">
-      {/* Header */}
-      <Header />
+      {/* Navigation */}
+      <Navigation />
 
       {/* Hero Section */}
       <div className="w-full h-[308px] bg-[#252f5c] relative mt-8 flex flex-col items-center justify-center">

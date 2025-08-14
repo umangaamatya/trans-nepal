@@ -109,7 +109,7 @@ const Feature = ({ icon, title, description }: FeatureProps) => (
 );
 
 const HeroSection = () => (
-  <section className="w-full h-[205px] bg-brand-blue flex items-center justify-center">
+  <section className="w-full h-[205px] bg-[#252f5c] flex items-center justify-center">
     <div className="flex flex-col items-center justify-center text-center">
       <h1 className="text-white font-poppins text-[45px] font-bold leading-normal mb-3">
         Transportation

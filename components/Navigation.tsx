@@ -18,7 +18,7 @@ interface NavLinkProps {
   children: ReactNode;
 }
 
-// --- HELPER COMPONENTS ---
+
 const NavDropdown: FC<NavDropdownProps> = ({ title, children, href, isActive }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -30,7 +30,7 @@ const NavDropdown: FC<NavDropdownProps> = ({ title, children, href, isActive }) 
     >
       <Link 
         href={href}
-        className={`flex items-center space-x-1 cursor-pointer transition-colors px-4 py-1 rounded-full whitespace-nowrap ${
+        className={`flex items-center space-x-1 cursor-pointer transition-colors px-3 py-1 rounded-full whitespace-nowrap ${
           isActive
             ? 'bg-[#36427C] text-white font-medium' 
             : 'text-gray-800 hover:text-brand-blue'
@@ -43,8 +43,8 @@ const NavDropdown: FC<NavDropdownProps> = ({ title, children, href, isActive }) 
       </Link>
       
       {isOpen && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 w-72 bg-white rounded-md shadow-lg z-20 border border-gray-200">
-          <div className="py-1">
+        <div className="absolute top-full left-1/2 -translate-x-1/2 w-44 bg-white rounded-md shadow-lg z-20 border border-gray-200">
+          <div className="py-1 flex flex-col gap-0">
             {children}
           </div>
         </div>
@@ -52,6 +52,7 @@ const NavDropdown: FC<NavDropdownProps> = ({ title, children, href, isActive }) 
     </div>
   );
 };
+
 
 const NavLink: FC<NavLinkProps> = ({ href, children }) => {
   const pathname = usePathname();
@@ -79,24 +80,25 @@ const TerminalManagementSideDropdown: FC = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors cursor-pointer">
+      <div className="flex items-center justify-between px-4 py-1 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors cursor-pointer">
         <span>Terminal Management</span>
         <ChevronRight className="w-4 h-4" />
       </div>
       
       {isHovered && (
-        <div className="absolute top-0 left-full ml-1 w-48 bg-white rounded-md shadow-lg z-30 border border-gray-200">
+        <div className="absolute top-0 left-full ml-1 w-40 bg-white rounded-md shadow-lg z-30 border border-gray-200">
           <div className="py-1">
-            <Link href="/services/terminal-management/biratnagar" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors">Biratnagar</Link>
-            <Link href="/services/terminal-management/kakarbitta" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors">Kakarbitta</Link>
-            <Link href="/services/terminal-management/tatopani" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors">Tatopani</Link>
-            <Link href="/services/terminal-management/chobar" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors">Chobar</Link>
+            <Link href="/services/terminal-management/biratnagar" className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors">Biratnagar</Link>
+            <Link href="/services/terminal-management/kakarbitta" className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors">Kakarbitta</Link>
+            <Link href="/services/terminal-management/tatopani" className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors">Tatopani</Link>
+            <Link href="/services/terminal-management/chobar" className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-blue transition-colors">Chobar</Link>
           </div>
         </div>
       )}
     </div>
   );
 };
+
 
 // --- MAIN NAVIGATION COMPONENT ---
 const Navigation: FC = () => {

@@ -14,18 +14,16 @@ export default function BoardOfDirectors() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative w-full h-96 bg-[#36427C] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#36427C]/90 to-[#283B9A]/90"></div>
+      <section className="relative w-full h-96 bg-[#252f5c] overflow-hidden">
+        <div className="absolute inset-0 bg-[#252f5c]"></div>
         
-        <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20 h-full flex flex-col justify-center relative z-10">
-          
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 h-full flex flex-col justify-center relative z-10">
           {/* Header text */}
           <div className="text-center text-white mb-12">
             <h1 className="text-white font-inter text-4xl md:text-6xl font-bold leading-normal">
               Board of Directors
             </h1>
           </div>
-
           {/* Breadcrumb */}
           <div className="mt-8">
             <div className="flex items-center gap-3 justify-center">
@@ -44,7 +42,7 @@ export default function BoardOfDirectors() {
       </section>
 
       {/* Directors Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-24">
         {/* Director 1 - Adarsh Hegde */}
         <div className="mb-20 lg:mb-32">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
