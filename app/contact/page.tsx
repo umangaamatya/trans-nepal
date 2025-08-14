@@ -168,7 +168,7 @@ export default function ContactPage() {
           <div className="w-full h-[300px] lg:h-[464px] rounded-[31px] overflow-hidden relative">
             {/* Google Maps Embed */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14289.794463987654!2d87.26289582345678!3d26.458947183456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6f7c8b0b7b7b%3A0x1234567890abcdef!2sBiratnagar%2C%20Nepal!5e0!3m2!1sen!2snp!4v1635123456789!5m2!1sen!2snp"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.7581474501126!2d87.27345267579435!3d26.463523779249265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef74147f7fa62d%3A0x631d4e7be0d690c2!2sTrans%20Nepal%20Freight%20Services%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1755147528254!5m2!1sen!2snp"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -177,56 +177,6 @@ export default function ContactPage() {
               referrerPolicy="no-referrer-when-downgrade"
               className="absolute inset-0"
             />
-            
-            {/* Overlay Information Card */}
-            <div className="absolute left-4 lg:left-[45px] top-[28px] w-[280px] lg:w-[308px] h-auto min-h-[244px] lg:min-h-[300px] rounded-[25px] bg-white shadow-[0_2px_50px_rgba(0,0,0,0.15)] p-6 z-10">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-trans-nepal-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 2C12.7614 2 15 4.23858 15 7C15 11.25 10 18 10 18C10 18 5 11.25 5 7C5 4.23858 7.23858 2 10 2ZM10 5.5C9.17157 5.5 8.5 6.17157 8.5 7C8.5 7.82843 9.17157 8.5 10 8.5C10.8284 8.5 11.5 7.82843 11.5 7C11.5 6.17157 10.8284 5.5 10 5.5Z" fill="white"/>
-                  </svg>
-                </div>
-                <h3 className="text-trans-nepal-blue font-poppins text-lg font-semibold mb-2">
-                  TransNepal Tower
-                </h3>
-                <p className="text-gray-600 font-inter text-sm leading-relaxed mb-4">
-                  Piyush Marg, Biratnagar-05<br />
-                  Province No. 1, Nepal
-                </p>
-                <div className="space-y-3 text-left">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 3h12v10H2V3zm1 1v8h10V4H3zm2 2h6v1H5V6zm0 2h4v1H5V8z" fill="#283b9a"/>
-                      </svg>
-                    </div>
-                    <span className="text-gray-700 font-inter text-sm">
-                      +977 21 501441
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 14.5c3.59 0 6.5-2.91 6.5-6.5S11.59 1.5 8 1.5 1.5 4.41 1.5 8s2.91 6.5 6.5 6.5zM8 4v4.25l3 1.75-.75 1.25L7 9V4h1z" fill="#283b9a"/>
-                      </svg>
-                    </div>
-                    <span className="text-gray-700 font-inter text-sm">
-                      10:00 AM - 6:00 PM
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 3.5v9A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 12.5 2h-9A1.5 1.5 0 0 0 2 3.5zM3 4l5 3 5-3v8.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V4z" fill="#283b9a"/>
-                      </svg>
-                    </div>
-                    <span className="text-gray-700 font-inter text-sm">
-                      info@transnepal.com
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -235,3 +185,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
+
