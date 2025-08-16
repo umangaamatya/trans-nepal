@@ -61,30 +61,34 @@ export default function TariffPage() {
 
         {/* Tabs */}
         <div className="flex mb-10" role="tablist" aria-label="Tariff locations">
-          <div className="flex flex-row gap-2 min-w-[180px]">
-            {TABS.map((tab) => (
-              <button
-                key={tab.value}
-                id={`tab-${tab.value}`}
-                role="tab"
-                aria-selected={activeTab === tab.value}
-                aria-controls={`panel-${tab.value}`}
-                onClick={() => setActiveTab(tab.value)}
-                className={`text-left px-4 py-2 font-poppins text-[15px] font-medium transition-colors ${
-                  activeTab === tab.value
-                    ? "bg-[#ecefff] text-black"
-                    : "bg-transparent text-black hover:bg-[#ecefff]"
-                }`}
-              >
-                {tab.label}
-              </button>
+          <div className="flex flex-row gap-0 min-w-[180px] border-b border-[#283b9a]">
+            {TABS.map((tab, idx) => (
+              <React.Fragment key={tab.value}>
+                <button
+                  id={`tab-${tab.value}`}
+                  role="tab"
+                  aria-selected={activeTab === tab.value}
+                  aria-controls={`panel-${tab.value}`}
+                  onClick={() => setActiveTab(tab.value)}
+                  className={`text-left px-4 py-2 font-poppins text-[15px] font-medium transition-colors border-none outline-none ${
+                    activeTab === tab.value
+                      ? "bg-[#ecefff] text-black border-b-2 border-[#283b9a]"
+                      : "bg-transparent text-black hover:bg-[#ecefff]"
+                  }`}
+                  style={{ borderRadius: 0 }}
+                >
+                  {tab.label}
+                </button>
+                {idx < TABS.length - 1 && (
+                  <div className="self-stretch w-px bg-[#283b9a] mx-0" />
+                )}
+              </React.Fragment>
             ))}
           </div>
         </div>
-
         {/* Active tab content */}
         <section
-          key={activeTab} // force remount so internal state resets on tab change
+          key={activeTab}
           id={`panel-${activeTab}`}
           role="tabpanel"
           aria-labelledby={`tab-${activeTab}`}
