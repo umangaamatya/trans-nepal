@@ -137,10 +137,12 @@ const Navigation: FC = () => {
           <nav className="hidden md:flex items-center space-x-1">
             <NavLink href="/">Home</NavLink>
             
-            <NavDropdown title="About Us" href="/board-of-directors" isActive={pathname.startsWith('/about') || pathname === '/board-of-directors' || pathname === '/our-purpose' || pathname === '/management-team' || pathname === '/calendar'}>
+            <NavDropdown title="About Us" href="/board-of-directors" isActive={pathname.startsWith('/about') || pathname === '/board-of-directors' || pathname === '/management-team' || pathname === '/calendar'}>
               <Link href="/board-of-directors" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Board of Directors</Link>
               <Link href="/management-team" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Management Team</Link>
-              <Link href="/our-purpose" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Our Purpose</Link>
+              <Link href="/vision" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Vision</Link>
+              <Link href="/features" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Features</Link>
+              <Link href="/history" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">History</Link>
               <Link href="/qa-code-of-conduct" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">QAC</Link>
               <Link href="/calendar" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Holiday Calendar</Link>
             </NavDropdown>
@@ -198,7 +200,9 @@ const Navigation: FC = () => {
                 <div className="pl-4 space-y-1">
                   <Link href="/board-of-directors" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Board of Directors</Link>
                   <Link href="/management-team" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Management Team</Link>
-                  <Link href="/our-purpose" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Our Purpose</Link>
+                  <Link href="/vision" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Vision</Link>
+                  <Link href="/features" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Features</Link>
+                  <Link href="/history" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">History</Link>
                   <Link href="/qa-code-of-conduct" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">QAC</Link>
                   <Link href="/calendar" className="block text-gray-600 hover:text-brand-blue py-1 transition-colors">Holiday Calendar</Link>
                 </div>

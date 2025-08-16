@@ -7,7 +7,7 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{html,js,ts,jsx,tsx}",
-    "./client/**/*.{ts,tsx}"
+    "./client/**/*.{ts,tsx}" // merged from new code
   ],
   safelist: [
     'font-poppins',
@@ -23,7 +23,6 @@ export default {
       }
     },
     extend: {
-      // --- Merge new fontFamily from provided code ---
       fontFamily: {
         inter: ['Inter', 'system-ui', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
         poppins: ['Poppins', 'system-ui', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
@@ -31,42 +30,13 @@ export default {
         heading: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       colors: {
-        // Existing design-specific colors
-        'terminal-blue': '#283B9A',
-        'terminal-blue-light': '#616FB3',
-        'terminal-blue-dark': '#171F45',
-        'terminal-bg': '#F6F8FF',
-        'terminal-gray': '#4B4B4B',
-
-        'company-blue': '#283B9A',
-        'company-dark-blue': '#252F5C',
-        'company-light': '#ECEFFF',
-
-        transnepal: {
-          blue: "#283B9A",
-          "blue-dark": "#252F5C",
-          text: "#36427C",
-          "card-bg": "#ECEFFF",
-        },
-
-        'trans-nepal': {
-          blue: "hsl(var(--trans-nepal-blue))",
-          'blue-light': "hsl(var(--trans-nepal-blue-light))",
-          'blue-lighter': "hsl(var(--trans-nepal-blue-lighter))",
-        },
-        'text-gray': "hsl(var(--text-gray))",
-        'text-light-gray': "hsl(var(--text-light-gray))",
-
-        // --- Merge new brand colors from provided code ---
+        // merged brand colors from new code
         brand: {
-          primary: "hsl(var(--brand-primary))",
-          text: "hsl(var(--brand-text))",
-          'text-light': "hsl(var(--brand-text-light))",
-          'blue-light': "hsl(var(--brand-blue-light))",
-          'blue-lighter': "hsl(var(--brand-blue-lighter))",
+          primary: "#283B9A",
+          secondary: "#36427C",
+          light: "#F6F8FF",
+          dark: "#252F5C",
         },
-
-        // Existing colors (keep everything intact)
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -75,28 +45,6 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-        },
-        brandOld: {
-          blue: "#252f5c",
-          "blue-light": "#364381",
-          "blue-nav": "#283b9a",
-          "service-bg": "#5664b2",
-          gray: "#4b4b4b",
-          "gray-light": "#2b3b83",
-          ...(typeof {} !== "undefined" && {
-            'dark-blue': "hsl(var(--brand-dark-blue))",
-            red: "hsl(var(--brand-red))",
-            primary: '#252F5C',
-            secondary: '#283B9A',
-            tertiary: '#36427C',
-            light: '#BEC5ED',
-            hero: 'hsl(var(--brand-hero))',
-            blueAlt: '#6F7FC1',
-            'text-primary': 'hsl(var(--brand-text-primary))',
-            'text-secondary': 'hsl(var(--brand-text-secondary))',
-            'text-muted': 'hsl(var(--brand-text-muted))',
-            'text-light': 'hsl(var(--brand-text-light))',
-          }),
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -131,6 +79,53 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        // keep all existing colors below
+        'nepal-blue': '#36427C',
+        'nepal-blue-dark': '#283B9A',
+        'nepal-blue-darker': '#252F5C',
+        'nepal-bg': '#F6F8FF',
+        'transnepal': {
+          primary: '#283B9A',
+          dark: '#252F5C',
+          gray: '#4B4B4B',
+        },
+        'terminal-blue': '#283B9A',
+        'terminal-blue-light': '#616FB3',
+        'terminal-blue-dark': '#171F45',
+        'terminal-bg': '#F6F8FF',
+        'terminal-gray': '#4B4B4B',
+        'company-blue': '#283B9A',
+        'company-dark-blue': '#252F5C',
+        'company-light': '#ECEFFF',
+        'trans-nepal': {
+          blue: "hsl(var(--trans-nepal-blue))",
+          'blue-light': "hsl(var(--trans-nepal-blue-light))",
+          'blue-lighter': "hsl(var(--trans-nepal-blue-lighter))",
+        },
+        'text-gray': "hsl(var(--text-gray))",
+        'text-light-gray': "hsl(var(--text-light-gray))",
+        brandOld: {
+          blue: "#252f5c",
+          "blue-light": "#364381",
+          "blue-nav": "#283b9a",
+          "service-bg": "#5664b2",
+          gray: "#4b4b4b",
+          "gray-light": "#2b3b83",
+          ...(typeof {} !== "undefined" && {
+            'dark-blue': "hsl(var(--brand-dark-blue))",
+            red: "hsl(var(--brand-red))",
+            primary: '#252F5C',
+            secondary: '#283B9A',
+            tertiary: '#36427C',
+            light: '#BEC5ED',
+            hero: 'hsl(var(--brand-hero))',
+            blueAlt: '#6F7FC1',
+            'text-primary': 'hsl(var(--brand-text-primary))',
+            'text-secondary': 'hsl(var(--brand-text-secondary))',
+            'text-muted': 'hsl(var(--brand-text-muted))',
+            'text-light': 'hsl(var(--brand-text-light))',
+          }),
         },
         port: {
           primary: "hsl(var(--port-primary))",
@@ -235,8 +230,7 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      // ...other existing theme extensions...
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+} satisfies Config;
