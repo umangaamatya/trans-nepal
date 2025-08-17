@@ -51,7 +51,7 @@ const CompanyOverview = () => {
           {/* Decorative Line */}
           <div className="w-40 h-0.5 bg-company-blue mb-8"></div>
           {/* Company Description */}
-          <p className="text-lg leading-relaxed text-company-blue font-medium text-justify">
+          <p className="text-lg leading-relaxed text-black text-justify">
             TranSilk Terminals Pvt. Ltd. a 60:40 Joint Venture company incorporated in the year 2022 with the objective of operating and managing terminals in Nepal. The company has signed the contract of operation and management of Tatopani ICD with Nepal Intermodel Transport Development Board and commenced its operation from September 2022.
           </p>
         </div>
@@ -89,33 +89,29 @@ const BoardOfDirectors = () => {
     {
       name: "Mukesh Kumar Rathi",
       position: "Chairman",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face"
+      image: "/associates/mukesh.png"
     },
     {
       name: "Suresh Kumar R",
       position: "Director",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      image: "/associates/random.png"
     },
     {
       name: "Ramesh Sherpa",
       position: "Joint Managing Director",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
-    },
-    {
-      name: "Mukesh Kumar Rathi",
-      position: "Director",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
-    },
-    {
-      name: "Bhimraj Joshi",
-      position: "Joint Managing Director",
-      image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=150&h=150&fit=crop&crop=face"
+      image: "/associates/random.png"
     },
     {
       name: "Bijay Sherpa",
       position: "Director",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
+      image: "/associates/random.png"
+    },
+    {
+      name: "Bhimraj Joshi",
+      position: "Joint Managing Director",
+      image: "/associates/bhimraj.png"
     }
+    
   ];
 
   return (
@@ -174,22 +170,22 @@ const ManagementTeam = () => {
     {
       name: "Capt. Mayur Paralkar",
       position: "Management Committee Member",
-      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=150&h=150&fit=crop&crop=face"
+      image: "/associates/mayur.png"
     },
     {
       name: "Anand Kumar Singh",
       position: "Management Committee Member",
-      image: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=150&h=150&fit=crop&crop=face"
+      image: "/associates/anand.png"
     },
     {
       name: "Anirudra Thapa",
       position: "Chief Executive Officer",
-      image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=150&h=150&fit=crop&crop=face"
+      image: "/associates/random.png"
     },
     {
       name: "Raj Sapkota",
       position: "Chief Financial Officer",
-      image: "https://images.unsplash.com/photo-1549068106-b024baf5062d?w=150&h=150&fit=crop&crop=face"
+      image: "/associates/random.png"
     }
   ];
 
