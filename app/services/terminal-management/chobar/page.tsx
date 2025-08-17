@@ -1,6 +1,7 @@
 "use client";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useState } from "react";
 import { ChevronDown, Building, Warehouse, Settings, Filter, MapPin } from "lucide-react"
 
 export default function Index() {
@@ -86,19 +87,21 @@ export default function Index() {
       tag: "",
       tagColor: ""
     }
-  ]
+  ];
 
-  const navigationItems = [
-    { name: "Home", active: false },
-    { name: "About Us", active: false, hasDropdown: true },
-    { name: "Services", active: true, hasDropdown: true },
-    { name: "Tariff", active: false },
-    { name: "Associates", active: false, hasDropdown: true },
-    { name: "Contact Us", active: false },
-    { name: "Gallery", active: false },
-    { name: "News & Events", active: false },
-    { name: "CSR", active: false }
-  ]
+  // Get unique categories for dropdown
+  const categories = [
+    "All categories",
+    ...Array.from(new Set(facilityData.map(f => f.category)))
+  ];
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All categories");
+
+  const filteredFacilities =
+    selectedCategory === "All categories"
+      ? facilityData
+      : facilityData.filter(f => f.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-background">
@@ -156,10 +159,36 @@ export default function Index() {
       <section className="py-8 bg-white">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="flex items-center space-x-4">
-            <div className="flex items-center bg-white rounded-2xl border border-gray-200 px-4 py-3 shadow-sm">
+            <div className="flex items-center bg-white rounded-2xl border border-gray-200 px-4 py-3 shadow-sm relative">
               <Filter className="h-6 w-6 text-terminal-primary mr-3" />
-              <span className="text-terminal-primary font-medium mr-8">All categories</span>
-              <ChevronDown className="h-4 w-4 text-terminal-primary" />
+              <button
+                className="flex items-center text-terminal-primary font-medium text-lg font-inter focus:outline-none"
+                onClick={() => setDropdownOpen(open => !open)}
+              >
+                {selectedCategory}
+                <ChevronDown className="h-4 w-4 ml-2 text-terminal-primary" />
+              </button>
+              {dropdownOpen && (
+                <div className="absolute left-0 top-full mt-2 bg-white rounded-xl shadow-lg border border-gray-100 z-10 w-48">
+                  <ul>
+                    {categories.map(cat => (
+                      <li key={cat}>
+                        <button
+                          className={`w-full text-left px-4 py-2 hover:bg-terminal-bg text-terminal-primary font-inter text-base ${
+                            selectedCategory === cat ? "font-bold" : ""
+                          }`}
+                          onClick={() => {
+                            setSelectedCategory(cat);
+                            setDropdownOpen(false);
+                          }}
+                        >
+                          {cat}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -169,7 +198,7 @@ export default function Index() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {facilityData.map((facility, index) => (
+            {filteredFacilities.map((facility, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
                 {/* Category Badge */}
                 <div className="flex items-center justify-between mb-4">

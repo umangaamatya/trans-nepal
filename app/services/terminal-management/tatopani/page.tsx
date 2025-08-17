@@ -1,6 +1,8 @@
+"use client";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ChevronRight, ChevronDown, Filter, Building, Warehouse, Cog } from "lucide-react";
+import { useState } from "react";
 
 // --- Hero Section ---
 const Hero = () => {
@@ -201,16 +203,16 @@ const ServiceCard = ({
   );
 };
 
-// --- ServicesGrid Section ---
+// --- ServicesGrid Section with Dropdown Filter ---
 const ServicesGrid = () => {
-  const services = [
+  const services: ServiceCardProps[] = [
     {
       title: "Admin Building",
       area: "Area",
       areaValue: "3,011 sqm",
       storey: "Storey",
       storeyValue: "Two storied",
-      category: "building" as const
+      category: "building"
     },
     {
       title: "Quarter Building for Customs",
@@ -218,13 +220,13 @@ const ServicesGrid = () => {
       areaValue: "3,011 sqm",
       storey: "Storey",
       storeyValue: "Two storied",
-      category: "building" as const
+      category: "building"
     },
     {
       title: "Bhimraj Joshi",
       position: "Position",
       positionValue: "Joint Managing Director",
-      category: "building" as const
+      category: "building"
     },
     {
       title: "Warehouse",
@@ -232,7 +234,7 @@ const ServicesGrid = () => {
       areaValue: "1,129 sqm",
       type: "Type",
       typeValue: "Storage",
-      category: "warehouse" as const
+      category: "warehouse"
     },
     {
       title: "Goods Shed",
@@ -240,7 +242,7 @@ const ServicesGrid = () => {
       areaValue: "700 sqm",
       type: "Type",
       typeValue: "Storage",
-      category: "warehouse" as const
+      category: "warehouse"
     },
     {
       title: "Inspection Shed",
@@ -248,7 +250,7 @@ const ServicesGrid = () => {
       areaValue: "598 sqm",
       type: "Type",
       typeValue: "Examination",
-      category: "warehouse" as const
+      category: "warehouse"
     },
     {
       title: "Custom Litigation Shed",
@@ -256,7 +258,7 @@ const ServicesGrid = () => {
       areaValue: "207 sqm",
       type: "Type",
       typeValue: "Legal Hold",
-      category: "warehouse" as const
+      category: "warehouse"
     },
     {
       title: "Weigh Bridge",
@@ -264,7 +266,7 @@ const ServicesGrid = () => {
       weightValue: "100 MT",
       type: "Type",
       typeValue: "Measurement",
-      category: "processing" as const
+      category: "processing"
     },
     {
       title: "Diesel Generator Set",
@@ -272,27 +274,81 @@ const ServicesGrid = () => {
       capacityValue: "125 KVA",
       type: "Type",
       typeValue: "Power Supply",
-      category: "processing" as const
+      category: "processing"
     }
   ];
+
+  // Get unique categories for dropdown
+  const categories = [
+    "All categories",
+    ...Array.from(new Set(services.map(s => {
+      if (s.category === "building") return "Terminal Building";
+      if (s.category === "warehouse") return "Warehouse";
+      if (s.category === "processing") return "Processing Areas";
+      return s.category;
+    })))
+  ] as const;
+
+  // Map dropdown label to service category value
+  const categoryMap: Record<"Terminal Building" | "Warehouse" | "Processing Areas", string> = {
+    "Terminal Building": "building",
+    "Warehouse": "warehouse",
+    "Processing Areas": "processing"
+  };
+
+  type CategoryType = typeof categories[number];
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<CategoryType>("All categories");
+
+  const filteredServices =
+    selectedCategory === "All categories"
+      ? services
+      : services.filter(s =>
+          categoryMap[selectedCategory as keyof typeof categoryMap] === s.category
+        );
 
   return (
     <section className="bg-terminal-bg-light py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Filter */}
-        <div className="mb-8">
-          <div className="inline-flex items-center bg-white rounded-2xl px-6 py-3 shadow-sm">
+        <div className="mb-8 relative">
+          <div className="inline-flex items-center bg-white rounded-2xl px-6 py-3 shadow-sm relative">
             <Filter className="h-5 w-5 text-terminal-blue mr-3" />
-            <button className="flex items-center text-terminal-blue text-lg font-medium font-inter">
-              All categories
+            <button
+              className="flex items-center text-terminal-blue text-lg font-medium font-inter focus:outline-none"
+              onClick={() => setDropdownOpen(open => !open)}
+            >
+              {selectedCategory}
               <ChevronDown className="ml-2 h-4 w-4" />
             </button>
+            {dropdownOpen && (
+              <div className="absolute left-0 top-full mt-2 bg-white rounded-xl shadow-lg border border-gray-100 z-10 w-48">
+                <ul>
+                  {categories.map(cat => (
+                    <li key={cat}>
+                      <button
+                        className={`w-full text-left px-4 py-2 hover:bg-terminal-bg-light text-terminal-blue font-inter text-base ${
+                          selectedCategory === cat ? "font-bold" : ""
+                        }`}
+                        onClick={() => {
+                          setSelectedCategory(cat);
+                          setDropdownOpen(false);
+                        }}
+                      >
+                        {cat}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {services.map((service, index) => (
+          {filteredServices.map((service, index) => (
             <ServiceCard key={index} {...service} />
           ))}
         </div>
@@ -308,6 +364,7 @@ const ServicesGrid = () => {
     </section>
   );
 };
+
 
 function Index() {
   return (

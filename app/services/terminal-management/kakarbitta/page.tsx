@@ -2,26 +2,44 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { ChevronDown, Filter } from "lucide-react";
 
 export default function Index() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // Service data with categories
+  const services = [
+    { title: "Custom Office", area: "600 sqm", floor: "Ground floor", category: "Administrative" },
+    { title: "Freight Forwarding", area: "195 sqm", floor: "Ground floor", category: "Support" },
+    { title: "Desktop / Photocopiers", area: "50 sqm", floor: "Ground floor", category: "Support" },
+    { title: "Lobby / Front Desk", area: "145 sqm", floor: "Ground floor", category: "Administrative" },
+    { title: "Electrical Room", area: "195 sqm", floor: "Ground floor", category: "Support" },
+    { title: "Bank", area: "140 sqm", floor: "First floor", category: "Support" }
+  ];
+
+  const categories = Array.from(new Set(services.map(s => s.category)));
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All categories");
+
+  const filteredServices =
+    selectedCategory === "All categories"
+      ? services
+      : services.filter(s => s.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-white">
-  {/* Navigation */}
-  <Navigation />
+      {/* Navigation */}
+      <Navigation />
 
       {/* Hero Section */}
       <div className="relative h-[455px] bg-[#36427C] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://api.builder.io/api/v1/image/assets/TEMP/59a5f479f6efea36e6222138131b123577f94775?width=2890')"
+            backgroundImage:
+              "url('https://api.builder.io/api/v1/image/assets/TEMP/59a5f479f6efea36e6222138131b123577f94775?width=2890')"
           }}
         ></div>
-
         <div className="absolute inset-0 bg-gradient-to-r from-[#616FB3]/80 to-[#171F45]/80"></div>
-
         <div className="relative z-10 text-center text-white px-4">
           <div className="flex flex-col items-center gap-2">
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-poppins leading-tight">
@@ -31,7 +49,6 @@ export default function Index() {
               Kakarbitta
             </h2>
           </div>
-
           <div className="flex items-center justify-center mt-8 text-xs font-inter">
             <span>Home</span>
             <span className="mx-2">›</span>
@@ -61,27 +78,56 @@ export default function Index() {
       {/* Services Section */}
       <div className="bg-terminal-gray-light py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-8 flex items-center">
-            <div className="flex items-center bg-white rounded-2xl px-4 py-2 shadow-sm">
-              <svg className="h-6 w-6 text-terminal-primary mr-2" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h8v-2h-8V9h8V7h-8V5h8V3h-8v2H3v2h10v2H3v2h10v2H3v2h10v2H3v2h10v4h2z"/>
-              </svg>
-              <span className="text-terminal-primary font-medium font-inter text-lg mr-2">All categories</span>
-              <svg className="h-4 w-4 text-terminal-primary" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M7 10l5 5 5-5z"/>
-              </svg>
+          {/* Filter Section */}
+          <div className="mb-8 flex items-center relative">
+            <div className="flex items-center bg-white rounded-2xl px-4 py-2 shadow-sm relative">
+              <Filter className="w-5 h-5 md:w-6 md:h-6 text-terminal-blue mr-3" />
+              <button
+                className="flex items-center text-terminal-primary font-medium font-inter text-lg mr-2 focus:outline-none"
+                onClick={() => setDropdownOpen(open => !open)}
+              >
+                {selectedCategory}
+                <ChevronDown className="h-4 w-4 ml-2 text-terminal-primary" />
+              </button>
+              {dropdownOpen && (
+                <div className="absolute left-0 top-full mt-2 bg-white rounded-xl shadow-lg border border-gray-100 z-10 w-48">
+                  <ul>
+                    <li>
+                      <button
+                        className={`w-full text-left px-4 py-2 hover:bg-terminal-gray-light text-terminal-primary font-inter text-base ${
+                          selectedCategory === "All categories" ? "font-bold" : ""
+                        }`}
+                        onClick={() => {
+                          setSelectedCategory("All categories");
+                          setDropdownOpen(false);
+                        }}
+                      >
+                        All categories
+                      </button>
+                    </li>
+                    {categories.map(cat => (
+                      <li key={cat}>
+                        <button
+                          className={`w-full text-left px-4 py-2 hover:bg-terminal-gray-light text-terminal-primary font-inter text-base ${
+                            selectedCategory === cat ? "font-bold" : ""
+                          }`}
+                          onClick={() => {
+                            setSelectedCategory(cat);
+                            setDropdownOpen(false);
+                          }}
+                        >
+                          {cat}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {[
-              { title: "Custom Office", area: "600 sqm", floor: "Ground floor" },
-              { title: "Freight Forwarding", area: "195 sqm", floor: "Ground floor" },
-              { title: "Desktop / Photocopiers", area: "50 sqm", floor: "Ground floor" },
-              { title: "Lobby / Front Desk", area: "145 sqm", floor: "Ground floor" },
-              { title: "Electrical Room", area: "195 sqm", floor: "Ground floor" },
-              { title: "Bank", area: "140 sqm", floor: "First floor" }
-            ].map((service, index) => (
+            {filteredServices.map((service, index) => (
               <div key={index} className="bg-white rounded-2xl p-6 shadow-sm">
                 <div className="flex items-center bg-terminal-secondary text-white px-4 py-2 rounded-full text-sm font-medium mb-4 w-fit">
                   <svg className="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
@@ -144,8 +190,8 @@ export default function Index() {
         </div>
       </div>
 
-  {/* Footer */}
-  <Footer />
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
