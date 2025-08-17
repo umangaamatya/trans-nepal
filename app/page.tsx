@@ -94,6 +94,17 @@ const features = [
       ),
       title: "ROUND THE CLOCK SECURITY",
       description: "In order to protect persons and prevent damage or destruction to property, TransNepal provides round-the-clock security in the parking area. A batch of 16 security personnel, which include a security incharge and supervisor, remains deployed around the clock in the parking area.",
+    },
+    {
+      icon: (
+        <img
+          src="/home/bank.png"
+          alt="Banking"
+          className="w-8 h-8 object-contain"
+        />
+      ),
+      title: "BANKING",
+      description: "In order to make transactions easy and secure, TransNepal provides banking facilities including all types of secured and unsecured banking facilities, loans, advances, credit facilities, and financial arrangements.",
     }
   ];
 
@@ -216,11 +227,11 @@ export default function Home() {
       </div>
 
       {/* Welcome Section */}
-      <section className="w-full px-4 md:px-12 lg:px-32 space-y-6 pt-10 text-center">
-        <h1 className="text-3xl font-bold text-transnepal-blue text-center font-poppins">
-          Welcome to TransNepal
-        </h1>
-        <p className="text-sm text-transnepal-text-gray leading-6 font-poppins mx-auto max-w-6xl text-justify">
+     <section className="w-full px-2 md:px-12 lg:px-32 space-y-4 md:space-y-6 pt-6 md:pt-10 text-center">
+      <h1 className="text-2xl md:text-3xl font-bold text-trans-blue text-center font-poppins">
+        Welcome to TransNepal
+      </h1>
+      <p className="text-xs md:text-sm text-transnepal-text-gray leading-5 md:leading-6 font-poppins mx-auto max-w-6xl text-justify">
           TransNepal Freight Services Pvt. Ltd., was incorporated in the year 2002 under the Nepalese Company Act and started operation from 17th April 2002 by taking over the operation and management of the two ICDs' at Biratnagar and Bhairahawa on lease for a period of ten years from Nepal Intermodal Transport Development Board, a body constituted by the Government of Nepal to regulate terminals in Nepal. The lease agreement for both the ICDs' has been renewed for a further period of ten years up to 15th April 2022. Meanwhile, Biratnagar ICP comes into existence and TransNepal has awarded the contract of operation & management of Biratnagar ICP for the period of 5 years under International Competitive Bidding, and the operation commenced from 17th August 2020. Further in an International Competitive Bidding, TransNepal has been awarded the contract of operation and management of Kakarbhitta ICD for 5 years and the operation commenced from 13th Feb 2021. In the year 2022, the company has registered its presence in the northern part of Nepal by winning the bid of Tatopani ICD at the Nepal-China border in the name of TransSilk Terminals Pvt. Ltd.. Recently, in 2023, the company has signed a contract with NITDB and commenced operation of Chobhar ICD at Kirtipur, Kathmandu, in the name of TranNepal T.R.S. Logipark Pvt.Ltd.
         </p>
       </section>
@@ -244,7 +255,7 @@ export default function Home() {
               </div>
               <div className="p-6 pt-8 text-white">
                 <h3 className="text-center text-2xl font-bold mb-4">Cargo Handling</h3>
-                <p className="text-lg leading-relaxed">
+                <p className="text-center text-lg leading-relaxed">
                   Earlier cargoes were being totally handled manually. In the current situation where handling activities difficult
                 </p>
               </div>
@@ -261,7 +272,7 @@ export default function Home() {
               </div>
               <div className="p-6 pt-8 text-white">
                 <h3 className="text-center text-2xl font-bold mb-4">Storage</h3>
-                <p className="text-lg leading-relaxed">
+                <p className="text-center text-lg leading-relaxed">
                   Covered Warehouse of 55 x 25 meter with 1.2 meter high level platform in both Biratnagar and Bhairahawa.
                 </p>
               </div>
@@ -278,7 +289,7 @@ export default function Home() {
               </div>
               <div className="p-6 pt-8 text-white">
                 <h3 className="text-center text-2xl font-bold mb-4">Weighment</h3>
-                <p className="text-lg leading-relaxed">
+                <p className="text-center text-lg leading-relaxed">
                   Weighing activities were being carried out at remote locations making it costs ineffective and time consuming.
                 </p>
               </div>
@@ -332,7 +343,7 @@ export default function Home() {
       {/* Features Grid */}
       <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 gap-y-16 justify-items-center mb-16">
         {features.map((feature, index) => (
-          <div key={index} className="flex flex-col gap-6 max-w-[331px] items-center">
+          <div key={index} className="flex flex-col gap-6 max-w-[331px] items-left">
             <div className="flex items-start gap-3">
               <div className="flex-shrink-0 w-8 h-8">
                 {feature.icon}
@@ -350,35 +361,42 @@ export default function Home() {
 
 
       {/* Testimonials Section */}
-      <section className="w-full flex justify-center bg-transnepal-blue/10 py-14">
-        <div className="max-w-7xl w-full px-4">
-          <div className="text-center space-y-3 mb-24">
-            <h2 className="text-xl font-bold text-transnepal-blue font-poppins">TESTIMONIAL</h2>
-            <p className="text-sm text-gray-600/68 max-w-3xl mx-auto font-poppins">
+      <section className="w-full flex justify-center bg-[#dbdeef] py-8 md:py-14">
+        <div className="max-w-7xl w-full px-2 md:px-4">
+          <div className="text-center space-y-3 mb-12 md:mb-24">
+            <h2 className="text-lg md:text-xl font-bold text-[#283B9A] font-poppins">TESTIMONIAL</h2>
+            <p className="text-xs md:text-sm text-gray-600/68 max-w-3xl mx-auto font-poppins">
               We understand that in order to maximize customer satisfaction, the flow of your supply chain from product to information to finance needs to be responsive towards demand.
             </p>
           </div>
-          {/* White card and its content remain unchanged */}
-          <div className="relative bg-white w-full max-w-4xl mx-auto h-60 rounded-lg">
-            <div className="absolute left-20 top-12 w-30 h-30">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-300 to-gray-400"></div>
+          {/* Card */}
+          <div className="relative bg-white w-full max-w-4xl mx-auto rounded-lg flex flex-col md:flex-row items-center h-auto md:h-60 shadow-md">
+            {/* Image on the left */}
+            <div className="flex-shrink-0 flex items-center justify-center pt-6 md:pt-0 pl-0 md:pl-8">
+              <img
+                src="/home/testimonial.png"
+                alt="Mukesh Rathi"
+                className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-gray-200"
+              />
             </div>
-            <div className="absolute left-60 top-12 space-y-2">
-              <h3 className="text-lg font-bold text-transnepal-blue font-poppins">Mr Mukesh Rathi</h3>
-              <p className="text-xs text-transnepal-blue/61 font-poppins">Managing Director, Rathi Group</p>
-              <div className="absolute right-24 top-2 flex gap-1">
+            {/* Content */}
+            <div className="flex-1 px-4 md:pl-8 md:pr-8 space-y-2 relative text-center md:text-left">
+              <h3 className="text-base md:text-lg font-bold text-[#283B9A] font-poppins">Mr Mukesh Rathi</h3>
+              <p className="text-xs text-[#283B9A] font-poppins">Managing Director, Rathi Group</p>
+              <div className="flex gap-1 justify-center md:justify-start mt-2 md:mt-0">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="text-sm text-gray-800 italic font-inter mt-8 max-w-xl leading-6">
+              <p className="text-xs md:text-sm text-gray-800 italic font-inter mt-4 md:mt-8 max-w-xl leading-6">
                 "TransNepal's solutions are user-friendly, innovative and low cost. We wish them success in all their endeavors"
               </p>
             </div>
-            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4">
-              <div className="w-3 h-3 bg-transnepal-blue rounded-full"></div>
-              <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
-              <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+            {/* Dots */}
+            <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 md:gap-4">
+              <div className="w-2 h-2 md:w-3 md:h-3 bg-transnepal-blue rounded-full"></div>
+              <div className="w-2 h-2 md:w-3 md:h-3 bg-gray-300 rounded-full"></div>
+              <div className="w-2 h-2 md:w-3 md:h-3 bg-gray-300 rounded-full"></div>
             </div>
           </div>
         </div>

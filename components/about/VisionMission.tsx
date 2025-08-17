@@ -4,7 +4,7 @@ export default function VisionMission() {
   return (
     <div className="bg-nepal-bg min-h-screen py-16">
       {/* Hero Section */}
-      <div className="bg-nepal-blue-darker py-16 mb-16">
+      <div className="bg-nepal-blue-darker pt-14 pb-16 mb-16 -mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-poppins text-[45px] font-bold text-white mb-4">
             Vision & Mission
@@ -29,12 +29,14 @@ export default function VisionMission() {
           {/* Vision Section */}
           <div className="space-y-8">
             <div className="bg-nepal-blue rounded-tl-[50px] p-8 text-white relative">
-              <div className="flex items-center mb-6">
-                <div className="bg-white rounded-full p-2 mr-4">
-                  <Eye className="w-8 h-8 text-nepal-blue" />
+              <div className="flex flex-col items-start mb-6">
+                <div className="flex items-center">
+                  <div className="bg-white rounded-full p-2 mr-4">
+                    <Eye className="w-8 h-8 text-nepal-blue" />
+                  </div>
+                  <h2 className="font-poppins text-[20px] font-bold">Vision</h2>
                 </div>
-                <div className="w-14 h-[1px] bg-white mr-4"></div>
-                <h2 className="font-poppins text-[20px] font-bold">Vision</h2>
+                <div className="w-16 h-[2px] bg-white mt-0 ml-16"></div>
               </div>
               <p className="font-poppins text-[15px] font-normal leading-relaxed">
                 Become a leader in ICP/ICD/CFS management in Nepal.
@@ -43,12 +45,14 @@ export default function VisionMission() {
 
             {/* Mission Section */}
             <div className="bg-nepal-blue rounded-bl-[50px] p-8 text-white relative">
-              <div className="flex items-center mb-6">
-                <div className="bg-white rounded-full p-2 mr-4">
-                  <Target className="w-8 h-8 text-nepal-blue" />
+              <div className="flex flex-col items-start mb-6">
+                <div className="flex items-center">
+                  <div className="bg-white rounded-full p-2 mr-4">
+                    <Target className="w-8 h-8 text-nepal-blue" />
+                  </div>
+                  <h2 className="font-poppins text-[20px] font-bold">Mission</h2>
                 </div>
-                <div className="w-20 h-[1px] bg-white mr-4"></div>
-                <h2 className="font-poppins text-[20px] font-bold">Mission</h2>
+                <div className="w-20 h-[2px] bg-white mt-0 ml-16"></div>
               </div>
               <div className="space-y-4 font-poppins text-[15px] font-normal leading-[27px]">
                 <p>
@@ -77,7 +81,7 @@ export default function VisionMission() {
               <img 
                 src="https://api.builder.io/api/v1/image/assets/TEMP/c3d5742f60aac4b367c1d6243c01726655f16c4a?width=1020" 
                 alt="Mission - Quality services and stakeholder relationships" 
-                className="w-full h-64 object-cover rounded-br-[50px] shadow-lg"
+                className="w-full h-60 object-cover rounded-br-[50px] shadow-lg"
               />
             </div>
           </div>

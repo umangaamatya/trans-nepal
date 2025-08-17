@@ -12,13 +12,15 @@ export default function Index() {
         <div className="text-center text-white px-4">
           <h1 className="font-['Poppins'] text-[32px] lg:text-[45px] font-bold leading-normal mb-3">Rental Services</h1>
           <div className="flex items-center justify-center space-x-2 text-[12px] font-['Inter'] font-normal">
-            <span>Home Services Rental Services</span>
-            <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <span>Home</span>
+            <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-1">
               <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
             </svg>
-            <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <span>Services</span>
+            <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-1">
               <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
             </svg>
+            <span>Rental Services</span>
           </div>
         </div>
       </section>
@@ -175,43 +177,6 @@ export default function Index() {
               <p className="text-[rgba(0,0,0,0.70)] font-['Inter'] text-[14px] lg:text-[15px] font-normal leading-[20px] lg:leading-[22px] text-center">
                 Our nationwide coverage and customizable rental plans make us the preferred choice for businesses focused on budget efficiency.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-[40px] lg:py-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-5 text-center">
-          <h2 className="text-[#283b9a] font-['Poppins'] text-[20px] font-bold leading-[30px] mb-[40px] lg:mb-10">
-            Testimonials
-          </h2>
-          <div className="max-w-[818px] mx-auto bg-[rgba(86,100,178,0.06)] rounded-[15px] py-[40px] lg:py-[60px] px-[20px] lg:px-10">
-            <div className="flex justify-center gap-2.5 mb-[20px] lg:mb-[30px]">
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} width="20" height="20" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" className="lg:w-[25px] lg:h-[25px]">
-                  <path d="M24.2188 9.92676H15.252L12.5 1.5625L9.74805 9.92676H0.78125L8.11572 15.0732L5.25928 23.4375L12.5 18.2539L19.7407 23.4375L16.8789 15.0732L24.2188 9.92676Z" fill="#FF7700" fillOpacity="0.59"/>
-                </svg>
-              ))}
-            </div>
-            <p className="text-[#171f45] font-['Inter'] text-[14px] lg:text-[15px] italic font-normal leading-[22px] lg:leading-[25px] mb-[20px] lg:mb-[30px]">
-              "Allcargo's flexible rental options and expert support guarantee a hassle-free experience tailored to our needs. Their commitment to excellence is evident."
-            </p>
-            <div className="flex items-center justify-center gap-[15px] mb-5">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/51cea4e1348d76e9d5d816683f5092a378923f11?width=60" 
-                alt="Ram Shah" 
-                className="w-[25px] h-[25px] lg:w-[30px] lg:h-[30px] rounded-full"
-              />
-              <span className="text-[#283b9a] font-['Poppins'] text-[14px] lg:text-[15px] font-bold leading-[30px]">
-                Ram Shah
-              </span>
-            </div>
-            <div className="flex justify-center gap-3 lg:gap-4">
-              <div className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-[#374276]"></div>
-              <div className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-[#D9D9D9]"></div>
-              <div className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-[#D9D9D9]"></div>
-              <div className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-[#D9D9D9]"></div>
             </div>
           </div>
         </div>
