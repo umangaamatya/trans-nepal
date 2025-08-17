@@ -52,7 +52,7 @@ export default function ContactPage() {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 px-4 lg:px-[157px] mb-0">
           {/* Left Section */}
           <div className="flex-1 max-w-[565px]">
-            <h2 className="text-trans-nepal-light-blue font-inter text-[25px] font-semibold mb-5">
+            <h2 className="text-[#6B7280] font-inter text-[25px] font-semibold mb-5">
               Ready to Start?
             </h2>
             <h3 className="text-trans-nepal-blue font-poppins text-[36px] font-medium leading-normal mb-[60px]">

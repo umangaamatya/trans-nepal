@@ -198,12 +198,12 @@ export default function CSR() {
                   alt={article.title}
                   className="w-full h-48 sm:h-64 lg:h-[349px] object-cover rounded-[15px]"
                 />
-                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-black bg-opacity-50 text-white font-poppins text-xs px-2 py-1 rounded">
-                  {article.date}
-                </div>
               </div>
-
+              {/* Date above title */}
               <div className="mt-4 sm:mt-5">
+                <span className="block text-black font-poppins text-xs mb-2">
+                  {article.date}
+                </span>
                 <Link href="/csr-more">
                   <h3 className="text-blue-800 font-poppins text-base sm:text-lg font-medium leading-normal mb-2 hover:underline cursor-pointer">
                     {article.title}
