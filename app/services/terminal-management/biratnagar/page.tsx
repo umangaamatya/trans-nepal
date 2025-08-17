@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 // ...existing code...
 import Footer from "@/components/Footer";
@@ -127,75 +128,123 @@ export default function BiratnagarPage() {
               icon: require("lucide-react").Building
             }
           ];
+
+          const categories = Array.from(new Set(services.map(s => s.category)));
+
+          const [dropdownOpen, setDropdownOpen] = useState(false);
+          const [selectedCategory, setSelectedCategory] = useState("All categories");
+          
+          const filteredServices = selectedCategory === "All categories"
+            ? services
+            : services.filter(s => s.category === selectedCategory);
+
           const { ChevronDown, Filter } = require("lucide-react");
           return (
             <section className="bg-terminal-bg py-8 md:py-16">
-              <div className="container mx-auto px-4 md:px-6">
-                {/* Filter Section */}
-                <div className="mb-8 md:mb-12">
-                  <div className="bg-white rounded-2xl p-3 md:p-4 w-fit shadow-sm">
-                    <div className="flex items-center gap-2 md:gap-3">
-                      <Filter className="w-5 h-5 md:w-6 md:h-6 text-terminal-blue" />
-                      <button className="flex items-center gap-2 text-terminal-blue font-inter text-base md:text-lg font-medium">
-                        All categories
-                        <ChevronDown className="w-3 h-3 md:w-4 md:h-4" />
-                      </button>
-                    </div>
+            <div className="container mx-auto px-4 md:px-6">
+              {/* Filter Section */}
+              <div className="mb-8 md:mb-12 relative">
+                <div className="bg-white rounded-2xl p-3 md:p-4 w-fit shadow-sm">
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <Filter className="w-5 h-5 md:w-6 md:h-6 text-terminal-blue" />
+                    <button
+                      className="flex items-center gap-2 text-terminal-blue font-inter text-base md:text-lg font-medium focus:outline-none"
+                      onClick={() => setDropdownOpen((open) => !open)}
+                    >
+                      {selectedCategory}
+                      <ChevronDown className="w-3 h-3 md:w-4 md:h-4" />
+                    </button>
                   </div>
+                  {/* Dropdown */}
+                  {dropdownOpen && (
+                    <div className="absolute left-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-100 z-10 w-48">
+                      <ul>
+                        <li>
+                          <button
+                            className={`w-full text-left px-4 py-2 hover:bg-terminal-bg text-terminal-blue font-inter text-base ${
+                              selectedCategory === "All categories" ? "font-bold" : ""
+                            }`}
+                            onClick={() => {
+                              setSelectedCategory("All categories");
+                              setDropdownOpen(false);
+                            }}
+                          >
+                            All categories
+                          </button>
+                        </li>
+                        {categories.map((cat) => (
+                          <li key={cat}>
+                            <button
+                              className={`w-full text-left px-4 py-2 hover:bg-terminal-bg text-terminal-blue font-inter text-base ${
+                                selectedCategory === cat ? "font-bold" : ""
+                              }`}
+                              onClick={() => {
+                                setSelectedCategory(cat);
+                                setDropdownOpen(false);
+                              }}
+                            >
+                              {cat}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
-                  {services.map((service) => {
-                    const Icon = service.icon;
-                    return (
-                      <div key={service.id} className="bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
-                        {/* Category Badge */}
-                        <div className="mb-4">
-                          <div className="inline-flex items-center gap-2 bg-terminal-blue/80 text-white px-4 py-1.5 rounded-full text-xs font-medium">
-                            <Icon className="w-3 h-3" />
-                            {service.category}
-                          </div>
+              </div>
+              {/* Services Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
+                {filteredServices.map((service) => {
+                  const Icon = service.icon;
+                  return (
+                    <div key={service.id} className="bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      {/* Category Badge */}
+                      <div className="mb-4">
+                        <div className="inline-flex items-center gap-2 bg-terminal-blue/80 text-white px-4 py-1.5 rounded-full text-xs font-medium">
+                          <Icon className="w-3 h-3" />
+                          {service.category}
                         </div>
-                        {/* Title */}
-                        <h3 className="text-terminal-blue font-poppins text-lg md:text-xl font-medium mb-3 md:mb-4 leading-tight">
-                          {service.title}
-                        </h3>
-                        {/* Details */}
-                        <div className="space-y-2">
-                          <div className="flex justify-between text-sm">
-                            <div className="text-terminal-gray">
-                              <div className="font-medium text-[15px]">Area</div>
-                              <div className="text-[13px]">{service.area}</div>
-                            </div>
-                            <div className="text-terminal-gray text-right">
-                              {service.storeys && (
-                                <>
-                                  <div className="font-medium text-[15px]">Storeys</div>
-                                  <div className="text-[13px]">{service.storeys}</div>
-                                </>
-                              )}
-                              {service.zone && (
-                                <>
-                                  <div className="font-medium text-[15px]">Zone</div>
-                                  <div className="text-[13px]">{service.zone}</div>
-                                </>
-                              )}
-                            </div>
+                      </div>
+                      {/* Title */}
+                      <h3 className="text-terminal-blue font-poppins text-lg md:text-xl font-medium mb-3 md:mb-4 leading-tight">
+                        {service.title}
+                      </h3>
+                      {/* Details */}
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-sm">
+                          <div className="text-terminal-gray">
+                            <div className="font-medium text-[15px]">Area</div>
+                            <div className="text-[13px]">{service.area}</div>
+                          </div>
+                          <div className="text-terminal-gray text-right">
+                            {service.storeys && (
+                              <>
+                                <div className="font-medium text-[15px]">Storeys</div>
+                                <div className="text-[13px]">{service.storeys}</div>
+                              </>
+                            )}
+                            {service.zone && (
+                              <>
+                                <div className="font-medium text-[15px]">Zone</div>
+                                <div className="text-[13px]">{service.zone}</div>
+                              </>
+                            )}
                           </div>
                         </div>
                       </div>
-                    );
-                  })}
-                </div>
-                {/* View More Button */}
-                <div className="text-center">
-                  <button className="text-terminal-blue font-inter text-lg md:text-xl font-medium hover:underline flex items-center gap-2 mx-auto">
-                    View more
-                    <ChevronDown className="w-4 h-4" />
-                  </button>
-                </div>
+                    </div>
+                  );
+                })}
               </div>
-            </section>
+              {/* View More Button */}
+              <div className="text-center">
+                <button className="text-terminal-blue font-inter text-lg md:text-xl font-medium hover:underline flex items-center gap-2 mx-auto">
+                  View more
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </section>
           );
         })()}
 
@@ -308,22 +357,8 @@ export default function BiratnagarPage() {
                       className="w-full h-[200px] md:h-[273px] object-cover rounded-2xl shadow-lg"
                     />
                   </div>
-                  {/* Tall image on the right */}
-                  <div className="md:row-span-2">
-                    <img
-                      src={galleryImages[5].src}
-                      alt={galleryImages[5].alt}
-                      className="w-full h-[300px] md:h-[384px] object-cover rounded-2xl shadow-lg"
-                    />
-                  </div>
-                  {/* Small image */}
-                  <div className="md:col-start-4">
-                    <img
-                      src={galleryImages[6].src}
-                      alt={galleryImages[6].alt}
-                      className="w-full h-[130px] lg:h-[162px] object-cover rounded-2xl shadow-lg"
-                    />
-                  </div>
+                  
+                  
                 </div>
               </div>
             </section>
