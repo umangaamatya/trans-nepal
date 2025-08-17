@@ -7,7 +7,7 @@ export default function Home() {
     {
       name: "Capt. Mayur Paralkar",
       position: "Advisor",
-      description: "Mr. Adarsh Hegde has been associated with Allcargo Logistics since its inception. With over two and half decades of experience in the field of logistics, he has been instrumental in the success of Allcargo Logistics' growth story. Under his leadership, Allcargo Logistics established 6 CFS & ICD facilities PAN India, making Allcargo CFS & ICD division one of the largest private players in the country. He continues to lead the blue print and strategy for the division. With his extensive experience & proficiency in transportation, he has contributed to the set-up the Allcargo Logistics Project Forwarding division. He is also a part of the leadership team at ECU-Line with respect to driving international procurement initiative and organisation-wide planning. After finishing his mechanical engineering from Nitte Education Trust, Mangalore.",
+      description: "Capt. Mayur Parlalkar brings decades of maritime and logistics expertise, having held leadership roles across shipping, port operations, and supply chain management. With a proven track record in guiding strategic initiatives, he has been instrumental in developing efficient operational frameworks and driving sustainable growth. His career spans commanding vessels, managing large-scale logistics hubs, and steering critical infrastructure projects that have enhanced operational capabilities across regions. Known for his deep understanding of transportation systems and international trade, he provides valuable insights into strategic planning, risk management, and process optimization. Capt. Mayur continues to play an advisory role in shaping long-term growth strategies and fostering innovation within the logistics sector.",
       image: "https://api.builder.io/api/v1/image/assets/TEMP/601e9598ebe209a8bc1e8a2a6d6f2b8362c7260f?width=564",
       imagePosition: "right"
     },
@@ -21,15 +21,15 @@ export default function Home() {
     {
       name: "Laxmi Subba",
       position: "Manager- ICP Biratnagar",
-      description: "\"Mr. Bhim Raj Joshi is on board since the formation of this company. He is a self made man and has a very vast experience in the field of transport and supply chain management in Nepal. He involves in policy formulation and provides strategic support to the management in the operation of ICDs. Mr. Joshi chairs J.B.Transport Group, a pioneer in the field of transportation in Nepal and this is his vision and sincere effort which made JBT strengthen day by day and today is a reputed name and market leader in transportation sector of Nepal.\"",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/3f382ddd91fc1cf1a7075b860d62d0f5979beef1?width=564",
+      description: "Mr. Laxmi Subba serves as Manager at ICP Biratnagar under Trans Nepal. With extensive experience in transport operations and supply chain management, he plays a vital role in overseeing the smooth functioning of the ICP and ensuring efficient coordination across operations. His leadership, strategic insight, and commitment to service excellence have been instrumental in enhancing operational efficiency, implementing effective policies, and strengthening Trans Nepal’s position in Nepal’s logistics and transportation sector.",
+      image: "/about/management/laxmi.png",
       imagePosition: "right"
     },
     {
       name: "Rajesh Babu Tiwari",
       position: "Manager- ICD Kakarvitta",
-      description: "Mr. Pankaj Rathi, the youngest director in the board is an MBA (International Business and Finance)and leading the BAGMATI PLASTIC INDUSTRIES PVT.LTD. as its chairman. He has an understanding of the macroeconomic Dynamics of Nepal due to exposure to various international markets. He has an analytical bent of mind with a passion for entrepreneurship and financial markets",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/99aaab3446f5d0c4514545f2a0e993bfe4847e5e?width=564",
+      description: "Mr. Rajesh Babu Tiwari serves as Manager at ICD Kakadbhitta under Trans Nepal. With extensive experience in transport management, customs operations, and cross-border trade facilitation, he is responsible for ensuring the smooth and efficient functioning of the terminal. His strong leadership, in-depth industry knowledge, and commitment to operational excellence have significantly contributed to enhancing service standards and optimizing workflows. Through his dedication and professional expertise, Mr. Tiwari plays a vital role in strengthening Trans Nepal’s reputation as a trusted leader in Nepal’s logistics and transportation sector.",
+      image: "/about/management/rajesh.png",
       imagePosition: "left"
     }
   ];
