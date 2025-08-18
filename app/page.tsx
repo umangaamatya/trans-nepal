@@ -116,28 +116,72 @@ export default function Home() {
 
   // Parallax effect
   useEffect(() => {
-    const handleScroll = () => {
-      if (!parallaxRef.current) return;
-      
-      const scrolled = window.pageYOffset;
-      const sectionTop = parallaxRef.current.offsetTop;
-      const sectionHeight = parallaxRef.current.offsetHeight;
-      const windowHeight = window.innerHeight;
-      
-      if (scrolled + windowHeight > sectionTop && scrolled < sectionTop + sectionHeight) {
-        const parallaxSpeed = 0.5;
-        const yPos = -(scrolled - sectionTop) * parallaxSpeed;
-        const bgElement = parallaxRef.current.querySelector('.parallax-bg');
-        if (bgElement) {
-          (bgElement as HTMLElement).style.transform = `translate3d(0, ${yPos}px, 0)`;
-        }
+    const sectionEl = parallaxRef.current;
+    if (!sectionEl) return;
+
+    // Respect reduced motion
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches) return;
+
+    let latestY = window.scrollY;
+    let rafId: number | null = null;
+
+    const onScroll = () => {
+      latestY = window.scrollY;
+      // Kick the RAF loop if it's not already running
+      if (rafId === null) rafId = requestAnimationFrame(update);
+    };
+
+    const update = () => {
+      rafId = null; // allow next frame to be scheduled
+
+      // Measure once per frame
+      const rect = sectionEl.getBoundingClientRect();
+      const viewportH = window.innerHeight;
+
+      // Only do work if the section is on screen
+      const isVisible = rect.top < viewportH && rect.bottom > 0;
+      if (!isVisible) return;
+
+      // Progress of the viewport through the section (0..1, unclamped for smoothness)
+      const progress = (viewportH - rect.top) / (viewportH + rect.height);
+
+      // Tweak this for “depth” (0.2–0.6 feels nice)
+      const PARALLAX_SPEED = 0.45;
+
+      // Translate background element
+      const bg = sectionEl.querySelector(".parallax-bg") as HTMLElement | null;
+      if (bg) {
+        const y = -(progress * rect.height) * PARALLAX_SPEED;
+        // translate3d triggers GPU without changing layout/paint much
+        bg.style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
+      }
+
+      // If the user is still scrolling, schedule the next frame
+      // (This keeps animation in sync with scroll velocity)
+      if (Math.abs(window.scrollY - latestY) > 0.5) {
+        rafId = requestAnimationFrame(update);
       }
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // Passive scroll listener keeps main thread freer
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    // Run once to position correctly on load
+    rafId = requestAnimationFrame(update);
+
+    // Keep measurements fresh on resize/rotate
+    const onResize = () => {
+      // Re-run update next frame after resize
+      if (rafId === null) rafId = requestAnimationFrame(update);
+    };
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   // Memoize functions to prevent re-creation on every render
@@ -371,12 +415,40 @@ export default function Home() {
       </section>
 
       {/* Numbers Section */}
-      <div className="w-full mb-24">
+      <div ref={parallaxRef} className="w-full mb-24 relative overflow-hidden h-[300px] md:h-[400px] lg:h-[500px]">
+        {/* Parallax background image */}
         <img 
-          src="https://api.builder.io/api/v1/image/assets/TEMP/82f374215d2dcea3783a072971958102fe4e60b7?width=2880" 
+          src="/home/parallexx.jpeg" 
           alt="Numbers" 
-          className="w-full h-68 object-cover"
+          className="parallax-bg absolute inset-0 w-full h-full object-cover transition-transform duration-300 will-change-transform"
+          style={{ zIndex: 1 }}
         />
+        {/* Highlight Texts */}
+        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+          <div className="flex gap-8 md:gap-16 lg:gap-24">
+            {/* Each stat */}
+            <div className="flex flex-col items-center">
+              <span className="text-white text-3xl md:text-6xl lg:text-7xl font-extrabold font-poppins leading-none">7</span>
+              <span className="text-white text-base md:text-2xl lg:text-3xl font-semibold font-poppins mt-2">Offices</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-white text-3xl md:text-6xl lg:text-7xl font-extrabold font-poppins leading-none">3</span>
+              <span className="text-white text-base md:text-2xl lg:text-3xl font-semibold font-poppins mt-2">Projects</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-white text-3xl md:text-6xl lg:text-7xl font-extrabold font-poppins leading-none">35,000</span>
+              <span className="text-white text-base md:text-2xl lg:text-3xl font-semibold font-poppins mt-2">Traffics</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-white text-3xl md:text-6xl lg:text-7xl font-extrabold font-poppins leading-none">100</span>
+              <span className="text-white text-base md:text-2xl lg:text-3xl font-semibold font-poppins mt-2">Staffs</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-white text-3xl md:text-6xl lg:text-7xl font-extrabold font-poppins leading-none">19</span>
+              <span className="text-white text-base md:text-2xl lg:text-3xl font-semibold font-poppins mt-2">Years</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Features Grid */}
@@ -451,88 +523,88 @@ export default function Home() {
 
 
       {/* Contact Form Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="max-w-3xl md:max-w-5xl mx-auto px-2 sm:px-4 lg:px-6">
+          <div className="bg-white rounded-xl shadow-xl overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               {/* Left Side - Contact Info */}
-              <div className="bg-gradient-to-br from-trans-blue-600 to-trans-blue p-8 lg:p-16 text-white">
-                <div className="flex items-center justify-center mb-8">
-                  <Send className="w-16 h-16" />
+              <div className="bg-gradient-to-br from-trans-blue-600 to-trans-blue flex flex-col justify-center items-center p-6 lg:p-10 text-white">
+                <div className="flex items-center justify-center mb-6 mt-2">
+                  <Send className="w-12 h-12" />
                 </div>
-                <h3 className="text-4xl lg:text-5xl text-center font-bold mb-6">Get a quote</h3>
-                <p className="text-lg text-white/80 text-center">
+                <h3 className="text-2xl lg:text-3xl text-center font-bold mb-4">Get a quote</h3>
+                <p className="text-base text-white/80 text-center">
                   Fill out the form below and we'll provide you with a personalized quote tailored to your needs
                 </p>
               </div>
 
               {/* Right Side - Form */}
-              <div className="p-8 lg:p-16 bg-gray-100">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-6 lg:p-10 bg-gray-100">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-trans-blue text-lg font-medium mb-2">Name</label>
+                      <label className="block text-trans-blue text-base font-medium mb-1">Name</label>
                       <input
                         type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full h-16 px-4 bg-white rounded-2xl border-0 focus:ring-2 focus:ring-trans-blue text-gray-800"
+                        className="w-full h-12 px-3 bg-white rounded-xl border-0 focus:ring-2 focus:ring-trans-blue text-gray-800 text-sm"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-trans-blue text-lg font-medium mb-2">Email</label>
+                      <label className="block text-trans-blue text-base font-medium mb-1">Email</label>
                       <input
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full h-16 px-4 bg-white rounded-2xl border-0 focus:ring-2 focus:ring-trans-blue text-gray-800"
+                        className="w-full h-12 px-3 bg-white rounded-xl border-0 focus:ring-2 focus:ring-trans-blue text-gray-800 text-sm"
                         required
                       />
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-trans-blue text-lg font-medium mb-2">Phone Number</label>
+                      <label className="block text-trans-blue text-base font-medium mb-1">Phone Number</label>
                       <input
                         type="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full h-16 px-4 bg-white rounded-2xl border-0 focus:ring-2 focus:ring-trans-blue text-gray-800"
+                        className="w-full h-12 px-3 bg-white rounded-xl border-0 focus:ring-2 focus:ring-trans-blue text-gray-800 text-sm"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-trans-blue text-lg font-medium mb-2">dd/mm/yy</label>
+                      <label className="block text-trans-blue text-base font-medium mb-1">dd/mm/yy</label>
                       <input
                         type="date"
                         name="date"
                         value={formData.date}
                         onChange={handleInputChange}
-                        className="w-full h-16 px-4 bg-white rounded-2xl border-0 focus:ring-2 focus:ring-trans-blue text-gray-800"
+                        className="w-full h-12 px-3 bg-white rounded-xl border-0 focus:ring-2 focus:ring-trans-blue text-gray-800 text-sm"
                       />
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-trans-blue text-lg font-medium mb-2">Other Details</label>
+                      <label className="block text-trans-blue text-base font-medium mb-1">Other Details</label>
                       <input
                         type="text"
                         name="details"
                         value={formData.details}
                         onChange={handleInputChange}
-                        className="w-full h-16 px-4 bg-white rounded-2xl border-0 focus:ring-2 focus:ring-trans-blue text-gray-800"
+                        className="w-full h-12 px-3 bg-white rounded-xl border-0 focus:ring-2 focus:ring-trans-blue text-gray-800 text-sm"
                       />
                     </div>
                     <div className="flex items-end">
                       <button
                         type="submit"
-                        className="w-full h-16 bg-trans-blue-700 text-white rounded-2xl font-bold text-lg hover:bg-trans-blue-800 transition-colors flex items-center justify-center gap-2"
+                        className="w-full h-12 bg-trans-blue-700 text-white rounded-xl font-bold text-base hover:bg-trans-blue-800 transition-colors flex items-center justify-center gap-2"
                       >
                         Send
                       </button>
