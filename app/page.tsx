@@ -108,6 +108,8 @@ const features = [
     }
   ];
 
+  
+
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -159,7 +161,24 @@ export default function Home() {
     return () => clearInterval(slideInterval);
   }, [goToNext]);
 
+  const testimonials = [
+    {
+      name: "Mr Mukesh Rathi",
+      position: "Managing Director, Rathi Group",
+      image: "/home/testimonial.png",
+      text: "TransNepal's solutions are user-friendly, innovative and low cost. We wish them success in all their endeavors",
+    },
+    {
+      name: "Mr Suresh Kumar R",
+      position: "CEO, ALl Cargo Logistic Limited",
+      image: "/home/testimonial-2.png", // Add this image to public/home/
+      text: "TransNepal's proactive efforts have helped use to maintain strong relationships with our customers. Thank you for your marvelous efforts.",
+    },
+  ];
 
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+
+  
   // (The form state and handlers remain unchanged)
   const [formData, setFormData] = useState({
     name: "",
@@ -192,22 +211,42 @@ export default function Home() {
           alt="Hero Banner" 
           className="w-full h-full object-cover"
         />
-        
-        {/* Navigation Arrows */}
+
+        {/* Navigation Arrows - only show on md and up */}
         <button
           onClick={goToPrevious}
-          className="absolute left-48 top-1/2 transform -translate-y-1/2 w-16 h-14 rounded-full border border-white bg-white/5 backdrop-blur-sm flex items-center justify-center"
+          className="hidden md:flex absolute left-48 top-1/2 transform -translate-y-1/2 w-16 h-14 rounded-full border border-white bg-white/5 backdrop-blur-sm items-center justify-center"
           aria-label="Previous Slide"
         >
           <ChevronLeft className="w-6 h-6 text-white" />
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-48 top-1/2 transform -translate-y-1/2 w-16 h-14 rounded-full border border-white bg-white/5 backdrop-blur-sm flex items-center justify-center"
+          className="hidden md:flex absolute right-48 top-1/2 transform -translate-y-1/2 w-16 h-14 rounded-full border border-white bg-white/5 backdrop-blur-sm items-center justify-center"
           aria-label="Next Slide"
         >
           <ChevronRight className="w-6 h-6 text-white" />
         </button>
+
+        {/* Mobile swipe support */}
+        <div
+          className="md:hidden absolute inset-0 z-10"
+          onTouchStart={e => {
+            const touchStartX = e.touches[0].clientX;
+            let touchEndX = touchStartX;
+            const handleTouchMove = (moveEvent: TouchEvent) => {
+              touchEndX = moveEvent.touches[0].clientX;
+            };
+            const handleTouchEnd = () => {
+              if (touchStartX - touchEndX > 50) goToNext();
+              if (touchEndX - touchStartX > 50) goToPrevious();
+              window.removeEventListener('touchmove', handleTouchMove);
+              window.removeEventListener('touchend', handleTouchEnd);
+            };
+            window.addEventListener('touchmove', handleTouchMove);
+            window.addEventListener('touchend', handleTouchEnd);
+          }}
+        />
 
         {/* Slide Indicators */}
         <div className="absolute bottom-14 left-1/2 transform -translate-x-1/2 flex gap-2">
@@ -239,13 +278,13 @@ export default function Home() {
       {/* Services Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-trans-blue text-center mb-16">
+          <h3 className="text-lg md:text-2xl lg:text-3xl font-bold text-trans-blue text-center mb-16">
             Our Services
-          </h2>
+          </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {/* Cargo Handling */}
-            <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[500px]">
+            <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[450px]">
               <div className="relative h-64">
                 <img 
                   src="/services/cargo-handling.png" 
@@ -254,15 +293,15 @@ export default function Home() {
                 />
               </div>
               <div className="p-6 pt-8 text-white">
-                <h3 className="text-center text-2xl font-bold mb-4">Cargo Handling</h3>
-                <p className="text-center text-lg leading-relaxed">
+                <h3 className="text-center text-2xl font-semibold mb-3">Cargo Handling</h3>
+                <p className="text-center text-m leading-normal">
                   Earlier cargoes were being totally handled manually. In the current situation where handling activities difficult
                 </p>
               </div>
             </div>
 
             {/* Storage */}
-            <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[500px]">
+            <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[450px]">
               <div className="relative h-64">
                 <img 
                   src="/services/storage.png" 
@@ -271,15 +310,15 @@ export default function Home() {
                 />
               </div>
               <div className="p-6 pt-8 text-white">
-                <h3 className="text-center text-2xl font-bold mb-4">Storage</h3>
-                <p className="text-center text-lg leading-relaxed">
+                <h3 className="text-center text-2xl font-semibold mb-3">Storage</h3>
+                <p className="text-center text-m leading-normal">
                   Covered Warehouse of 55 x 25 meter with 1.2 meter high level platform in both Biratnagar and Bhairahawa.
                 </p>
               </div>
             </div>
 
             {/* Weighment */}
-            <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[500px]">
+            <div className="bg-trans-blue rounded-2xl overflow-hidden shadow-lg h-[450px]">
               <div className="relative h-64">
                 <img 
                   src="/services/weighment.png" 
@@ -288,8 +327,8 @@ export default function Home() {
                 />
               </div>
               <div className="p-6 pt-8 text-white">
-                <h3 className="text-center text-2xl font-bold mb-4">Weighment</h3>
-                <p className="text-center text-lg leading-relaxed">
+                <h3 className="text-center text-2xl font-semibold mb-3">Weighment</h3>
+                <p className="text-center text-m leading-normal">
                   Weighing activities were being carried out at remote locations making it costs ineffective and time consuming.
                 </p>
               </div>
@@ -370,37 +409,46 @@ export default function Home() {
             </p>
           </div>
           {/* Card */}
-          <div className="relative bg-white w-full max-w-4xl mx-auto rounded-lg flex flex-col md:flex-row items-center h-auto md:h-60 shadow-md">
+          <div className="relative bg-white w-full max-w-4xl mx-auto rounded-lg flex flex-col md:flex-row items-center h-auto md:h-60 shadow-md transition-all duration-300">
             {/* Image on the left */}
             <div className="flex-shrink-0 flex items-center justify-center pt-6 md:pt-0 pl-0 md:pl-8">
               <img
-                src="/home/testimonial.png"
-                alt="Mukesh Rathi"
+                src={testimonials[testimonialIndex].image}
+                alt={testimonials[testimonialIndex].name}
                 className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-gray-200"
               />
             </div>
             {/* Content */}
             <div className="flex-1 px-4 md:pl-8 md:pr-8 space-y-2 relative text-center md:text-left">
-              <h3 className="text-base md:text-lg font-bold text-[#283B9A] font-poppins">Mr Mukesh Rathi</h3>
-              <p className="text-xs text-[#283B9A] font-poppins">Managing Director, Rathi Group</p>
+              <h3 className="text-base md:text-lg font-bold text-[#283B9A] font-poppins">{testimonials[testimonialIndex].name}</h3>
+              <p className="text-xs text-[#283B9A] font-poppins">{testimonials[testimonialIndex].position}</p>
               <div className="flex gap-1 justify-center md:justify-start mt-2 md:mt-0">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
               <p className="text-xs md:text-sm text-gray-800 italic font-inter mt-4 md:mt-8 max-w-xl leading-6">
-                "TransNepal's solutions are user-friendly, innovative and low cost. We wish them success in all their endeavors"
+                "{testimonials[testimonialIndex].text}"
               </p>
             </div>
+
             {/* Dots */}
             <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 md:gap-4">
-              <div className="w-2 h-2 md:w-3 md:h-3 bg-transnepal-blue rounded-full"></div>
-              <div className="w-2 h-2 md:w-3 md:h-3 bg-gray-300 rounded-full"></div>
-              <div className="w-2 h-2 md:w-3 md:h-3 bg-gray-300 rounded-full"></div>
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors ${
+                    testimonialIndex === idx ? "bg-black" : "bg-gray-400"
+                  }`}
+                  onClick={() => setTestimonialIndex(idx)}
+                  aria-label={`Show testimonial ${idx + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Contact Form Section */}
       <section className="py-16 md:py-24 bg-gray-50">

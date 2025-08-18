@@ -43,8 +43,8 @@ const NavDropdown: FC<NavDropdownProps> = ({ title, children, href, isActive }) 
       </Link>
       
       {isOpen && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 w-44 bg-white rounded-md shadow-lg z-20 border border-gray-200">
-          <div className="py-1 flex flex-col gap-0">
+        <div className="absolute left-1/2 -translate-x-1/2 top-[110%] w-44 bg-white rounded-md shadow-lg z-20 border border-gray-200">
+          <div className="py-2 flex flex-col gap-1">
             {children}
           </div>
         </div>
