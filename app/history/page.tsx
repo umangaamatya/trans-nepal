@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, ArrowRight, Phone, Mail, ArrowLeft, Menu, X, Printer } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
@@ -23,10 +23,10 @@ export default function Index() {
 
             {/* Breadcrumbs */}
             <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
-              <span>Home</span>
-              <ArrowRight className="h-2 w-2" />
+              <a href="/" className="hover:underline">Home</a>
+              <ChevronRight className="h-2 w-2" />
               <span>About Us</span>
-              <ArrowRight className="h-2 w-2" />
+              <ChevronRight className="h-2 w-2" />
               <span>History & Memories</span>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function Index() {
           {/* Image */}
           <div className="mt-6 md:mt-8">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F1f4527fd6f7444eca706cc5a81627746%2Fd5acd7372e6b4a40b651f19618443d5f?format=webp&width=800"
+              src="about/new/history.png"
               alt="Inauguration ceremony at Biratnagar ICD"
               className="w-full h-auto rounded-lg shadow-lg"
             />

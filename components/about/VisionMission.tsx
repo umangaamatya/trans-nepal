@@ -1,30 +1,30 @@
-import { Eye, Target } from "lucide-react";
+import { Eye, Target, ChevronRight } from "lucide-react";
 
 export default function VisionMission() {
   return (
-    <div className="bg-nepal-bg min-h-screen py-16">
+    <div className="bg-nepal-bg min-h-screen">
       {/* Hero Section */}
-      <div className="bg-nepal-blue-darker pt-14 pb-16 mb-16 -mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-poppins text-[45px] font-bold text-white mb-4">
-            Vision & Mission
-          </h1>
-          <div className="flex items-center justify-center text-white font-inter text-[12px] space-x-2">
-            <span>Home</span>
-            <svg className="w-2 h-4 text-white" viewBox="0 0 8 16" fill="none">
-              <path fillRule="evenodd" clipRule="evenodd" d="M6.77259 8.47377L3.00126 12.2451L2.05859 11.3024L5.35859 8.00243L2.05859 4.70243L3.00126 3.75977L6.77259 7.5311C6.89757 7.65612 6.96778 7.82566 6.96778 8.00243C6.96778 8.17921 6.89757 8.84875 6.77259 8.47377Z" fill="white"/>
-            </svg>
-            <span>About Us</span>
-            <svg className="w-2 h-4 text-white" viewBox="0 0 8 16" fill="none">
-              <path fillRule="evenodd" clipRule="evenodd" d="M6.77259 8.47377L3.00126 12.2451L2.05859 11.3024L5.35859 8.00243L2.05859 4.70243L3.00126 3.75977L6.77259 7.5311C6.89757 7.65612 6.96778 7.82566 6.96778 8.00243C6.96778 8.17921 6.89757 8.84875 6.77259 8.47377Z" fill="white"/>
-            </svg>
-            <span>Vision & Mission</span>
+      <section className="bg-transnepal-dark">
+        <div className="max-w-screen-xl mx-auto px-4 lg:px-20 py-12 md:py-16">
+          <div className="text-center">
+            <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4">
+              Vision & Mission
+            </h1>
+
+            {/* Breadcrumbs */}
+            <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+              <a href="/" className="hover:underline">Home</a>
+              <ChevronRight className="h-2 w-2" />
+              <span>About Us</span>
+              <ChevronRight className="h-2 w-2" />
+              <span>Vision & Mission</span>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Vision & Mission Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Vision Section */}
           <div className="space-y-8">

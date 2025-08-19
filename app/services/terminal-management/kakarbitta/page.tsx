@@ -50,7 +50,7 @@ export default function Index() {
             </h2>
           </div>
           <div className="flex items-center justify-center mt-8 text-xs font-inter">
-            <span>Home</span>
+            <a href="/" className="hover:underline">Home</a>
             <span className="mx-2">›</span>
             <span>Services</span>
             <span className="mx-2">›</span>

@@ -1,6 +1,7 @@
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 
 export default function Home() {
   const teamMembers = [
@@ -38,28 +39,21 @@ export default function Home() {
     <div className="min-h-screen bg-white font-poppins">
       <Navigation />
       
-      {/* Hero Section - updated to match Board Of Directors */}
-      <section className="relative w-full h-96 bg-[#36427C] overflow-hidden">
-        <div className="absolute inset-0 bg-[#252f5c]"></div>
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 h-full flex flex-col justify-center relative z-10">
-          {/* Title */}
-          <div className="text-center text-white mb-12">
-            <h1 className="text-white font-inter text-4xl md:text-6xl font-bold leading-normal">
+      {/* Hero Section */}
+      <section className="bg-transnepal-dark">
+        <div className="max-w-screen-xl mx-auto px-4 lg:px-20 py-12 md:py-16">
+          <div className="text-center">
+            <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4">
               Management Team
             </h1>
-          </div>
-          {/* Breadcrumb */}
-          <div className="mt-8">
-            <div className="flex items-center gap-3 justify-center">
-              <a href="/" className="text-white text-base font-normal hover:underline font-inter">Home</a>
-              <svg width="8" height="16" viewBox="0 0 8 16" fill="none">
-                <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
-              </svg>
-              <a href="/about" className="text-white text-base font-normal hover:underline font-inter">About Us</a>
-              <svg width="8" height="16" viewBox="0 0 8 16" fill="none">
-                <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
-              </svg>
-              <span className="text-white text-base font-normal font-inter">Management Team</span>
+
+            {/* Breadcrumbs */}
+            <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+              <a href="/" className="hover:underline">Home</a>
+              <ChevronRight className="h-2 w-2" />
+              <span>About Us</span>
+              <ChevronRight className="h-2 w-2" />
+              <span>Management Team</span>
             </div>
           </div>
         </div>

@@ -406,9 +406,6 @@ export default function Home() {
                 TransNepal Freight Services Pvt. Ltd., was incorporated in the year 2002 under the Nepalese Company Act and started operation from 17th April 2002 by taking over the operation and management of the two ICDs' at Biratnagar and Bhairahawa on lease for a period of ten years from Nepal Intermodal Transport Development Board, a body constituted by the Government of Nepal to regulate terminals in Nepal.
               </p>
               
-              <button className="bg-trans-blue text-white px-8 py-3 rounded-xl font-bold text-lg hover:bg-trans-blue-800 transition-colors">
-                Read more
-              </button>
             </div>
           </div>
         </div>

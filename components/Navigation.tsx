@@ -140,9 +140,9 @@ const Navigation: FC = () => {
             <NavDropdown title="About Us" href="/board-of-directors" isActive={pathname.startsWith('/about') || pathname === '/board-of-directors' || pathname === '/management-team' || pathname === '/calendar'}>
               <Link href="/board-of-directors" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Board of Directors</Link>
               <Link href="/management-team" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Management Team</Link>
-              <Link href="/vision" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Vision</Link>
-              <Link href="/features" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Features</Link>
-              <Link href="/history" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">History</Link>
+              <Link href="/vision" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Vision & Mission</Link>
+              <Link href="/features" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Salient Features</Link>
+              <Link href="/history" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">History & Memories</Link>
               <Link href="/qa-code-of-conduct" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">QAC</Link>
               <Link href="/calendar" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue transition-colors">Holiday Calendar</Link>
             </NavDropdown>

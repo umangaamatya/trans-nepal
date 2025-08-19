@@ -13,7 +13,7 @@ export default function TerminalNetwork() {
               <img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/f1a17fa6f3ad56ea25aa168ee23c07e25b78fb0b?width=938"
                 alt="Nepal Terminal Network Map"
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-lg"
               />
             </div>
             

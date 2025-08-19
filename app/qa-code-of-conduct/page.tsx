@@ -1,17 +1,40 @@
 import React from "react";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
+import { ChevronRight } from "lucide-react";
 
 export default function QualityContent() {
   return (
-    <div className="min-h-screen bg-[#f6f8ff] font-poppins">
+    <div className="min-h-screen bg-white font-poppins">
       <Navigation />
       
+      {/* Hero Section */}
+      <section className="bg-transnepal-dark">
+        <div className="max-w-screen-xl mx-auto px-4 lg:px-20 py-12 md:py-16">
+          <div className="text-center">
+            <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4 flex flex-col items-center">
+              <span>Quality Assurance</span>
+              <span className="text-2xl md:text-3xl lg:text-4xl font-bold my-1">&</span>
+              <span>Code of Conduct</span>
+            </h1>
+
+            {/* Breadcrumbs */}
+            <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+              <a href="/" className="hover:underline">Home</a>
+              <ChevronRight className="h-2 w-2" />
+              <span>About Us</span>
+              <ChevronRight className="h-2 w-2" />
+              <span>QAC</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div className="px-4 lg:px-[115px] max-w-[1440px] mx-auto py-16">
         {/* Quality Policy Section */}
         <div className="relative py-16 pb-12">
           {/* Background quote box */}
-          <div className="w-full max-w-[1090px] h-[119px] rounded-[15px] bg-[rgba(86,100,178,0.06)] absolute left-1/2 transform -translate-x-1/2 top-20 z-0">
+          <div className="w-full max-w-[1090px] h-[119px] rounded-[15px] bg-[rgba(86,100,178,0.06)] absolute left-1/2 transform -translate-x-1/2 top-28 z-0">
             {/* Quote icons */}
             <div className="absolute left-[13px] top-[27px]">
               <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
@@ -139,11 +162,11 @@ export default function QualityContent() {
             ].map((card, index) => (
               <div key={index} className="relative">
                 {/* Background card */}
-                <div className="w-full h-[355px] rounded-[15px] bg-[#36427C] p-8 flex flex-col justify-center">
-                  <h3 className="text-white text-center font-inter text-xl font-bold mb-6 leading-6">
+                <div className="w-full h-[355px] rounded-[15px] bg-[#ECEFFF] p-8 flex flex-col justify-center">
+                  <h3 className="text-[#283b9a] text-center font-inter text-xl font-bold mb-6 leading-6">
                     {card.title}
                   </h3>
-                  <p className="text-white text-center font-inter text-[15px] font-normal leading-[18px] tracking-[0.15px]">
+                  <p className="text-[#283b9a] text-center font-inter text-[15px] font-normal leading-[18px] tracking-[0.15px]">
                     {card.content}
                   </p>
                 </div>

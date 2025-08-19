@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
-// ...existing code...
 import Footer from "@/components/Footer";
+import { ChevronRight } from "lucide-react";
 
 export default function BiratnagarPage() {
   return (
@@ -16,16 +16,16 @@ export default function BiratnagarPage() {
               {/* Background Image */}
               <div className="absolute inset-0">
                 <img 
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/34a2f742813cfc17f08fec59a6677a22c4f0501a?width=2904" 
+                  src="/biratnagar/biratnagar-tm.jpg" 
                   alt="Terminal Management Biratnagar" 
                   className="w-full h-full object-cover"
                 />
               </div>
               {/* Gradient Overlay */}
               <div 
-                className="absolute inset-0 bg-gradient-to-r from-terminal-blue-light/80 to-terminal-blue-dark/80"
+                className="absolute inset-0"
                 style={{
-                  background: 'linear-gradient(270deg, rgba(97, 111, 179, 0.80) 1.08%, rgba(23, 31, 69, 0.80) 99.89%), #36427C'
+                  background: 'rgba(76, 86, 138, 0.83)'
                 }}
               />
               {/* Content */}
@@ -34,16 +34,17 @@ export default function BiratnagarPage() {
                   <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-inter mb-2 md:mb-4">
                     Terminal Management
                   </h1>
-                  <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-inter mb-4 md:mb-6">
+                  <h2 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-inter mb-4 md:mb-6">
                     Biratnagar
                   </h2>
-                  <div className="flex flex-wrap items-center justify-center gap-1 md:gap-2 text-white/90 font-inter text-sm md:text-lg">
-                    <span>Home</span>
-                    <span>&gt;</span>
-                    <span>Services</span>
-                    <span>&gt;</span>
-                    <span className="hidden sm:inline">Terminal Management</span>
-                    <span className="hidden sm:inline">&gt;</span>
+                  {/* Breadcrumbs */}
+                  <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+                    <a href="/" className="hover:underline">Home</a>
+                    <ChevronRight className="h-2 w-2" />
+                    <a>Services</a>
+                    <ChevronRight className="h-2 w-2" />
+                    <a>Terminal Management</a>
+                    <ChevronRight className="h-2 w-2" />
                     <span>Biratnagar</span>
                   </div>
                 </div>
