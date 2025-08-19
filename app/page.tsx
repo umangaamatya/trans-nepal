@@ -398,11 +398,11 @@ export default function Home() {
             </div>
             
             <div className="space-y-6">
-              <p className="text-gray-600 text-lg leading-relaxed text-justify">
+              <p className="text-gray-600 text-l leading-relaxed text-justify">
                 TransNepal Freight Services Pvt. Ltd., was incorporated in the year 2002 under the Nepalese Company Act and started operation from 17th April 2002 by taking over the operation and management of the two ICDs' at Biratnagar and Bhairahawa on lease for a period of ten years from Nepal Intermodal Transport Development Board, a body constituted by the Government of Nepal to regulate terminals in Nepal.
               </p>
               
-              <p className="text-gray-600 text-lg leading-relaxed text-justify">
+              <p className="text-gray-600 text-l leading-relaxed text-justify">
                 TransNepal Freight Services Pvt. Ltd., was incorporated in the year 2002 under the Nepalese Company Act and started operation from 17th April 2002 by taking over the operation and management of the two ICDs' at Biratnagar and Bhairahawa on lease for a period of ten years from Nepal Intermodal Transport Development Board, a body constituted by the Government of Nepal to regulate terminals in Nepal.
               </p>
               
@@ -412,14 +412,17 @@ export default function Home() {
       </section>
 
       {/* Numbers Section */}
-      <div ref={parallaxRef} className="w-full mb-24 relative overflow-hidden h-[300px] md:h-[400px] lg:h-[500px]">
+       <div className="w-full mb-24 relative overflow-hidden h-[300px] md:h-[400px] lg:h-[500px]">
         {/* Parallax background image */}
-        <img 
-          src="/home/parallexx.jpeg" 
-          alt="Numbers" 
-          className="parallax-bg absolute inset-0 w-full h-full object-cover transition-transform duration-300 will-change-transform"
-          style={{ zIndex: 1 }}
-        />
+        <div
+          className="w-full mb-24 relative overflow-hidden h-[300px] md:h-[400px] lg:h-[500px]"
+          style={{
+            backgroundImage: 'url(/home/parallexx.jpeg)', 
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed', 
+          }}
+        >
         {/* Highlight Texts */}
         <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
           <div className="flex gap-8 md:gap-16 lg:gap-24">
@@ -444,6 +447,7 @@ export default function Home() {
               <span className="text-white text-3xl md:text-6xl lg:text-7xl font-extrabold font-poppins leading-none">19</span>
               <span className="text-white text-base md:text-2xl lg:text-3xl font-semibold font-poppins mt-2">Years</span>
             </div>
+          </div>
           </div>
         </div>
       </div>
