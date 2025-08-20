@@ -3,6 +3,8 @@ import * as React from "react";
 import Link from "next/link";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
+import { ChevronRight } from "lucide-react"
+import { Chevron } from "react-day-picker";
 
 export default function Index() {
   return (
@@ -10,24 +12,23 @@ export default function Index() {
       {/* Navigation Replacement */}
       <Navigation />
       {/* Hero Section */}
-      <div className="w-full h-[308px] bg-[#252f5c] flex items-center justify-center relative">
-        <div className="text-center text-white">
-          <h1 className="font-poppins text-3xl lg:text-[45px] font-bold leading-normal mb-5">
-            News & Events
-          </h1>
-          <div className="flex items-center justify-center gap-2 font-inter text-[12px] font-normal">
-            <span>Home News & Events</span>
-            <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path 
-                fillRule="evenodd" 
-                clipRule="evenodd" 
-                d="M6.77064 8.474L2.99931 12.2453L2.05664 11.3027L5.35664 8.00266L2.05664 4.70266L2.99931 3.76L6.77064 7.53133C6.89562 7.65635 6.96583 7.82589 6.96583 8.00266C6.96583 8.17944 6.89562 8.34898 6.77064 8.474Z" 
-                fill="white"
-              />
-            </svg>
+      <section className="bg-transnepal-dark">
+        <div className="max-w-screen-xl mx-auto px-4 lg:px-20 py-12 md:py-16">
+          <div className="text-center">
+            <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4">
+              News & Events
+            </h1>
+
+            {/* Breadcrumbs */}
+            <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+              <a href="/" className="hover:underline">Home</a>
+              <ChevronRight className="h-2 w-2" />
+              <span>News & Events</span>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
       <main className="max-w-7xl mx-auto px-4 lg:px-[78px] py-[60px]">
         {/* Featured Section */}
         <div className="mb-20">

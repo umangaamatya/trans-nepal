@@ -1,6 +1,7 @@
 "use client";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { ChevronRight } from "lucide-react";
 
 // Feature icons as inline SVGs to match the design exactly
 const ShipIcon = () => (
@@ -109,46 +110,24 @@ const Feature = ({ icon, title, description }: FeatureProps) => (
 );
 
 const HeroSection = () => (
-  <section className="w-full h-[205px] bg-[#252f5c] flex items-center justify-center">
-    <div className="flex flex-col items-center justify-center text-center">
-      <h1 className="text-white font-poppins text-[45px] font-bold leading-normal mb-3">
-        Transportation
-      </h1>
-      <div className="flex items-center gap-2 text-white font-inter text-xs">
-        <span>Home Services Rental Services</span>
-        <svg
-          width="8"
-          height="16"
-          viewBox="0 0 8 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-2 h-4"
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z"
-            fill="white"
-          />
-        </svg>
-        <svg
-          width="8"
-          height="17"
-          viewBox="0 0 8 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-2 h-4"
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M6.77162 8.97377L3.00028 12.7451L2.05762 11.8024L5.35762 8.50243L2.05762 5.20243L3.00028 4.25977L6.77162 8.0311C6.8966 8.15612 6.96681 8.32566 6.96681 8.50243C6.96681 8.67921 6.8966 8.84875 6.77162 8.97377Z"
-            fill="white"
-          />
-        </svg>
+  <section className="bg-transnepal-dark">
+      <div className="max-w-screen-xl mx-auto px-4 lg:px-20 py-12 md:py-16">
+        <div className="text-center">
+          <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4">
+            Transportation
+          </h1>
+
+          {/* Breadcrumbs */}
+          <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+            <a href="/" className="hover:underline">Home</a>
+            <ChevronRight className="h-2 w-2" />
+            <span>Services</span>
+            <ChevronRight className="h-2 w-2" />
+            <span>Transportation</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>  
 );
 
 const newsItems = [

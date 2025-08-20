@@ -126,33 +126,24 @@ export default function CSR() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      {/* HeroSection inlined */}
-      <div className="w-full h-[303px] bg-[#252f5c] flex items-center justify-center relative">
-        <div className="text-center text-white">
-          <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold leading-normal mb-5 px-4">
-            <span className="block sm:inline">{'Customer Shared Responsibility'.split(' ').slice(0, 2).join(' ')}</span>
-            <br className="hidden sm:block" />
-            <span className="block sm:inline">{'Customer Shared Responsibility'.split(' ').slice(2).join(' ')}</span>
-          </h1>
-          {/* Breadcrumb Navigation */}
-          <div className="flex items-center justify-center gap-2 font-inter text-xs">
-            {breadcrumbs.map((crumb, index) => (
-              <div key={index} className="flex items-center gap-2">
-                {crumb.href ? (
-                  <Link href={crumb.href} className="text-white hover:text-gray-200">
-                    {crumb.label}
-                  </Link>
-                ) : (
-                  <span className="text-white">{crumb.label}</span>
-                )}
-                {index < breadcrumbs.length - 1 && (
-                  <ChevronRight className="w-2 h-4 text-white" />
-                )}
+      {/* Hero Section */}
+            <section className="bg-transnepal-dark">
+              <div className="max-w-screen-xl mx-auto px-4 lg:px-20 py-12 md:py-16">
+                <div className="text-center">
+                  <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4 leading-tight">
+                    <span className="block">Customer Shared</span>
+                    <span className="block">Responsibility</span>
+                  </h1>
+      
+                  {/* Breadcrumbs */}
+                  <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+                    <a href="/" className="hover:underline">Home</a>
+                    <ChevronRight className="h-2 w-2" />
+                    <span>CSR</span>
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
+            </section>
 
       {/* MainContentSection inlined */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-20">

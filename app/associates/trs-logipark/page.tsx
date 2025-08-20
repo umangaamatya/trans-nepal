@@ -11,23 +11,25 @@ export default function Index() {
     <div className="min-h-screen text-[15px] md:text-[16px] font-inter">
       <Navigation />
       {/* --- HeroSection --- */}
-      <section className="relative bg-[#252f5c] h-80 flex items-center justify-center">
-        <div className="text-center px-4">
-          <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            TransNepal TRS Logipark
-            <br />
-            Pvt. Ltd.
+      <section className="bg-transnepal-dark">
+      <div className="max-w-screen-xl mx-auto px-4 lg:px-20 py-12 md:py-16">
+        <div className="text-center">
+          <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4">
+            TransNepal TRS <br />
+            Logipark Pvt. Ltd.
           </h1>
-          {/* Breadcrumb */}
-          <div className="flex items-center justify-center mt-6 text-white text-xs">
-            <span>Home</span>
-            <ChevronRight className="w-3 h-3 mx-2" />
+
+          {/* Breadcrumbs */}
+          <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+            <a href="/" className="hover:underline">Home</a>
+            <ChevronRight className="h-2 w-2" />
             <span>Associates</span>
-            <ChevronRight className="w-3 h-3 mx-2" />
-            <span>TransNepal TRS Logipark Pvt.Ltd.</span>
+            <ChevronRight className="h-2 w-2" />
+            <span>Transik Terminals Pvt. Ltd.</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>  
 
       {/* --- CompanyOverview --- */}
       <section className="py-12 bg-white">

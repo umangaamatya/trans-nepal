@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
+import { ChevronRight } from "lucide-react";
 
   // Hero component code
   const BreadcrumbArrow = () => (
@@ -93,35 +94,30 @@ import Footer from "../../../components/Footer";
     );
   }
 
-  // ...existing code...
   const IndexPage: React.FC = () => {
     return (
       <div className="min-h-screen flex flex-col">
         <Navigation />
         <main className="flex-1">
           {/* Hero Section */}
-          <div className="w-full h-[205px] bg-hero-blue relative">
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="flex flex-col items-center gap-[10px] w-[606px] max-w-[90vw]">
-                <div className="flex flex-col justify-center items-center px-[10px] py-[10px] h-[123px] w-full">
-                  <h1 className="text-white text-center font-poppins text-[45px] font-semibold leading-[55px] md:text-[45px] sm:text-[32px]">
-                    Agency Services
-                  </h1>
-                  <div className="w-[208px] h-[23px] flex-shrink-0 relative">
-                    <div className="w-[397px] h-[23px] flex-shrink-0 text-white font-inter text-[12px] font-normal leading-normal">
-                      <div className="flex items-center gap-2">
-                        <span>Home</span>
-                        <BreadcrumbArrow />
-                        <span>Services</span>
-                        <BreadcrumbArrow />
-                        <span>Agency Services</span>
-                      </div>
-                    </div>
-                  </div>
+          <section className="bg-transnepal-dark">
+            <div className="max-w-screen-xl mx-auto px-4 lg:px-20 py-12 md:py-16">
+              <div className="text-center">
+                <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4">
+                  Agency Services
+                </h1>
+
+                {/* Breadcrumbs */}
+                <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+                  <a href="/" className="hover:underline">Home</a>
+                  <ChevronRight className="h-2 w-2" />
+                  <span>Services</span>
+                  <ChevronRight className="h-2 w-2" />
+                  <span>Agency Services</span>
                 </div>
               </div>
             </div>
-          </div>
+          </section>  
 
           {/* Statistics Section */}
           <div className="w-full py-[60px] bg-white">

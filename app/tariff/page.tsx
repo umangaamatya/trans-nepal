@@ -40,15 +40,22 @@ export default function TariffPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <div className="w-full h-[308px] bg-[#252f5c] relative mt-8 flex flex-col items-center justify-center">
-        <h1 className="text-white text-center font-poppins text-[45px] font-bold leading-normal mb-4">
-          Tariff Information
-        </h1>
-        <div className="flex items-center gap-2 text-white font-inter text-[12px] font-normal leading-normal">
-          <span>About Us Contact Us</span>
-          <ChevronRight className="w-2 h-4 text-white" />
+      <section className="bg-transnepal-dark">
+      <div className="max-w-screen-xl mx-auto px-4 lg:px-20 py-12 md:py-16">
+        <div className="text-center">
+          <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4">
+            Tariff Information
+          </h1>
+
+          {/* Breadcrumbs */}
+          <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+            <a href="/" className="hover:underline">Home</a>
+            <ChevronRight className="h-2 w-2" />
+            <span>Tariff</span>
+          </div>
         </div>
       </div>
+    </section>  
 
       {/* Main Content */}
       <div className="w-full max-w-[1440px] mx-auto px-4 lg:px-[166px] py-10">

@@ -1,29 +1,31 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { ChevronRight } from 'lucide-react';
 
 export default function Index() {
   return (
     <div className="min-h-screen bg-white font-['Inter']">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="bg-[#252f5c] h-[150px] lg:h-[205px] flex items-center justify-center">
-        <div className="text-center text-white px-4">
-          <h1 className="font-['Poppins'] text-[32px] lg:text-[45px] font-bold leading-normal mb-3">Rental Services</h1>
-          <div className="flex items-center justify-center space-x-2 text-[12px] font-['Inter'] font-normal">
-            <span>Home</span>
-            <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-1">
-              <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
-            </svg>
+      <section className="bg-transnepal-dark">
+      <div className="max-w-screen-xl mx-auto px-4 lg:px-20 py-12 md:py-16">
+        <div className="text-center">
+          <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4">
+            Rental Services
+          </h1>
+
+          {/* Breadcrumbs */}
+          <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+            <a href="/" className="hover:underline">Home</a>
+            <ChevronRight className="h-2 w-2" />
             <span>Services</span>
-            <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-1">
-              <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.47377L3.00028 12.2451L2.05762 11.3024L5.35762 8.00243L2.05762 4.70243L3.00028 3.75977L6.77162 7.5311C6.8966 7.65612 6.96681 7.82566 6.96681 8.00243C6.96681 8.17921 6.8966 8.34875 6.77162 8.47377Z" fill="white"/>
-            </svg>
+            <ChevronRight className="h-2 w-2" />
             <span>Rental Services</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>  
 
       {/* Statistics Section */}
       <section className="py-[40px] lg:py-[60px] bg-white">

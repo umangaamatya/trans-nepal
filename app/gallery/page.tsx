@@ -49,18 +49,22 @@ export default function Gallery() {
       <Navigation />
       
       {/* Hero Section */}
-      <div className="w-full h-[199px] bg-brand-blue-dark relative">
-        <div className="absolute left-1/2 top-[65px] transform -translate-x-1/2">
-          <h1 className="text-white text-center font-poppins text-[45px] font-semibold">
-            Gallery
-          </h1>
+      <section className="bg-transnepal-dark">
+        <div className="max-w-screen-xl mx-auto px-4 lg:px-20 py-12 md:py-16">
+          <div className="text-center">
+            <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4">
+              Gallery
+            </h1>
+
+            {/* Breadcrumbs */}
+            <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+              <a href="/" className="hover:underline">Home</a>
+              <ChevronRight className="h-2 w-2" />
+              <span>Gallery</span>
+            </div>
+          </div>
         </div>
-        <div className="absolute left-1/2 top-[133px] transform -translate-x-1/2 flex items-center gap-2">
-          <span className="text-white font-inter text-[12px] font-normal">Home</span>
-          <ChevronRight className="w-2 h-4 text-white" />
-          <span className="text-white font-inter text-[12px] font-normal">Gallery</span>
-        </div>
-      </div>
+      </section>
 
       {/* Gallery Content */}
       <div className="w-full max-w-[1280px] mx-auto px-5 py-20">

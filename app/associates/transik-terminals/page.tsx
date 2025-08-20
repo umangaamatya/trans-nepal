@@ -16,26 +16,25 @@ export default function Index() {
 
 const HeroSection = () => {
   return (
-    <section className="w-full bg-company-dark-blue relative">
-      <div className="container mx-auto px-6 py-16 md:py-24">
-        {/* Main Title */}
-        <div className="text-center text-white mb-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Transik Treminals<br />
+    <section className="bg-transnepal-dark">
+      <div className="max-w-screen-xl mx-auto px-4 lg:px-20 py-12 md:py-16">
+        <div className="text-center">
+          <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4">
+            Transik Terminals <br />
             Pvt. Ltd.
           </h1>
-        </div>
-        
-        {/* Breadcrumb */}
-        <div className="flex items-center justify-center text-white text-xs space-x-2 mt-8">
-          <span>Home</span>
-          <ChevronRight className="w-3 h-3" />
-          <span>Associates</span>
-          <ChevronRight className="w-3 h-3" />
-          <span>Transik Terminals Pvt. Ltd.</span>
+
+          {/* Breadcrumbs */}
+          <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+            <a href="/" className="hover:underline">Home</a>
+            <ChevronRight className="h-2 w-2" />
+            <span>Associates</span>
+            <ChevronRight className="h-2 w-2" />
+            <span>Transik Terminals Pvt. Ltd.</span>
+          </div>
         </div>
       </div>
-    </section>
+    </section>  
   );
 };
 

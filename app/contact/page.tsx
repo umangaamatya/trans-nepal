@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
+import { ChevronRight } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -28,24 +29,22 @@ export default function ContactPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <div className="w-full h-[205px] bg-[#252f5c] flex items-center justify-center flex-col">
-        <div className="text-center">
-          <h1 className="text-white font-poppins text-[45px] font-semibold mb-[25px]">
-            Contact Us
-          </h1>
-          <div className="flex items-center gap-2 justify-center">
-            <span className="text-white font-inter text-xs font-normal">
-              Home
-            </span>
-            <svg width="8" height="17" viewBox="0 0 8 17" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-2 h-4 flex-shrink-0">
-              <path fillRule="evenodd" clipRule="evenodd" d="M6.77162 8.97399L3.00028 12.7453L2.05762 11.8027L5.35762 8.50266L2.05762 5.20266L3.00028 4.25999L6.77162 8.03133C6.8966 8.15635 6.96681 8.32588 6.96681 8.50266C6.96681 8.67944 6.8966 8.84898 6.77162 8.97399Z" fill="white"/>
-            </svg>
-            <span className="text-white font-inter text-xs font-normal">
+      <section className="bg-transnepal-dark">
+        <div className="max-w-screen-xl mx-auto px-4 lg:px-20 py-12 md:py-16">
+          <div className="text-center">
+            <h1 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4">
               Contact Us
-            </span>
+            </h1>
+
+            {/* Breadcrumbs */}
+            <div className="flex items-center justify-center space-x-2 text-white text-xs font-inter">
+              <a href="/" className="hover:underline">Home</a>
+              <ChevronRight className="h-2 w-2" />
+              <span>Contact Us</span>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Main Content */}
       <div className="py-20 max-w-[1440px] mx-auto">
