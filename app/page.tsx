@@ -259,14 +259,14 @@ export default function Home() {
         {/* Navigation Arrows - only show on md and up */}
         <button
           onClick={goToPrevious}
-          className="hidden md:flex absolute left-48 top-1/2 transform -translate-y-1/2 w-16 h-14 rounded-full border border-white bg-white/5 backdrop-blur-sm items-center justify-center"
+          className="hidden md:flex absolute left-48 top-1/2 transform -translate-y-1/2 w-14 h-14 rounded-full border border-white bg-white/5 backdrop-blur-sm items-center justify-center"
           aria-label="Previous Slide"
         >
           <ChevronLeft className="w-6 h-6 text-white" />
         </button>
         <button
           onClick={goToNext}
-          className="hidden md:flex absolute right-48 top-1/2 transform -translate-y-1/2 w-16 h-14 rounded-full border border-white bg-white/5 backdrop-blur-sm items-center justify-center"
+          className="hidden md:flex absolute right-48 top-1/2 transform -translate-y-1/2 w-14 h-14 rounded-full border border-white bg-white/5 backdrop-blur-sm items-center justify-center"
           aria-label="Next Slide"
         >
           <ChevronRight className="w-6 h-6 text-white" />
@@ -381,31 +381,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Get to Know Us Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      {/* About Us Section */}
+      <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-trans-blue text-center mb-16">
-            About Us
-          </h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="rounded-2xl shadow-md bg-[#dbdeef] flex flex-col lg:flex-row items-center lg:items-start p-6 md:p-10 gap-6 lg:gap-8">
+            {/* Image - left side, smaller and close to text */}
+            <div className="flex-shrink-0 flex justify-center lg:justify-start w-full lg:w-auto">
               <img 
                 src="/home/gtku.png" 
                 alt="TransNepal Building" 
-                className="w-full h-auto rounded-2xl shadow-lg"
+                className="w-64 md:w-64 lg:w-72 h-48 md:h-62 lg:h-96 rounded-2xl shadow-lg"
               />
             </div>
-            
-            <div className="space-y-6">
-              <p className="text-gray-600 text-l leading-relaxed text-justify">
-                TransNepal Freight Services Pvt. Ltd., was incorporated in the year 2002 under the Nepalese Company Act and started operation from 17th April 2002 by taking over the operation and management of the two ICDs' at Biratnagar and Bhairahawa on lease for a period of ten years from Nepal Intermodal Transport Development Board, a body constituted by the Government of Nepal to regulate terminals in Nepal.
+            {/* About Us Content - right side */}
+            <div className="flex-1 flex flex-col justify-center space-y-4">
+              <h2 className="text-l md:text-xl lg:text-3xl font-bold text-trans-blue text-left mb-2 font-poppins">
+                About Us
+              </h2>
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed text-justify">
+                TransNepal Freight Services Pvt. Ltd., was incorporated in the year 2002 under the Nepalese Company Act and started operation from 17th April 2002 by taking over the operation and management of the two ICDs’ at Biratnagar and Bhairahawa on lease for a period of ten years from Nepal Intermodal Transport Development Board, a body constituted by the Government of Nepal to regulate terminals in Nepal. The lease agreement for both the ICDs’ has been renewed for a further period of ten years up to 15th April 2022. Meanwhile, Biratnagar ICP comes into existence and TransNepal has awarded the contract of operation & management of Biratnagar ICP for the period of 5 years under International Competitive Bidding, and the operation commenced from 17th August 2020. Further in an International Competitive Bidding, TransNepal has been awarded the contract of operation and management of Kakarbhitta ICD for 5 years and the operation commenced from 13th Feb 2021. In the year 2022, the company has registered its presence in the northern part of Nepal by winning the bid of Tatopani ICD at the Nepal-China border in the name of TransSilk Terminals Pvt. Ltd.. Recently, in 2023, the company has signed a contract with NITDB and commenced operation of Chobhar ICD at Kirtipur, Kathmandu, in the name of TranNepal T.R.S. Logipark Pvt.Ltd.
               </p>
-              
-              <p className="text-gray-600 text-l leading-relaxed text-justify">
-                TransNepal Freight Services Pvt. Ltd., was incorporated in the year 2002 under the Nepalese Company Act and started operation from 17th April 2002 by taking over the operation and management of the two ICDs' at Biratnagar and Bhairahawa on lease for a period of ten years from Nepal Intermodal Transport Development Board, a body constituted by the Government of Nepal to regulate terminals in Nepal.
-              </p>
-              
             </div>
           </div>
         </div>
