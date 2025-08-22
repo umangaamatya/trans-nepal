@@ -12,43 +12,45 @@ export default function TBiratnagar() {
         </h2>
         <TariffTable
           headers={["S.N", "Activities", "Vehicle", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
               activity: "Truck/Tanker/Tractor/Trailor per entry per trip",
-              vehicle: "259.31",
+              vehicle: <span className="pl-24 block">{`259.31`}</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "2",
               activity: "Rickshaw / Hand Trolley per entry per trip",
-              vehicle: "129.69",
+              vehicle: <span className="pl-24 block">{`129.69`}</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "3",
-              activity:
-                "Light Vehicles/Bullock Cart with capacity up to 5 Ton per entry",
-              vehicle: "38.94",
+              activity: "Light Vehicles/Bullock Cart with capacity up to 5 Ton per entry",
+              vehicle: <span className="pl-24 block">{`38.94`}</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "4",
-              activity:
-                "Container Truck (fixed container Vehicle) per entry per trip",
-              vehicle: "389.06",
+              activity: "Container Truck (fixed container Vehicle) per entry per trip",
+              vehicle: <span className="pl-24 block">{`389.06`}</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "5",
-              activity:
-                "Trailor / Flat Truck / Artriculated Vehicles with or without container per entry trip.",
-              vehicle: "518.64",
-              teu: "778.13",
+              activity: "Trailor / Flat Truck / Artriculated Vehicles with or without container per entry trip.",
+              vehicle: <span className="pl-24 block">{`518.64`}</span>,
+              teu: <span className="pl-24 block">{`778.13`}</span>,
               feu: "",
             },
           ]}
@@ -65,33 +67,37 @@ export default function TBiratnagar() {
         </h3>
         <TariffTable
           headers={["S.N", "Activities", "Vehicle", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
               activity: "All handling activities",
-              vehicle: "2593.75 4668.74",
+              vehicle: <span className="pl-24 block">2593.75 4668.74</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "2",
               activity: "Containerized cargo",
-              vehicle: "181.57",
+              vehicle: <span className="pl-24 block">181.57</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "3",
-              activity:
-                "Non containerized break bulk/Packaged/ Bagged cargo",
-              vehicle: "181.57",
+              activity: "Non containerized break bulk/Packaged/ Bagged cargo",
+              vehicle: <span className="pl-24 block">181.57</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "4",
               activity: "Non containerized bulk/ loose cargo",
-              vehicle: "129.69",
+              vehicle: <span className="pl-24 block">129.69</span>,
               teu: "",
               feu: "",
             },
@@ -110,22 +116,21 @@ export default function TBiratnagar() {
             {
               sn: "1",
               activity: "Loaded container",
-              vehicle: "2593.75 4150.00",
+              vehicle: <span className="pl-24 block">2593.75 4150.00</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "2",
               activity: "Unloaded Container",
-              vehicle: "1296.89 2075.01",
+              vehicle: <span className="pl-24 block">1296.89 2075.01</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "3",
-              activity:
-                "LCL Cargo including container handling / loading / unloading and stuffing and destuffing",
-              vehicle: "518.74",
+              activity: "LCL Cargo including container handling / loading / unloading and stuffing and destuffing",
+              vehicle: <span className="pl-24 block">518.74</span>,
               teu: "",
               feu: "",
             },
@@ -144,21 +149,21 @@ export default function TBiratnagar() {
             {
               sn: "1",
               activity: "Weighing charges per trip per vehicle",
-              vehicle: "389.06",
-              teu: "518.74",
-              feu: "648.43",
+              vehicle: <span className="pl-24 block">389.06</span>,
+              teu: <span className="pl-24 block">518.74</span>,
+              feu: <span className="pl-24 block">648.43</span>,
             },
             {
               sn: "2",
               activity: "Additional weighing services",
-              vehicle: "194.53",
-              teu: "259.37",
-              feu: "324.21",
+              vehicle: <span className="pl-24 block">194.53</span>,
+              teu: <span className="pl-24 block">259.37</span>,
+              feu: <span className="pl-24 block">324.21</span>,
             },
             {
               sn: "3",
               activity: "Bulk cargo weighing per MT",
-              vehicle: "25.94",
+              vehicle: <span className="pl-24 block">25.94</span>,
               teu: "",
               feu: "",
             },
@@ -183,21 +188,21 @@ export default function TBiratnagar() {
             {
               sn: "1",
               activity: "2-8 days +0.1416 paisa/ Kg / day",
-              vehicle: "0.16",
+              vehicle: <span className="pl-24 block">0.16</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "2",
               activity: "9-30 days + 0.1888 paisa / Kg / day",
-              vehicle: "0.21",
+              vehicle: <span className="pl-24 block">0.21</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "3",
               activity: "31 days onwards + 0.2830 paisa / Kg / day",
-              vehicle: "0.31",
+              vehicle: <span className="pl-24 block">0.31</span>,
               teu: "",
               feu: "",
             },
@@ -216,21 +221,21 @@ export default function TBiratnagar() {
             {
               sn: "1",
               activity: "2-8 days + 0.0706 paisa / Kg / day",
-              vehicle: "0.08",
+              vehicle: <span className="pl-24 block">0.08</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "2",
               activity: "9-30 days + 0.1888 paisa / Kg / day",
-              vehicle: "0.10",
+              vehicle: <span className="pl-24 block">0.10</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "3",
               activity: "31 days onwards + 0.2830 paisa / Kg / day",
-              vehicle: "0.13",
+              vehicle: <span className="pl-24 block">0.13</span>,
               teu: "",
               feu: "",
             },
@@ -249,14 +254,14 @@ export default function TBiratnagar() {
             {
               sn: "1",
               activity: "2-8 days + 0.0706 paisa / Kg / day",
-              vehicle: "0.08",
+              vehicle: <span className="pl-24 block">0.08</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "2",
               activity: "9 days onwards = 0.1181 paisa / Kg / day",
-              vehicle: "0.13",
+              vehicle: <span className="pl-24 block">0.13</span>,
               teu: "",
               feu: "",
             },
@@ -278,23 +283,23 @@ export default function TBiratnagar() {
             {
               sn: "1",
               activity: "One day free",
-              vehicle: "-",
-              teu: "-",
-              feu: "-",
+              vehicle: <span className="pl-24 block">-</span>,
+              teu: <span className="pl-24 block">-</span>,
+              feu: <span className="pl-24 block">-</span>,
             },
             {
               sn: "2",
               activity: "2-7 days per day",
-              vehicle: "389.06",
-              teu: "518.74",
+              vehicle: <span className="pl-24 block">389.06</span>,
+              teu: <span className="pl-24 block">518.74</span>,
               feu: "",
             },
             {
               sn: "3",
               activity: "8 days onwards per days",
-              vehicle: "518.74",
-              teu: "518.74",
-              feu: "778.13",
+              vehicle: <span className="pl-24 block">518.74</span>,
+              teu: <span className="pl-24 block">518.74</span>,
+              feu: <span className="pl-24 block">778.13</span>,
             },
           ]}
         />
@@ -311,22 +316,22 @@ export default function TBiratnagar() {
             {
               sn: "1",
               activity: "One day free",
-              vehicle: "-",
+              vehicle: <span className="pl-24 block">-</span>,
               teu: "",
               feu: "",
             },
             {
               sn: "2",
               activity: "2-7 days per day",
-              vehicle: "389.06",
-              teu: "518.74",
+              vehicle: <span className="pl-24 block">389.06</span>,
+              teu: <span className="pl-24 block">518.74</span>,
               feu: "",
             },
             {
               sn: "3",
               activity: "8 days onwards per days",
-              vehicle: "518.74",
-              teu: "778.13",
+              vehicle: <span className="pl-24 block">518.74</span>,
+              teu: <span className="pl-24 block">778.13</span>,
               feu: "",
             },
           ]}
@@ -344,8 +349,8 @@ export default function TBiratnagar() {
             {
               sn: "1",
               activity: "Cost of cleaning",
-              vehicle: "259.39",
-              teu: "389.06",
+              vehicle: <span className="pl-24 block">259.39</span>,
+              teu: <span className="pl-24 block">389.06</span>,
               feu: "",
             },
           ]}
@@ -364,8 +369,8 @@ export default function TBiratnagar() {
               sn: "1",
               activity:
                 "Unfurnished room on the main terminal building @1071.81/m2 per month",
-              vehicle: "",
-              teu: "",
+              vehicle: <span className="pl-24 block">259.39</span>,
+              teu: <span className="pl-24 block">389.06</span>,
               feu: "",
             },
           ]}
@@ -383,22 +388,22 @@ export default function TBiratnagar() {
             {
               sn: "1",
               activity: "Complete Cycle",
-              vehicle: "3865.22",
-              teu: "7730.45",
+              vehicle: <span className="pl-24 block">3865.22</span>,
+              teu: <span className="pl-24 block">7730.45</span>,
               feu: "",
             },
             {
               sn: "2",
               activity: "Half Cycle per operation",
-              vehicle: "2013.80",
-              teu: "4026.28",
+              vehicle: <span className="pl-24 block">2013.80</span>,
+              teu: <span className="pl-24 block">4026.28</span>,
               feu: "",
             },
             {
               sn: "3",
               activity: "Additional operations per hour",
-              vehicle: "242.42",
-              teu: "484.84",
+              vehicle: <span className="pl-24 block">242.42</span>,
+              teu: <span className="pl-24 block">484.84</span>,
               feu: "",
             },
           ]}
@@ -416,30 +421,30 @@ export default function TBiratnagar() {
             {
               sn: "1",
               activity: "Rail loading / unloading per container",
-              vehicle: "1556.25",
-              teu: "2334.37",
-              feu: "3112.50",
+              vehicle: <span className="pl-24 block">1556.25</span>,
+              teu: <span className="pl-24 block">2334.37</span>,
+              feu: <span className="pl-24 block">3112.50</span>,
             },
             {
               sn: "2",
               activity: "Rail container handling per operation",
-              vehicle: "778.12",
-              teu: "1167.18",
-              feu: "1556.25",
+              vehicle: <span className="pl-24 block">778.12</span>,
+              teu: <span className="pl-24 block">1167.18</span>,
+              feu: <span className="pl-24 block">1556.25</span>,
             },
             {
               sn: "3",
               activity: "Rail to road transfer charges",
-              vehicle: "389.06",
-              teu: "583.59",
-              feu: "778.12",
+              vehicle: <span className="pl-24 block">389.06</span>,
+              teu: <span className="pl-24 block">583.59</span>,
+              feu: <span className="pl-24 block">778.12</span>,
             },
             {
               sn: "4",
               activity: "Railway line usage charges per day",
-              vehicle: "259.37",
-              teu: "389.06",
-              feu: "518.74",
+              vehicle: <span className="pl-24 block">259.37</span>,
+              teu: <span className="pl-24 block">389.06</span>,
+              feu: <span className="pl-24 block">518.74</span>,
             },
           ]}
         />
