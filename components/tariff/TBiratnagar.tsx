@@ -76,7 +76,7 @@ export default function TBiratnagar() {
             {
               sn: "1",
               activity: "All handling activities",
-              vehicle: <span className="pl-24 block">2593.75 4668.74</span>,
+              vehicle: <span className="pl-24 block">2593.75</span>,
               teu: "",
               feu: "",
             },
@@ -107,11 +107,16 @@ export default function TBiratnagar() {
 
       {/* Terminal Handling Charges */}
       <div className="mb-[60px]">
-        <h3 className="text-[#283b9a] font-poppins text-[20px] font-normal leading-normal mb-4">
-          Terminal Handling Charger
+        <h3 className="text-[#283b9a] font-poppins text-[20px] font-bold leading-normal mb-4">
+          Terminal Handling Charges
         </h3>
         <TariffTable
           headers={["S.N", "Activities", "Vehicle", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
@@ -145,6 +150,11 @@ export default function TBiratnagar() {
         </h2>
         <TariffTable
           headers={["S.N", "Activities", "Vehicle", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
@@ -179,11 +189,16 @@ export default function TBiratnagar() {
             24 Hours Free time from the time of arrival
           </span>
         </h2>
-        <h3 className="text-[#283b9a] font-poppins text-[20px] font-normal leading-normal mb-4">
+        <h3 className="text-[#283b9a] font-poppins text-[20px] font-bold leading-normal mb-4">
           Imports
         </h3>
         <TariffTable
           headers={["S.N", "Activities", "Vehicle", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
@@ -212,11 +227,16 @@ export default function TBiratnagar() {
 
       {/* Exports */}
       <div className="mb-[60px]">
-        <h3 className="text-[#283b9a] font-poppins text-[20px] font-normal leading-normal mb-4">
+        <h3 className="text-[#283b9a] font-poppins text-[20px] font-bold leading-normal mb-4">
           Exports
         </h3>
         <TariffTable
           headers={["S.N", "Activities", "Vehicle", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
@@ -245,11 +265,16 @@ export default function TBiratnagar() {
 
       {/* Open Yard Storage */}
       <div className="mb-[60px]">
-        <h3 className="text-[#283b9a] font-poppins text-[20px] font-normal leading-normal mb-4">
+        <h3 className="text-[#283b9a] font-poppins text-[20px] font-bold leading-normal mb-4">
           Open Yard Storage
         </h3>
         <TariffTable
           headers={["S.N", "Activities", "Vehicle", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
@@ -279,6 +304,11 @@ export default function TBiratnagar() {
         </h3>
         <TariffTable
           headers={["S.N", "Activities", "Vehicle", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
@@ -307,11 +337,16 @@ export default function TBiratnagar() {
 
       {/* Container */}
       <div className="mb-[60px]">
-        <h3 className="text-[#283b9a] font-poppins text-[20px] font-normal leading-normal mb-4">
+        <h3 className="text-[#283b9a] font-poppins text-[20px] font-bold leading-normal mb-4">
           Container
         </h3>
         <TariffTable
           headers={["S.N", "Activities", "Vehicle", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
@@ -340,11 +375,16 @@ export default function TBiratnagar() {
 
       {/* Cleaning of Containers */}
       <div className="mb-[60px]">
-        <h3 className="text-[#283b9a] font-poppins text-[20px] font-normal leading-normal mb-4">
+        <h3 className="text-[#283b9a] font-poppins text-[20px] font-bold leading-normal mb-4">
           Cleaning of Containers
         </h3>
         <TariffTable
           headers={["S.N", "Activities", "Vehicle", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
@@ -359,11 +399,16 @@ export default function TBiratnagar() {
 
       {/* Sub lease charges */}
       <div className="mb-[60px]">
-        <h3 className="text-[#283b9a] font-poppins text-[20px] font-normal leading-normal mb-4">
+        <h3 className="text-[#283b9a] font-poppins text-[20px] font-bold leading-normal mb-4">
           Sub lease charges
         </h3>
         <TariffTable
           headers={["S.N", "Activities", "Vehicle", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
@@ -379,11 +424,16 @@ export default function TBiratnagar() {
 
       {/* Forklift Charges */}
       <div className="mb-[60px]">
-        <h3 className="text-[#283b9a] font-poppins text-[20px] font-normal leading-normal mb-4">
+        <h3 className="text-[#283b9a] font-poppins text-[20px] font-bold leading-normal mb-4">
           Forklift Charges
         </h3>
         <TariffTable
           headers={["S.N", "Activities", "Vehicle", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
@@ -417,6 +467,11 @@ export default function TBiratnagar() {
         </h2>
         <TariffTable
           headers={["S.N", "Activities", "Vehicle", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
@@ -457,6 +512,11 @@ export default function TBiratnagar() {
         </h2>
         <TariffTable
           headers={["S.N", "Activities", "Schedule of Charges (w.e.f)", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
@@ -490,6 +550,11 @@ export default function TBiratnagar() {
         </h2>
         <TariffTable
           headers={["S.N", "Activities", "Schedule of Charges (w.e.f)", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
@@ -530,6 +595,11 @@ export default function TBiratnagar() {
         </h2>
         <TariffTable
           headers={["S.N", "Activities", "Rate per MT", "TEU", "FEU"]}
+          columnClasses={{
+            Vehicle: "-ml-16 text-center tabular-nums",
+            TEU: "text-center tabular-nums",
+            FEU: "text-center tabular-nums",
+          }}
           rows={[
             {
               sn: "1",
