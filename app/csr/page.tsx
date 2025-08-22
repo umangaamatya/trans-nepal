@@ -158,7 +158,7 @@ export default function CSR() {
           </div>
 
           {/* Features List */}
-          <div className="w-full lg:w-1/2 flex flex-col gap-6 sm:gap-8 lg:gap-9">
+          <div className="w-full lg:w-1/2 flex flex-col gap-6 sm:gap-8 lg:gap-10 lg:ml-28">
             {features.map((feature, index) => (
               <div key={index} className="flex items-start gap-3 sm:gap-4 lg:gap-5 opacity-70">
                 <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12">

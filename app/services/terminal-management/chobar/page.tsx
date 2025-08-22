@@ -246,14 +246,6 @@ export default function Index() {
               </div>
             ))}
           </div>
-
-          {/* View More */}
-          <div className="text-center mt-12">
-            <button className="flex items-center justify-center mx-auto space-x-2 text-black font-medium">
-              <span>View more</span>
-              <ChevronDown className="h-4 w-4" />
-            </button>
-          </div>
         </div>
       </section>
 

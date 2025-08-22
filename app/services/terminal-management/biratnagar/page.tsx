@@ -237,13 +237,7 @@ export default function BiratnagarPage() {
                   );
                 })}
               </div>
-              {/* View More Button */}
-              <div className="text-center">
-                <button className="text-terminal-blue font-inter text-lg md:text-xl font-medium hover:underline flex items-center gap-2 mx-auto">
-                  View more
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-              </div>
+              
             </div>
           </section>
           );

@@ -353,13 +353,7 @@ const ServicesGrid = () => {
           ))}
         </div>
 
-        {/* View More */}
-        <div className="text-center">
-          <button className="flex items-center justify-center text-terminal-blue text-xl font-medium font-inter mx-auto">
-            View more
-            <ChevronDown className="ml-2 h-4 w-4" />
-          </button>
-        </div>
+        
       </div>
     </section>
   );

@@ -76,7 +76,7 @@ export default function Index() {
       </div>
 
       {/* Services Section */}
-      <div className="bg-terminal-gray-light py-16">
+      <div className="bg-terminal-gray-light pb-0">
         <div className="max-w-7xl mx-auto px-4">
           {/* Filter Section */}
           <div className="mb-8 flex items-center relative">
@@ -126,7 +126,7 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-0">
             {filteredServices.map((service, index) => (
               <div key={index} className="bg-white rounded-2xl p-6 shadow-sm">
                 <div className="flex items-center bg-terminal-secondary text-white px-4 py-2 rounded-full text-sm font-medium mb-4 w-fit">
@@ -152,12 +152,6 @@ export default function Index() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="text-center">
-            <button className="text-terminal-primary font-medium font-inter text-lg hover:underline">
-              View more
-            </button>
           </div>
         </div>
       </div>
