@@ -60,39 +60,40 @@ export default function Home() {
       </section>
 
       {/* Team Members */}
-      <div className="py-[120px] px-[150px] max-w-[1440px] mx-auto">
-        {teamMembers.map((member, index) => (
-          <div key={index}>
-            <div className={`flex items-start gap-[60px] mb-[120px] ${
-              member.imagePosition === 'left' ? 'flex-row-reverse' : 'flex-row'
-            }`}>
-              <div className="flex-1 max-w-[810px]">
-                <h2 className="font-inter text-2xl lg:text-3xl font-bold mb-4" style={{ color: '#283B9A' }}>
-                  {member.name}
-                </h2>
-                <p className="font-inter text-lg lg:text-xl font-semibold mb-7" style={{ color: '#AC3A38' }}>
-                  {member.position}
-                </p>
-                <p className="font-inter text-base lg:text-lg text-[#171F45] leading-relaxed text-justify">
-                  {member.description}
-                </p>
-              </div>
+      <div className="py-12 px-4 md:px-12 lg:px-[150px] max-w-[1440px] mx-auto">
+      {teamMembers.map((member, index) => (
+        <div key={index}>
+          <div className={`flex flex-col lg:flex-row items-start gap-8 lg:gap-[60px] mb-16 lg:mb-[120px] ${
+            member.imagePosition === 'left' ? 'lg:flex-row-reverse' : ''
+          }`}>
+            <div className="flex-1 max-w-full lg:max-w-[810px]">
+              <h2 className="font-inter text-xl md:text-2xl lg:text-3xl font-bold mb-4" style={{ color: '#283B9A' }}>
+                {member.name}
+              </h2>
+              <p className="font-inter text-base md:text-lg lg:text-xl font-semibold mb-7" style={{ color: '#AC3A38' }}>
+                {member.position}
+              </p>
+              <p className="font-inter text-sm md:text-base lg:text-lg text-[#171F45] leading-relaxed text-justify">
+                {member.description}
+              </p>
+            </div>
+            <div className="w-full max-w-[282px] mx-auto lg:mx-0">
               <Image 
                 src={member.image}
                 alt={member.name}
                 width={282}
                 height={325}
-                className="w-[282px] h-[325px] rounded-[15px] flex-shrink-0"
+                className="w-full h-auto max-h-[325px] rounded-[15px] flex-shrink-0 object-cover"
               />
             </div>
-            
-            {/* Divider line (except for last member) */}
-            {index < teamMembers.length - 1 && (
-              <div className="w-full h-px bg-[rgba(23,31,69,0.05)] my-[60px]"></div>
-            )}
           </div>
-        ))}
-      </div>
+          {/* Divider line (except for last member) */}
+          {index < teamMembers.length - 1 && (
+            <div className="w-full h-px bg-[rgba(23,31,69,0.05)] my-8 lg:my-[60px]"></div>
+          )}
+        </div>
+      ))}
+</div>
 
       <Footer />
     </div>
