@@ -179,7 +179,7 @@ import { ChevronRight } from "lucide-react";
             </div>
 
             {/* Growth Journey Section */}
-            <div className="flex flex-col lg:flex-row items-start gap-[60px]">
+            <div className="flex flex-col items-start gap-[60px]">
               <div className="flex-1">
                 <h2 className="text-primary-blue text-justify font-poppins text-[25px] font-bold leading-[30px] mb-[30px]">
                   Growth Journey
@@ -195,26 +195,7 @@ import { ChevronRight } from "lucide-react";
                 </div>
               </div>
               <div className="flex-none w-full lg:w-[400px] relative">
-                {/* Growth Chart */}
-                <div className="flex items-end justify-center gap-[10px] h-[300px] mb-[20px]">
-                  <div className="w-[33px] h-[79px] bg-primary-blue/50"></div>
-                  <div className="w-[33px] h-[123px] bg-primary-blue/50"></div>
-                  <div className="w-[33px] h-[156px] bg-primary-blue/50"></div>
-                  <div className="w-[33px] h-[197px] bg-primary-blue/50"></div>
-                  <div className="w-[33px] h-[231px] bg-primary-blue/50"></div>
-                  <div className="w-[33px] h-[274px] bg-primary-blue/50"></div>
-                </div>
-                {/* Chart Labels */}
-                <div className="flex justify-center gap-[10px]">
-                  {["2019", "2020", "2021", "2022", "2023", "2024"].map((year) => (
-                    <div 
-                      key={year}
-                      className="w-[42px] text-primary-blue text-center font-inter text-[13px] font-normal leading-[30px]"
-                    >
-                      {year}
-                    </div>
-                  ))}
-                </div>
+                
               </div>
             </div>
           </div>
