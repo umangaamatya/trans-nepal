@@ -1,5 +1,5 @@
 "use client";
-import { Mail, Phone, Facebook, Linkedin, Youtube, ChevronRight, ChevronUp } from "lucide-react";
+import { Mail, Phone, Facebook, Linkedin, Youtube, ChevronRight, ChevronUp, Dot } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20 pb-14 border-b border-white/30">
         {/* Connect with Us */}
         <div className="flex-1">
-          <h3 className="text-[20px] lg:text-[24px] font-bold uppercase border-b-2 border-white inline-block pb-2 mb-6">
+          <h3 className="text-[20px] lg:text-[24px] font-bold border-b-2 border-white inline-block pb-2 mb-6">
             Connect with us
           </h3>
           <div className="flex flex-col gap-4">
@@ -18,7 +18,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-3">
               <Phone className="w-6 h-6" />
-              <span className="text-[18px]">+977 21 501470</span>
+              <a className="text-[18px]" href="tel: +977 21 501470">+977 21 501470</a>
             </div>
             <div className="flex items-center gap-3">
               <Phone className="w-6 h-6" />
@@ -36,13 +36,13 @@ export default function Footer() {
 
         {/* Useful Links */}
         <div className="flex-1">
-          <h3 className="text-[20px] lg:text-[24px] font-bold uppercase border-b-2 border-white inline-block pb-2 mb-6">
+          <h3 className="text-[20px] lg:text-[24px] font-bold border-b-2 border-white inline-block pb-2 mb-6">
             Useful Links
           </h3>
           <ul className="space-y-2">
-            {["Department Of Customs", "NITDB Board", "FNCCI", "Indian Embassy Nepal", "Check Email"].map((text, i) => (
+            {["Department of Customs", "NITDB Board", "FNCCI", "Indian Embassy Nepal", "Check Email"].map((text, i) => (
               <li key={i} className="flex items-center gap-2">
-                <ChevronRight className="w-4 h-4 text-white/80" />
+                <Dot className="w-4 h-4 text-white/80" />
                 <span className="text-[16px]">{text}</span>
               </li>
             ))}
@@ -51,13 +51,13 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="flex-1">
-          <h3 className="text-[20px] lg:text-[24px] font-bold uppercase border-b-2 border-white inline-block pb-2 mb-6">
+          <h3 className="text-[20px] lg:text-[24px] font-bold border-b-2 border-white inline-block pb-2 mb-6">
             Quick Links
           </h3>
           <ul className="space-y-2">
             {["Management Team", "Biratnagar ICP", "Kakarbhitta ICD", "Tariff", "News & Events"].map((text, i) => (
               <li key={i} className="flex items-center gap-2">
-                <ChevronRight className="w-4 h-4 text-white/80" />
+                <Dot className="w-4 h-4 text-white/80" />
                 <span className="text-[16px]">{text}</span>
               </li>
             ))}
@@ -86,7 +86,7 @@ export default function Footer() {
       <div className="flex flex-col lg:flex-row justify-between items-center py-6 text-[14px] text-white/80 gap-3">
         <div>All rights Reserved | Copyright © 2024 Trans Nepal Freight Services Pvt. Ltd.</div>
         <div>
-          Technology Partner | <span>Pracas Infosys</span>
+          Technology Partner | <span>SRIYOG Consulting</span>
         </div>
       </div>
     </footer>
