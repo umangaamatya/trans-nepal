@@ -84,7 +84,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="flex flex-col lg:flex-row justify-between items-center py-6 text-[14px] text-white/80 gap-3">
-        <div>All Rights Reserved | Copyright © 2024 Trans Nepal Freight Services Pvt. Ltd.</div>
+        <div>All Rights Reserved | Copyright © 2025 Trans Nepal Freight Services Pvt. Ltd.</div>
         <div>
           Technology Partner | <span>SRIYOG Consulting</span>
         </div>

@@ -480,43 +480,137 @@ export default function Home() {
               We understand that in order to maximize customer satisfaction, the flow of your supply chain from product to information to finance needs to be responsive towards demand.
             </p>
           </div>
-          {/* Card */}
-          <div className="relative bg-white w-full max-w-4xl mx-auto rounded-lg flex flex-col md:flex-row items-center h-auto md:h-60 shadow-md transition-all duration-300">
-            {/* Image on the left */}
-            <div className="flex-shrink-0 flex items-center justify-center pt-6 md:pt-0 pl-0 md:pl-8">
-              <img
-                src={testimonials[testimonialIndex].image}
-                alt={testimonials[testimonialIndex].name}
-                className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-gray-200"
-              />
-            </div>
-            {/* Content */}
-            <div className="flex-1 px-4 md:pl-8 md:pr-8 space-y-2 relative text-center md:text-left">
-              <h3 className="text-base md:text-lg font-bold text-[#283B9A] font-poppins">{testimonials[testimonialIndex].name}</h3>
-              <p className="text-xs text-[#283B9A] font-poppins">{testimonials[testimonialIndex].position}</p>
-              <div className="flex gap-1 justify-center md:justify-start mt-2 md:mt-0">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                ))}
+
+          {/* Cards Wrapper */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {testimonials.slice(0, 2).map((testimonial, idx) => (
+              <div
+                key={idx}
+                className="relative bg-white w-full rounded-lg flex flex-col md:flex-row items-center h-auto md:h-60 shadow-md transition-all duration-300"
+              >
+                {/* Image on the left */}
+                <div className="flex-shrink-0 flex items-center justify-center pt-6 md:pt-0 pl-0 md:pl-8">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-gray-200"
+                  />
+                </div>
+                {/* Content */}
+                <div className="flex-1 px-4 md:pl-8 md:pr-8 space-y-2 relative text-center md:text-left">
+                  <h3 className="text-base md:text-lg font-bold text-[#283B9A] font-poppins">{testimonial.name}</h3>
+                  <p className="text-xs text-[#283B9A] font-poppins">{testimonial.position}</p>
+                  <div className="flex gap-1 justify-center md:justify-start mt-2 md:mt-0">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-xs md:text-sm text-gray-800 italic font-inter mt-4 md:mt-8 max-w-xl leading-6">
+                    "{testimonial.text}"
+                  </p>
+                </div>
               </div>
-              <p className="text-xs md:text-sm text-gray-800 italic font-inter mt-4 md:mt-8 max-w-xl leading-6">
-                "{testimonials[testimonialIndex].text}"
-              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Info Strip */}
+      <section className="w-full bg-[#f3f5f9] py-10 md:py-14">
+        <div className="max-w-6xl w-full mx-auto px-2 md:px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+
+            {/* Working Hours */}
+            <div className="space-y-4">
+              {/* Heading */}
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rotate-45 bg-gray-400/70" />
+                <h3 className="text-xs md:text-sm tracking-wide text-gray-700 font-semibold font-poppins">
+                  WORKING HOURS
+                </h3>
+              </div>
+              {/* Items */}
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  {/* Clock icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <p className="text-xs md:text-sm text-gray-800 font-poppins">
+                    <span className="font-semibold">Weekdays:</span> 10:00 AM – 6:00 PM
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* Dots */}
-            <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 md:gap-4">
-              {testimonials.map((_, idx) => (
-                <button
-                  key={idx}
-                  className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors ${
-                    testimonialIndex === idx ? "bg-black" : "bg-gray-400"
-                  }`}
-                  onClick={() => setTestimonialIndex(idx)}
-                  aria-label={`Show testimonial ${idx + 1}`}
-                />
-              ))}
+            {/* Address Information */}
+            <div className="space-y-4">
+              {/* Heading */}
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rotate-45 bg-gray-400/70" />
+                <h3 className="text-xs md:text-sm tracking-wide text-gray-700 font-semibold font-poppins">
+                  ADDRESS INFORMATION
+                </h3>
+              </div>
+              {/* Items */}
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  {/* Mail icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                  </svg>
+                  <p className="text-xs md:text-sm text-gray-800 font-poppins">
+                    <span className="font-semibold">Email:</span> transnepal_brt@transnepaldryport.com
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  {/* Map pin icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeWidth="2" d="M12 11a4 4 0 100-8 4 4 0 000 8z" />
+                    <path strokeWidth="2" d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z" />
+                  </svg>
+                  <p className="text-xs md:text-sm text-gray-800 font-poppins">
+                    TransNepal Tower, Piyush Marg, Biratnagar-05, Nepal
+                  </p>
+                </div>
+              </div>
             </div>
+
+            {/* Contact Information */}
+            <div className="space-y-4">
+              {/* Heading */}
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rotate-45 bg-gray-400/70" />
+                <h3 className="text-xs md:text-sm tracking-wide text-gray-700 font-semibold font-poppins">
+                  CONTACT INFORMATION
+                </h3>
+              </div>
+              {/* Items */}
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  {/* Phone icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeWidth="2" d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013 5.18 2 2 0 015 3h3a2 2 0 012 1.72c.12.9.33 1.77.63 2.6a2 2 0 01-.45 2.11L9 10a16 16 0 006 6l.57-.78a2 2 0 012.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0122 16.92z" />
+                  </svg>
+                  <p className="text-xs md:text-sm text-gray-800 font-poppins">
+                    <span className="font-semibold">Telephone:</span> +977 21 501441
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  {/* Fax/Printer icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeWidth="2" d="M6 9V4h12v5M6 18h12v2H6z" />
+                    <path strokeWidth="2" d="M6 14h12a2 2 0 002-2V9H4v3a2 2 0 002 2z" />
+                  </svg>
+                  <p className="text-xs md:text-sm text-gray-800 font-poppins">
+                    <span className="font-semibold">Fax:</span> +977 21 501470
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
