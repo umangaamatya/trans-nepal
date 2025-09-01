@@ -517,7 +517,7 @@ export default function Home() {
 
       {/* Info Strip */}
       <section className="w-full bg-[#f3f5f9] py-10 md:py-14">
-        <div className="max-w-6xl w-full mx-auto px-2 md:px-4">
+        <div className="max-w-6xl w-full mx-auto px-2 md:px-3 ml-48">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
 
             {/* Working Hours */}
@@ -526,7 +526,7 @@ export default function Home() {
               <div className="flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rotate-45 bg-gray-400/70" />
                 <h3 className="text-xs md:text-sm tracking-wide text-gray-700 font-semibold font-poppins">
-                  WORKING HOURS
+                  Working Hours
                 </h3>
               </div>
               {/* Items */}
@@ -549,7 +549,7 @@ export default function Home() {
               <div className="flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rotate-45 bg-gray-400/70" />
                 <h3 className="text-xs md:text-sm tracking-wide text-gray-700 font-semibold font-poppins">
-                  ADDRESS INFORMATION
+                  Address Information
                 </h3>
               </div>
               {/* Items */}
@@ -583,7 +583,7 @@ export default function Home() {
               <div className="flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rotate-45 bg-gray-400/70" />
                 <h3 className="text-xs md:text-sm tracking-wide text-gray-700 font-semibold font-poppins">
-                  CONTACT INFORMATION
+                  Contact Information
                 </h3>
               </div>
               {/* Items */}
